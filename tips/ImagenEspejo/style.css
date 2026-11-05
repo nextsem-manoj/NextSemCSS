@@ -1,0 +1,13 @@
+body{
+    font-size: 22px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    margin-left: 4%;
+    margin-top: 3%;
+}
+
+img {
+    transform: rotateY(0deg);
+    transform: rotateX(0deg);
+    transform: rotate(360deg);
+}

@@ -1,0 +1,37 @@
+body {
+  font-size: 22px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  margin-left: 18%;
+  margin-top: 3%;
+  background-color: lightyellow;
+  /* background-image: url(); */
+}
+
+
+
+h1 {
+  /* transform: rotate(-10deg); */
+  /* transform: rotate(+40deg); */
+  display: inline-block;
+  animation: 1s infinite movehand;
+}
+
+@keyframes movehand {
+  0% {
+    transform: rotate(0deg) translate(10px);
+  }
+
+  25% {
+    transform: rotate(90deg) translate(20px);
+  }
+
+
+  50% {
+    transform: rotate(180deg) translate(30px);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(40px);
+  }
+}

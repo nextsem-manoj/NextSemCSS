@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animations &amp; Loaders Studio | NextSem CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b14;
+      --card-bg: #0f172a;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: #0b1120;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #10b981;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+
+    .stage {
+      background: #090d18;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 1. QUANTUM ORBIT SPINNER                     */
+    /* ═════════════════════════════════════════════ */
+    .quantum-orbit {
+      position: relative;
+      width: 60px;
+      height: 60px;
+    }
+    .orbit-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #38bdf8;
+      animation: spinOrbit 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+    .orbit-ring:nth-child(2) {
+      inset: 6px;
+      border-top-color: #a855f7;
+      animation-duration: 1.6s;
+      animation-direction: reverse;
+    }
+    .orbit-ring:nth-child(3) {
+      inset: 12px;
+      border-top-color: #10b981;
+      animation-duration: 2s;
+    }
+    @keyframes spinOrbit {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 2. CYBERPUNK GLITCH TEXT                     */
+    /* ═════════════════════════════════════════════ */
+    .glitch-text {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      position: relative;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    .glitch-text::before, .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .glitch-text::before {
+      left: 2px;
+      text-shadow: -2px 0 #ec4899;
+      clip-path: rect(24px, 550px, 90px, 0);
+      animation: glitchAnim 2.5s infinite linear alternate-reverse;
+    }
+    .glitch-text::after {
+      left: -2px;
+      text-shadow: -2px 0 #06b6d4;
+      clip-path: rect(85px, 550px, 140px, 0);
+      animation: glitchAnim2 2s infinite linear alternate-reverse;
+    }
+    @keyframes glitchAnim {
+      0% { clip-path: inset(40% 0 61% 0); }
+      20% { clip-path: inset(92% 0 1% 0); }
+      40% { clip-path: inset(10% 0 85% 0); }
+      60% { clip-path: inset(58% 0 31% 0); }
+      80% { clip-path: inset(25% 0 58% 0); }
+      100% { clip-path: inset(79% 0 12% 0); }
+    }
+    @keyframes glitchAnim2 {
+      0% { clip-path: inset(25% 0 58% 0); }
+      25% { clip-path: inset(79% 0 12% 0); }
+      50% { clip-path: inset(40% 0 61% 0); }
+      75% { clip-path: inset(10% 0 85% 0); }
+      100% { clip-path: inset(92% 0 1% 0); }
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 3. SKELETON SHIMMER                          */
+    /* ═════════════════════════════════════════════ */
+    .skeleton-card {
+      width: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .skel-line {
+      height: 14px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+      background-size: 200% 100%;
+      animation: skeletonWave 1.5s infinite;
+    }
+    .skel-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+      background-size: 200% 100%;
+      animation: skeletonWave 1.5s infinite;
+    }
+    @keyframes skeletonWave {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 4. FLUID MORPHING BLOB                       */
+    /* ═════════════════════════════════════════════ */
+    .morph-blob {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #a855f7, #38bdf8);
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      animation: morphing 5s ease-in-out infinite alternate;
+      box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+    }
+    @keyframes morphing {
+      0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+      50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+      100% { border-radius: 60% 40% 60% 40% / 40% 50% 50% 60%; }
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 5. EQUALIZER BARS                            */
+    /* ═════════════════════════════════════════════ */
+    .equalizer {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      height: 50px;
+    }
+    .eq-bar {
+      width: 8px;
+      background: linear-gradient(to top, #10b981, #38bdf8);
+      border-radius: 4px;
+      animation: eqBounce 1s ease-in-out infinite alternate;
+    }
+    .eq-bar:nth-child(1) { height: 20px; animation-delay: 0.1s; }
+    .eq-bar:nth-child(2) { height: 40px; animation-delay: 0.3s; }
+    .eq-bar:nth-child(3) { height: 50px; animation-delay: 0.2s; }
+    .eq-bar:nth-child(4) { height: 30px; animation-delay: 0.4s; }
+    .eq-bar:nth-child(5) { height: 45px; animation-delay: 0.15s; }
+    @keyframes eqBounce {
+      0% { transform: scaleY(0.3); }
+      100% { transform: scaleY(1); }
+    }
+
+    .copy-btn {
+      align-self: flex-end;
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .copy-btn:hover { background: var(--accent); color: #070b14; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-icon">⚡</div>
+      <div>CSS Animations &amp; Loaders Studio</div>
+    </div>
+    <a href="/" style="color:var(--accent); text-decoration:none; font-size:0.86rem; font-weight:700;">← Back to Hub</a>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+
+      <!-- Quantum Orbit -->
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Quantum Triple-Orbit Loader</span>
+          <span class="tag">Keyframes</span>
+        </div>
+        <div class="stage">
+          <div class="quantum-orbit">
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring"></div>
+            <div class="orbit-ring"></div>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyCSS('orbit')">📋 Copy Keyframes</button>
+      </div>
+
+      <!-- Glitch Text -->
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Cyberpunk Glitch Effect</span>
+          <span class="tag">clip-path</span>
+        </div>
+        <div class="stage">
+          <div class="glitch-text" data-text="CYBER_CSS">CYBER_CSS</div>
+        </div>
+        <button class="copy-btn" onclick="copyCSS('glitch')">📋 Copy Keyframes</button>
+      </div>
+
+      <!-- Skeleton Shimmer -->
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Skeleton Loading Wave</span>
+          <span class="tag">background-size</span>
+        </div>
+        <div class="stage">
+          <div class="skeleton-card">
+            <div class="skel-avatar"></div>
+            <div class="skel-line" style="width: 80%;"></div>
+            <div class="skel-line" style="width: 100%;"></div>
+            <div class="skel-line" style="width: 60%;"></div>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyCSS('skeleton')">📋 Copy Keyframes</button>
+      </div>
+
+      <!-- Morphing Blob -->
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Fluid Morphing Liquid Blob</span>
+          <span class="tag">border-radius</span>
+        </div>
+        <div class="stage">
+          <div class="morph-blob"></div>
+        </div>
+        <button class="copy-btn" onclick="copyCSS('blob')">📋 Copy Keyframes</button>
+      </div>
+
+      <!-- Equalizer -->
+      <div class="card">
+        <div class="card-head">
+          <span class="card-title">Waveform Equalizer Bars</span>
+          <span class="tag">scaleY</span>
+        </div>
+        <div class="stage">
+          <div class="equalizer">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyCSS('eq')">📋 Copy Keyframes</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const CSS_SNIPPETS = {
+      orbit: `@keyframes spinOrbit {\n  to { transform: rotate(360deg); }\n}`,
+      glitch: `@keyframes glitchAnim {\n  0% { clip-path: inset(40% 0 61% 0); }\n  50% { clip-path: inset(10% 0 85% 0); }\n  100% { clip-path: inset(79% 0 12% 0); }\n}`,
+      skeleton: `@keyframes skeletonWave {\n  0% { background-position: 200% 0; }\n  100% { background-position: -200% 0; }\n}`,
+      blob: `@keyframes morphing {\n  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }\n  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }\n  100% { border-radius: 60% 40% 60% 40% / 40% 50% 50% 60%; }\n}`,
+      eq: `@keyframes eqBounce {\n  0% { transform: scaleY(0.3); }\n  100% { transform: scaleY(1); }\n}`
+    };
+
+    function copyCSS(k) {
+      navigator.clipboard.writeText(CSS_SNIPPETS[k] || '').then(() => {
+        alert('CSS Animation Keyframes Copied!');
+      });
+    }
+  </script>
+</body>
+</html>

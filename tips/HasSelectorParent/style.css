@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #090d16;
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.item-card {
+  position: relative;
+  display: block;
+  background: #151f34;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.item-card:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  transform: translateY(-2px);
+}
+
+.card-check {
+  margin-bottom: 12px;
+  accent-color: #38bdf8;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.card-body h4 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.card-body p {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+/* 🌟 MAGIC OF :has() — Styling the parent when child is checked! */
+.item-card:has(.card-check:checked) {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.25);
+}
+
+.item-card:has(.card-check:checked) .price {
+  color: #10b981;
+}
+
+/* Dim sibling cards when any card is hovered */
+.cards-grid:has(.item-card:hover) .item-card:not(:hover) {
+  opacity: 0.5;
+  transform: scale(0.98);
+}

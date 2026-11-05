@@ -1,0 +1,26 @@
+body{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  margin-left: 16%;
+  margin-top: 5%;
+}
+
+.container {
+  display: flex;
+  width: 200px;
+}
+.card {
+  flex: 1;
+  overflow: hidden;
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+.card img {
+  width: 100px;
+  height: 100px;
+}
+.card:hover {
+  flex: 2;
+  filter: grayscale(0);
+}

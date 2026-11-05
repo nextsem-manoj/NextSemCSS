@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #090d16;
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 🌟 Bento Grid Layout */
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.bento-item {
+  background: #151f34;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.bento-item:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+.featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #151f34 0%, #0d1627 100%);
+  border-color: rgba(56, 189, 248, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.featured::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+}
+
+.tag {
+  align-self: flex-start;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+p {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.stat-item {
+  text-align: center;
+  align-items: center;
+}
+
+.num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #38bdf8;
+}
+
+.lbl {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 4px;
+}

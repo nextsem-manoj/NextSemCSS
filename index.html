@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Skills, Tips &amp; Interactive Projects Suite | NextSem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #070b14;
+      --bg-surface: #0e1526;
+      --bg-card: #141e34;
+      --bg-hover: #1c2a47;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-focus: #38bdf8;
+
+      --accent-cyan: #38bdf8;
+      --accent-emerald: #10b981;
+      --accent-purple: #a855f7;
+      --accent-amber: #f59e0b;
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+
+      --font-ui: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-code: 'JetBrains Mono', monospace;
+    }
+
+    body.light-theme {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-card: #f1f5f9;
+      --bg-hover: #e2e8f0;
+      --border: #cbd5e1;
+      --border-focus: #0284c7;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-dim: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-ui);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Top Navigation Header */
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      flex-shrink: 0;
+      z-index: 50;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.35);
+    }
+
+    .brand-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .stats-badges-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .stats-badge {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-cyan);
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-header {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.80rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .btn-header:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-1px);
+    }
+
+    /* Hero / Projects Section */
+    .hero-section {
+      padding: 24px 24px 16px 24px;
+      background: linear-gradient(180deg, var(--bg-surface) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-head h1 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+    .hero-head p {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.22s ease;
+    }
+    .project-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .project-icon {
+      font-size: 1.4rem;
+    }
+    .project-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    body.light-theme .project-title { color: #0f172a; }
+
+    .project-desc {
+      font-size: 0.80rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .project-link-label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Main Studio Split Layout */
+    .studio-container {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      flex: 1;
+      overflow: hidden;
+      min-height: calc(100vh - 240px);
+    }
+
+    /* Sidebar */
+    aside {
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .search-box {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .search-input {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 14px;
+      color: var(--text-main);
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .search-input:focus {
+      border-color: var(--border-focus);
+    }
+
+    .category-pills {
+      padding: 10px 14px;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .category-pills::-webkit-scrollbar { display: none; }
+
+    .cat-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cat-pill:hover, .cat-pill.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .tips-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .tip-item {
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid transparent;
+    }
+    .tip-item:hover {
+      background: var(--bg-hover);
+    }
+    .tip-item.active {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+    .tip-item-name {
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+    .tip-item-cat {
+      font-size: 0.70rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* Workspace */
+    main {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-base);
+      overflow: hidden;
+    }
+
+    .workspace-header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .workspace-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .workspace-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .workspace-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .action-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .action-btn:hover {
+      border-color: var(--accent-cyan);
+    }
+
+    .workspace-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .preview-box {
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.04) 0%, transparent 60%);
+      position: relative;
+    }
+
+    .preview-iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+    }
+
+    .code-inspector {
+      background: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .code-tabs {
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tabs-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .code-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .code-tab.active {
+      background: var(--bg-card);
+      color: var(--accent-cyan);
+    }
+
+    .copy-btn {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .copy-btn:hover {
+      background: var(--accent-cyan);
+      color: #070b14;
+    }
+
+    .code-display {
+      flex: 1;
+      padding: 16px;
+      font-family: var(--font-code);
+      font-size: 0.84rem;
+      color: #cbd5e1;
+      overflow: auto;
+      line-height: 1.6;
+      white-space: pre;
+      background: transparent;
+    }
+
+    @media (max-width: 900px) {
+      .studio-container { grid-template-columns: 1fr; }
+      .workspace-split { grid-template-columns: 1fr; grid-template-rows: 320px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+    <div class="brand-wrap">
+      <div class="brand-logo">CSS</div>
+      <div>
+        <div class="brand-title">NextSem CSS Studio &amp; Projects</div>
+      </div>
+    </div>
+
+    <div class="stats-badges-group">
+      <span class="stats-badge" id="stats-badge">117+ Tips Active</span>
+      <span class="stats-badge" style="border-color: #10b981; color: #10b981;">4 Project Studios</span>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn-header" onclick="toggleTheme()" id="themeToggleBtn" title="Toggle Dark/Light Theme">🌙</button>
+      <a class="btn-header" href="https://github.com/nextsem-manoj/css" target="_blank" title="GitHub Repository">
+        🐙 GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Projects Showcase Section -->
+  <section class="hero-section">
+    <div class="hero-head">
+      <div>
+        <h1>Featured CSS Studios &amp; Component Laboratories</h1>
+        <p>Explore production-grade layouts, micro-components, keyframe animations, and next-gen selectors.</p>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <a href="/projects/01-modern-layouts-bento-studio/index.html" class="project-card">
+        <div class="project-header">
+          <div class="project-icon">📐</div>
+          <div class="project-title">Modern Layouts &amp; Bento Grid</div>
+        </div>
+        <p class="project-desc">Apple &amp; Vercel Bento grids, Container Queries adaptive cards, and zero-JS CSS Masonry.</p>
+        <span class="project-link-label">Launch Studio →</span>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="/projects/02-creative-ui-components-kit/index.html" class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🎨</div>
+          <div class="project-title">Creative UI Components Kit</div>
+        </div>
+        <p class="project-desc">3D perspective cards, glassmorphism 2.0, soft UI neumorphism, and rotating conic borders.</p>
+        <span class="project-link-label">Launch UI Kit →</span>
+      </a>
+
+      <!-- Project 3 -->
+      <a href="/projects/03-animations-loaders-studio/index.html" class="project-card">
+        <div class="project-header">
+          <div class="project-icon">⚡</div>
+          <div class="project-title">Animations &amp; Loaders Lab</div>
+        </div>
+        <p class="project-desc">Quantum orbital spinners, cyberpunk glitch effects, skeleton shimmer, and fluid morphing blobs.</p>
+        <span class="project-link-label">Launch Lab →</span>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="/projects/04-modern-selectors-lab/index.html" class="project-card">
+        <div class="project-header">
+          <div class="project-icon">🔬</div>
+          <div class="project-title">Modern Selectors &amp; Features</div>
+        </div>
+        <p class="project-desc">Parent validation via :has(), sibling hover dimming, native CSS nesting, and OKLCH color mixing.</p>
+        <span class="project-link-label">Launch Lab →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Split Studio for 117+ Tips -->
+  <div class="studio-container">
+    <!-- Sidebar -->
+    <aside>
+      <div class="search-box">
+        <input type="text" id="search-input" class="search-input" placeholder="🔍 Search 117+ tips (e.g., bento, flex, hover)...">
+      </div>
+      <div class="category-pills">
+        <button class="cat-pill active" onclick="filterCategory('All')">All</button>
+        <button class="cat-pill" onclick="filterCategory('Buttons & Hovers')">Buttons</button>
+        <button class="cat-pill" onclick="filterCategory('Animations & Loaders')">Animations</button>
+        <button class="cat-pill" onclick="filterCategory('Layout & Flexbox')">Layouts</button>
+        <button class="cat-pill" onclick="filterCategory('Modern CSS Specs')">Modern Specs</button>
+        <button class="cat-pill" onclick="filterCategory('Forms & Inputs')">Forms</button>
+        <button class="cat-pill" onclick="filterCategory('Backgrounds & Gradients')">Backgrounds</button>
+        <button class="cat-pill" onclick="filterCategory('Typography & Text')">Typography</button>
+        <button class="cat-pill" onclick="filterCategory('Borders & Shadows')">Borders</button>
+      </div>
+      <div class="tips-list" id="tips-list"></div>
+    </aside>
+
+    <!-- Workspace -->
+    <main>
+      <div class="workspace-header">
+        <div class="workspace-title-group">
+          <h2 class="workspace-title" id="current-title">Select a CSS Tip</h2>
+          <span class="stats-badge" id="current-category" style="display:none;"></span>
+        </div>
+        <div class="workspace-actions">
+          <button class="action-btn" onclick="reloadPreview()">🔄 Refresh</button>
+          <a class="action-btn" id="open-tab-btn" href="#" target="_blank">↗ Fullscreen</a>
+        </div>
+      </div>
+
+      <div class="workspace-split">
+        <!-- Preview Box -->
+        <div class="preview-box">
+          <iframe id="preview-iframe" class="preview-iframe" sandbox="allow-scripts allow-same-origin"></iframe>
+        </div>
+
+        <!-- Code Inspector -->
+        <div class="code-inspector">
+          <div class="code-tabs">
+            <div class="tabs-group">
+              <button class="code-tab active" id="tab-css" onclick="switchTab('css')">CSS (style.css)</button>
+              <button class="code-tab" id="tab-html" onclick="switchTab('html')">HTML (index.html)</button>
+            </div>
+            <button class="copy-btn" id="copy-btn" onclick="copyCurrentCode()">📋 Copy Code</button>
+          </div>
+          <pre class="code-display" id="code-display">// Loading code...</pre>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    let allTips = [];
+    let filteredTips = [];
+    let currentTipIndex = 0;
+    let currentCodeTab = 'css';
+    let activeCategory = 'All';
+
+    async function init() {
+      // Check saved theme
+      const savedTheme = localStorage.getItem('nextsem_css_theme');
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        document.getElementById('themeToggleBtn').textContent = '☀️';
+      }
+
+      try {
+        const res = await fetch('/api/tips');
+        allTips = await res.json();
+        filteredTips = [...allTips];
+
+        document.getElementById('stats-badge').innerText = `${allTips.length} CSS Tips Active`;
+
+        renderSidebar();
+        if (allTips.length > 0) {
+          selectTip(0);
+        }
+      } catch (err) {
+        console.error('Failed to load tips:', err);
+      }
+
+      // Search listener
+      document.getElementById('search-input').addEventListener('input', (e) => {
+        applyFilters(e.target.value);
+      });
+
+      // Keyboard navigation
+      window.addEventListener('keydown', (e) => {
+        if (document.activeElement.tagName === 'INPUT') return;
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (currentTipIndex < filteredTips.length - 1) selectTip(currentTipIndex + 1);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (currentTipIndex > 0) selectTip(currentTipIndex - 1);
+        }
+      });
+    }
+
+    function renderSidebar() {
+      const container = document.getElementById('tips-list');
+      container.innerHTML = '';
+
+      filteredTips.forEach((tip, idx) => {
+        const item = document.createElement('div');
+        item.className = `tip-item ${idx === currentTipIndex ? 'active' : ''}`;
+        item.onclick = () => selectTip(idx);
+
+        item.innerHTML = `
+          <div>
+            <div class="tip-item-name">${tip.name}</div>
+            <div class="tip-item-cat">${tip.category}</div>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function selectTip(idx) {
+      if (!filteredTips[idx]) return;
+      currentTipIndex = idx;
+      const tip = filteredTips[idx];
+
+      document.querySelectorAll('.tip-item').forEach((el, i) => {
+        el.classList.toggle('active', i === idx);
+      });
+
+      document.getElementById('current-title').innerText = tip.name;
+      const catBadge = document.getElementById('current-category');
+      catBadge.style.display = 'inline-block';
+      catBadge.innerText = tip.category;
+
+      document.getElementById('open-tab-btn').href = tip.path;
+      document.getElementById('preview-iframe').src = tip.path;
+
+      updateCodeDisplay();
+    }
+
+    function switchTab(tab) {
+      currentCodeTab = tab;
+      document.getElementById('tab-css').classList.toggle('active', tab === 'css');
+      document.getElementById('tab-html').classList.toggle('active', tab === 'html');
+      updateCodeDisplay();
+    }
+
+    function updateCodeDisplay() {
+      const tip = filteredTips[currentTipIndex];
+      if (!tip) return;
+      const display = document.getElementById('code-display');
+      display.innerText = (currentCodeTab === 'css') ? (tip.css || '/* No CSS */') : (tip.html || '<!-- No HTML -->');
+    }
+
+    function copyCurrentCode() {
+      const tip = filteredTips[currentTipIndex];
+      if (!tip) return;
+      const code = (currentCodeTab === 'css') ? tip.css : tip.html;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.innerText = '✅ Copied!';
+        setTimeout(() => { btn.innerText = '📋 Copy Code'; }, 1500);
+      });
+    }
+
+    function reloadPreview() {
+      const iframe = document.getElementById('preview-iframe');
+      iframe.src = iframe.src;
+    }
+
+    function filterCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.includes(cat) || (cat === 'All' && btn.innerText === 'All'));
+      });
+      applyFilters();
+    }
+
+    function applyFilters(searchQuery = document.getElementById('search-input').value) {
+      const q = searchQuery.toLowerCase().trim();
+      filteredTips = allTips.filter(tip => {
+        const matchesCategory = (activeCategory === 'All') || tip.category === activeCategory;
+        const matchesSearch = !q || tip.name.toLowerCase().includes(q) || tip.id.toLowerCase().includes(q) || tip.category.toLowerCase().includes(q);
+        return matchesCategory && matchesSearch;
+      });
+
+      renderSidebar();
+      if (filteredTips.length > 0) {
+        selectTip(0);
+      } else {
+        document.getElementById('current-title').innerText = 'No matching tips found';
+        document.getElementById('current-category').style.display = 'none';
+        document.getElementById('code-display').innerText = '';
+      }
+    }
+
+    function toggleTheme() {
+      const isLight = document.body.classList.toggle('light-theme');
+      localStorage.setItem('nextsem_css_theme', isLight ? 'light' : 'dark');
+      document.getElementById('themeToggleBtn').textContent = isLight ? '☀️' : '🌙';
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>

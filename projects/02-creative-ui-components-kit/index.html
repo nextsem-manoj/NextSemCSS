@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative CSS UI Components Kit | NextSem CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    :root {
+      --bg: #070b14;
+      --card-bg: #0f172a;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent-purple: #a855f7;
+      --accent-green: #10b981;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: #0b1120;
+      border-bottom: 1px solid var(--card-border);
+      padding: 18px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #a855f7, #6366f1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 30px;
+    }
+
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .comp-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .comp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .comp-tag {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+    }
+
+    .demo-stage {
+      background: #090d18;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 30px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 1. ANIMATED CONIC GRADIENT BORDER             */
+    /* ═════════════════════════════════════════════ */
+    .g-border-btn {
+      position: relative;
+      background: #0f172a;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-weight: 800;
+      color: #fff;
+      font-size: 0.92rem;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .g-border-btn::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: conic-gradient(from var(--angle), #a855f7, #38bdf8, #10b981, #f59e0b, #a855f7);
+      border-radius: 14px;
+      z-index: -1;
+      animation: rotateBorder 3s linear infinite;
+    }
+    @keyframes rotateBorder {
+      to { --angle: 360deg; }
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 2. 3D PERSPECTIVE TILT CARD                  */
+    /* ═════════════════════════════════════════════ */
+    .tilt-box {
+      perspective: 800px;
+    }
+    .tilt-inner {
+      width: 220px;
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 16px;
+      text-align: center;
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+    .tilt-box:hover .tilt-inner {
+      transform: rotateY(18deg) rotateX(-12deg) scale(1.05);
+    }
+    .tilt-inner h4 {
+      transform: translateZ(30px);
+      font-size: 1.1rem;
+      color: #38bdf8;
+      margin-bottom: 6px;
+    }
+    .tilt-inner p {
+      transform: translateZ(20px);
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 3. NEUMORPHIC SOFT UI                        */
+    /* ═════════════════════════════════════════════ */
+    .neu-stage {
+      background: #0d1526;
+      border-radius: 14px;
+    }
+    .neu-btn {
+      background: #0d1526;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-weight: 700;
+      color: #38bdf8;
+      cursor: pointer;
+      box-shadow: 6px 6px 14px #060a12, -6px -6px 14px #14203a;
+      transition: all 0.2s ease;
+    }
+    .neu-btn:hover {
+      box-shadow: 3px 3px 8px #060a12, -3px -3px 8px #14203a;
+    }
+    .neu-btn:active {
+      box-shadow: inset 4px 4px 8px #060a12, inset -4px -4px 8px #14203a;
+      transform: scale(0.98);
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 4. MODERN SPRING SWITCH                      */
+    /* ═════════════════════════════════════════════ */
+    .spring-switch {
+      position: relative;
+      display: inline-block;
+      width: 58px;
+      height: 32px;
+    }
+    .spring-switch input { opacity: 0; width: 0; height: 0; }
+    .spring-slider {
+      position: absolute;
+      inset: 0;
+      background: #1e293b;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .spring-slider::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 3px;
+      bottom: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .spring-switch input:checked + .spring-slider {
+      background: #10b981;
+    }
+    .spring-switch input:checked + .spring-slider::before {
+      transform: translateX(26px);
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 5. SMOOTH CSS ACCORDION                      */
+    /* ═════════════════════════════════════════════ */
+    details.modern-faq {
+      width: 100%;
+      background: #151f38;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    details.modern-faq[open] {
+      border-color: var(--accent);
+    }
+    summary.faq-summary {
+      padding: 14px 18px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary.faq-summary::-webkit-details-marker { display: none; }
+    summary.faq-summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 0.25s ease;
+    }
+    details.modern-faq[open] summary.faq-summary::after {
+      transform: rotate(45deg);
+    }
+    .faq-content {
+      padding: 0 18px 16px 18px;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* 6. MAC OS FLOATING DOCK                      */
+    /* ═════════════════════════════════════════════ */
+    .dock-bar {
+      display: flex;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 16px;
+      border-radius: 20px;
+    }
+    .dock-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s;
+    }
+    .dock-icon:hover {
+      transform: scale(1.35) translateY(-8px);
+      background: var(--accent);
+    }
+
+    /* Action bar */
+    .comp-footer {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .copy-snippet-btn {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .copy-snippet-btn:hover {
+      background: var(--accent);
+      color: #070b14;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-icon">🎨</div>
+      <div>Creative CSS UI Components Kit</div>
+    </div>
+    <a href="/" style="color:var(--accent); text-decoration:none; font-size:0.86rem; font-weight:700;">← Back to Hub</a>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Production-Ready Micro-Components</h2>
+    <p class="section-desc">Handcrafted modern CSS interactions built with pure CSS3, 3D perspective transforms, and modern pseudo-elements.</p>
+
+    <div class="components-grid">
+
+      <!-- 1. Conic Gradient Border -->
+      <div class="comp-card">
+        <div class="comp-header">
+          <span style="font-weight:800; font-size:0.95rem;">Rotating Conic Glow</span>
+          <span class="comp-tag">@property</span>
+        </div>
+        <div class="demo-stage">
+          <button class="g-border-btn">Interactive Light Border</button>
+        </div>
+        <div class="comp-footer">
+          <button class="copy-snippet-btn" onclick="copySnippet('conic')">📋 Copy Snippet</button>
+        </div>
+      </div>
+
+      <!-- 2. 3D Tilt Card -->
+      <div class="comp-card">
+        <div class="comp-header">
+          <span style="font-weight:800; font-size:0.95rem;">3D Perspective Card</span>
+          <span class="comp-tag">preserve-3d</span>
+        </div>
+        <div class="demo-stage">
+          <div class="tilt-box">
+            <div class="tilt-inner">
+              <h4>Hover Tilt</h4>
+              <p>Z-space elevation with zero JS.</p>
+            </div>
+          </div>
+        </div>
+        <div class="comp-footer">
+          <button class="copy-snippet-btn" onclick="copySnippet('tilt')">📋 Copy Snippet</button>
+        </div>
+      </div>
+
+      <!-- 3. Neumorphism Button -->
+      <div class="comp-card">
+        <div class="comp-header">
+          <span style="font-weight:800; font-size:0.95rem;">Soft UI Neumorphism</span>
+          <span class="comp-tag">box-shadow</span>
+        </div>
+        <div class="demo-stage neu-stage">
+          <button class="neu-btn">Press Me Softly</button>
+        </div>
+        <div class="comp-footer">
+          <button class="copy-snippet-btn" onclick="copySnippet('neu')">📋 Copy Snippet</button>
+        </div>
+      </div>
+
+      <!-- 4. Spring Switch -->
+      <div class="comp-card">
+        <div class="comp-header">
+          <span style="font-weight:800; font-size:0.95rem;">Spring Elastic Switch</span>
+          <span class="comp-tag">cubic-bezier</span>
+        </div>
+        <div class="demo-stage">
+          <label class="spring-switch">
+            <input type="checkbox" checked>
+            <span class="spring-slider"></span>
+          </label>
+        </div>
+        <div class="comp-footer">
+          <button class="copy-snippet-btn" onclick="copySnippet('switch')">📋 Copy Snippet</button>
+        </div>
+      </div>
+
+      <!-- 5. Modern FAQ Accordion -->
+      <div class="comp-card">
+        <div class="comp-header">
+          <span style="font-weight:800; font-size:0.95rem;">Pure CSS Accordion</span>
+          <span class="comp-tag">&lt;details&gt;</span>
+        </div>
+        <div class="demo-stage">
+          <details class="modern-faq">
+            <summary class="faq-summary">Why pure CSS components?</summary>
+            <div class="faq-content">
+              Zero bundle size overhead, hardware-accelerated animations, and no JavaScript framework lock-in!
+            </div>
+          </details>
+        </div>
+        <div class="comp-footer">
+          <button class="copy-snippet-btn" onclick="copySnippet('faq')">📋 Copy Snippet</button>
+        </div>
+      </div>
+
+      <!-- 6. Mac OS Dock -->
+      <div class="comp-card">
+        <div class="comp-header">
+          <span style="font-weight:800; font-size:0.95rem;">Floating Mac Dock</span>
+          <span class="comp-tag">backdrop-filter</span>
+        </div>
+        <div class="demo-stage">
+          <div class="dock-bar">
+            <div class="dock-icon" title="Finder">📁</div>
+            <div class="dock-icon" title="Terminal">💻</div>
+            <div class="dock-icon" title="Safari">🌐</div>
+            <div class="dock-icon" title="Settings">⚙️</div>
+          </div>
+        </div>
+        <div class="comp-footer">
+          <button class="copy-snippet-btn" onclick="copySnippet('dock')">📋 Copy Snippet</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const SNIPPETS = {
+      conic: `@property --angle {\n  syntax: '<angle>';\n  initial-value: 0deg;\n  inherits: false;\n}\n.g-border-btn::after {\n  background: conic-gradient(from var(--angle), #a855f7, #38bdf8, #10b981, #a855f7);\n  animation: rotateBorder 3s linear infinite;\n}\n@keyframes rotateBorder {\n  to { --angle: 360deg; }\n}`,
+      tilt: `.tilt-box { perspective: 800px; }\n.tilt-inner { transform-style: preserve-3d; transition: transform 0.4s ease; }\n.tilt-box:hover .tilt-inner { transform: rotateY(18deg) rotateX(-12deg) scale(1.05); }`,
+      neu: `.neu-btn {\n  background: #0d1526;\n  box-shadow: 6px 6px 14px #060a12, -6px -6px 14px #14203a;\n}\n.neu-btn:active {\n  box-shadow: inset 4px 4px 8px #060a12, inset -4px -4px 8px #14203a;\n}`,
+      switch: `.spring-slider::before {\n  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);\n}\ninput:checked + .spring-slider::before {\n  transform: translateX(26px);\n}`,
+      faq: `details.modern-faq[open] summary::after {\n  transform: rotate(45deg);\n}`,
+      dock: `.dock-icon:hover {\n  transform: scale(1.35) translateY(-8px);\n}`
+    };
+
+    function copySnippet(key) {
+      navigator.clipboard.writeText(SNIPPETS[key] || '').then(() => {
+        alert('CSS Snippet Copied to Clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>

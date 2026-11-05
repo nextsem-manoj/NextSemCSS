@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --c1: #38bdf8;
+  --c2: #ec4899;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #090d16;
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.swatches-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.swatch {
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #0f172a;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* 🌟 Dynamic color-mix in modern perceptual OKLCH color space */
+.s-base {
+  background: var(--c1);
+}
+
+.s-25 {
+  background: color-mix(in oklch, var(--c1) 75%, var(--c2) 25%);
+}
+
+.s-50 {
+  background: color-mix(in oklch, var(--c1) 50%, var(--c2) 50%);
+}
+
+.s-75 {
+  background: color-mix(in oklch, var(--c1) 25%, var(--c2) 75%);
+}
+
+.s-target {
+  background: var(--c2);
+  color: #ffffff;
+}

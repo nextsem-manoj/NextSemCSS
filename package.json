@@ -1,0 +1,31 @@
+{
+  "name": "nextsem-css",
+  "version": "1.1.0",
+  "description": "NextSem CSS Suite — 117+ Modern CSS Tips & Interactive Studios (Bento Grids, Creative UI Components, Keyframes Lab & Modern Selectors)",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "preview": "node server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextsem-manoj/css.git"
+  },
+  "keywords": [
+    "css",
+    "css-tips",
+    "css-tricks",
+    "bento-grid",
+    "container-queries",
+    "glassmorphism",
+    "neumorphism",
+    "animations",
+    "loaders",
+    "has-selector",
+    "web-development"
+  ],
+  "author": "Er. Manoj Kumar (NextSem)",
+  "license": "MIT"
+}

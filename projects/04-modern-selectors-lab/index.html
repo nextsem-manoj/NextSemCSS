@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern CSS Selectors &amp; Features Lab | NextSem CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b14;
+      --card-bg: #0f172a;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #f59e0b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: #0b1120;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .lab-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .lab-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .lab-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .spec-pill {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--accent);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .lab-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .interactive-box {
+      background: #090d18;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .code-box {
+      background: #050811;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* DEMO 1: :has() FORM VALIDATION                */
+    /* ═════════════════════════════════════════════ */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px;
+      border-radius: 10px;
+      background: #151f38;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .form-input {
+      background: #090d18;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    /* Parent turns green when input is valid and not empty */
+    .form-group:has(.form-input:valid:not(:placeholder-shown)) {
+      border-color: #10b981;
+      background: rgba(16, 185, 129, 0.08);
+    }
+    .form-group:has(.form-input:invalid:not(:placeholder-shown)) {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.08);
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* DEMO 2: SIBLING HOVER DIMMING WITH :has()     */
+    /* ═════════════════════════════════════════════ */
+    .tag-cloud {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .cloud-pill {
+      background: #1e293b;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cloud-pill:hover {
+      background: var(--accent);
+      color: #070b14;
+      transform: scale(1.08);
+    }
+    .tag-cloud:has(.cloud-pill:hover) .cloud-pill:not(:hover) {
+      opacity: 0.35;
+      transform: scale(0.95);
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* DEMO 3: NATIVE CSS NESTING                   */
+    /* ═════════════════════════════════════════════ */
+    .nested-card {
+      background: #131f38;
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+
+      & h4 {
+        color: #38bdf8;
+        margin-bottom: 6px;
+      }
+      & p {
+        font-size: 0.85rem;
+        color: #94a3b8;
+      }
+      &:hover {
+        border-color: #38bdf8;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .lab-body { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-icon">🔬</div>
+      <div>Modern CSS Selectors &amp; Features Lab</div>
+    </div>
+    <a href="/" style="color:var(--accent); text-decoration:none; font-size:0.86rem; font-weight:700;">← Back to Hub</a>
+  </header>
+
+  <main class="container">
+
+    <!-- Lab 1: :has() Form Validation -->
+    <div class="lab-card">
+      <div class="lab-header">
+        <span class="lab-title">1. Parent Form Validation via :has()</span>
+        <span class="spec-pill">:has(:valid)</span>
+      </div>
+      <div class="lab-body">
+        <div class="interactive-box">
+          <div class="form-group">
+            <label style="font-size:0.82rem; font-weight:700;">Enter Valid Email:</label>
+            <input type="email" class="form-input" placeholder="name@domain.com" required>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Watch the parent card turn green when valid without 1 line of JS!</span>
+          </div>
+        </div>
+        <div class="code-box">/* Zero-JS Parent Card Validation */
+.form-group:has(.form-input:valid:not(:placeholder-shown)) {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+}
+.form-group:has(.form-input:invalid:not(:placeholder-shown)) {
+  border-color: #ef4444;
+}</div>
+      </div>
+    </div>
+
+    <!-- Lab 2: Sibling Hover Dimming -->
+    <div class="lab-card">
+      <div class="lab-header">
+        <span class="lab-title">2. Sibling Hover Dimming (Focus Effect)</span>
+        <span class="spec-pill">:has(:hover) :not(:hover)</span>
+      </div>
+      <div class="lab-body">
+        <div class="interactive-box">
+          <div class="tag-cloud">
+            <span class="cloud-pill">CSS Grid</span>
+            <span class="cloud-pill">Flexbox</span>
+            <span class="cloud-pill">Subgrid</span>
+            <span class="cloud-pill">Animations</span>
+            <span class="cloud-pill">OKLCH</span>
+          </div>
+          <span style="font-size:0.75rem; color:var(--text-muted); margin-top:8px;">Hover over any tag to focus it and dim all other sibling tags.</span>
+        </div>
+        <div class="code-box">/* Dim all sibling pills when any pill is hovered */
+.tag-cloud:has(.cloud-pill:hover) .cloud-pill:not(:hover) {
+  opacity: 0.35;
+  transform: scale(0.95);
+}</div>
+      </div>
+    </div>
+
+    <!-- Lab 3: Native CSS Nesting -->
+    <div class="lab-card">
+      <div class="lab-header">
+        <span class="lab-title">3. Native CSS Nesting (No SASS/SCSS Required)</span>
+        <span class="spec-pill">&amp; nesting</span>
+      </div>
+      <div class="lab-body">
+        <div class="interactive-box">
+          <div class="nested-card">
+            <h4>Native CSS Nesting Demo</h4>
+            <p>Direct hierarchy nesting supported natively in all modern evergreen browsers.</p>
+          </div>
+        </div>
+        <div class="code-box">.nested-card {
+  background: #131f38;
+  border: 1px solid var(--border);
+
+  & h4 { color: #38bdf8; }
+  & p { font-size: 0.85rem; }
+  &:hover { border-color: #38bdf8; }
+}</div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

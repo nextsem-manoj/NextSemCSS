@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern CSS Layouts &amp; Bento Grid Studio | NextSem CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #070b14;
+      --bg-surface: #0d1526;
+      --bg-card: #131f38;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: var(--bg-base);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .brand-icon {
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      background: var(--bg-base);
+      padding: 4px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    .nav-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .nav-tab.active {
+      background: var(--accent);
+      color: #070b14;
+    }
+
+    .main-wrap {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .preview-pane {
+      padding: 30px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 60%);
+    }
+
+    .code-pane {
+      background: var(--bg-surface);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .code-header {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .code-pre {
+      flex: 1;
+      padding: 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.84rem;
+      color: #cbd5e1;
+      overflow: auto;
+      line-height: 1.6;
+      white-space: pre;
+    }
+
+    .btn-copy {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-copy:hover {
+      background: var(--accent);
+      color: #070b14;
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* LAYOUT 1: BENTO GRID                           */
+    /* ═════════════════════════════════════════════ */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+      width: 100%;
+      max-width: 840px;
+    }
+
+    .bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+    .bento-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .bento-card.col-span-2 { grid-column: span 2; }
+    .bento-card.row-span-2 { grid-row: span 2; }
+
+    .bento-badge {
+      align-self: flex-start;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .bento-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .bento-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .bento-stat {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 10px;
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* LAYOUT 2: CONTAINER QUERIES CARD             */
+    /* ════════════════════════════════════════════ */
+    .cq-wrapper {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .cq-slider-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .cq-slider-bar input { flex: 1; accent-color: var(--accent); }
+
+    .cq-resizable-box {
+      border: 1px dashed var(--accent);
+      border-radius: 18px;
+      padding: 16px;
+      width: 100%;
+      container-type: inline-size;
+      container-name: livecard;
+      transition: width 0.1s ease;
+    }
+
+    .cq-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @container livecard (min-width: 440px) {
+      .cq-card {
+        flex-direction: row;
+        align-items: center;
+      }
+      .cq-media {
+        width: 160px;
+        height: 120px;
+        flex-shrink: 0;
+      }
+    }
+
+    .cq-media {
+      background: linear-gradient(135deg, #0284c7, #38bdf8);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      min-height: 120px;
+    }
+
+    /* ═════════════════════════════════════════════ */
+    /* LAYOUT 3: MASONRY GRID                       */
+    /* ═════════════════════════════════════════════ */
+    .masonry-columns {
+      columns: 3 220px;
+      column-gap: 16px;
+      width: 100%;
+      max-width: 800px;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .main-wrap { grid-template-columns: 1fr; grid-template-rows: auto 350px; }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-card.col-span-2 { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-icon">📐</div>
+      <div>Modern CSS Layouts Studio</div>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="switchLayout('bento')">Bento Grid</button>
+      <button class="nav-tab" onclick="switchLayout('container')">Container Queries</button>
+      <button class="nav-tab" onclick="switchLayout('masonry')">CSS Masonry</button>
+    </div>
+    <a href="/" style="color:var(--accent); text-decoration:none; font-size:0.84rem; font-weight:700;">← Back to Hub</a>
+  </header>
+
+  <div class="main-wrap">
+    <div class="preview-pane" id="previewContainer">
+      <!-- Injected by JS -->
+    </div>
+
+    <div class="code-pane">
+      <div class="code-header">
+        <span style="font-size:0.8rem; font-weight:800; color:var(--text-muted); text-transform:uppercase;">CSS Layout Blueprint</span>
+        <button class="btn-copy" onclick="copyCode()">📋 Copy CSS</button>
+      </div>
+      <pre class="code-pre" id="codePre"></pre>
+    </div>
+  </div>
+
+  <script>
+    const LAYOUTS = {
+      bento: {
+        html: `
+          <div class="bento-grid">
+            <div class="bento-card col-span-2">
+              <span class="bento-badge">Hero Component</span>
+              <h3 class="bento-title">Autonomous Design Synthesis</h3>
+              <p class="bento-desc">Apple and Vercel style high-density responsive dashboard cards with fluid spans and glowing hover borders.</p>
+            </div>
+            <div class="bento-card">
+              <span class="bento-badge">Performance</span>
+              <div class="bento-stat">60 FPS</div>
+              <p class="bento-desc">GPU accelerated transforms.</p>
+            </div>
+            <div class="bento-card">
+              <span class="bento-badge">Component</span>
+              <h3 class="bento-title">Subgrid Support</h3>
+              <p class="bento-desc">Synchronized row heights across tracks.</p>
+            </div>
+            <div class="bento-card col-span-2">
+              <span class="bento-badge">Pure CSS</span>
+              <h3 class="bento-title">Zero JavaScript Layout Engine</h3>
+              <p class="bento-desc">Native CSS Grid fr-units with minmax() and clamp() typography.</p>
+            </div>
+          </div>
+        `,
+        css: `/* Modern Bento Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 840px;
+}
+
+.bento-card {
+  background: #131f38;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  transition: all 0.25s ease;
+}
+
+.bento-card:hover {
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.bento-card.col-span-2 {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-card.col-span-2 {
+    grid-column: span 1;
+  }
+}`
+      },
+      container: {
+        html: `
+          <div class="cq-wrapper">
+            <div class="cq-slider-bar">
+              <span>Resize Container Width:</span>
+              <input type="range" min="300" max="650" value="550" oninput="resizeCqBox(this.value)">
+              <span id="cqWidthVal">550px</span>
+            </div>
+            <div class="cq-resizable-box" id="cqBox" style="width: 550px;">
+              <div class="cq-card">
+                <div class="cq-media">⚡</div>
+                <div class="cq-content">
+                  <span class="bento-badge">Container Query</span>
+                  <h3 class="bento-title">Smart Responsive Card</h3>
+                  <p class="bento-desc">Notice how this card reorganizes from vertical stack to horizontal split automatically as you drag the width slider above 440px!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        css: `/* Container Queries Adaptive Card */
+.cq-resizable-box {
+  container-type: inline-size;
+  container-name: livecard;
+}
+
+.cq-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Switches layout based on card parent width! */
+@container livecard (min-width: 440px) {
+  .cq-card {
+    flex-direction: row;
+    align-items: center;
+  }
+  .cq-media {
+    width: 160px;
+    height: 120px;
+    flex-shrink: 0;
+  }
+}`
+      },
+      masonry: {
+        html: `
+          <div class="masonry-columns">
+            <div class="masonry-item">
+              <span class="bento-badge">Pin 1</span>
+              <h4>Compact Note</h4>
+              <p>Short paragraph fitting neatly into the first flow column.</p>
+            </div>
+            <div class="masonry-item">
+              <span class="bento-badge">Pin 2</span>
+              <h4>Detailed Technical Case</h4>
+              <p>Pure CSS column-count: 3 with break-inside: avoid eliminates the need for expensive JS isotope or masonry libraries.</p>
+              <p style="margin-top:8px; color: #38bdf8;">✓ Zero JS overhead<br>✓ 100% fluid reflow</p>
+            </div>
+            <div class="masonry-item">
+              <span class="bento-badge">Pin 3</span>
+              <h4>Responsive Columns</h4>
+              <p>Columns automatically collapse smoothly on smaller tablet and mobile screens.</p>
+            </div>
+            <div class="masonry-item">
+              <span class="bento-badge">Pin 4</span>
+              <h4>Color Mix Palette</h4>
+              <p>Using oklch color interpolation for ultra-vivid gradient accents.</p>
+            </div>
+          </div>
+        `,
+        css: `/* Pure CSS Masonry Layout */
+.masonry-columns {
+  columns: 3 220px;
+  column-gap: 16px;
+  max-width: 800px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  background: #131f38;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 16px;
+}`
+      }
+    };
+
+    let activeLayout = 'bento';
+
+    function switchLayout(key) {
+      activeLayout = key;
+      document.querySelectorAll('.nav-tab').forEach(t => {
+        t.classList.toggle('active', t.innerText.toLowerCase().includes(key));
+      });
+      document.getElementById('previewContainer').innerHTML = LAYOUTS[key].html;
+      document.getElementById('codePre').textContent = LAYOUTS[key].css;
+    }
+
+    function resizeCqBox(val) {
+      const box = document.getElementById('cqBox');
+      if (box) box.style.width = val + 'px';
+      const lbl = document.getElementById('cqWidthVal');
+      if (lbl) lbl.textContent = val + 'px';
+    }
+
+    function copyCode() {
+      navigator.clipboard.writeText(LAYOUTS[activeLayout].css).then(() => {
+        const btn = document.querySelector('.btn-copy');
+        btn.textContent = '✅ Copied!';
+        setTimeout(() => btn.textContent = '📋 Copy CSS', 1500);
+      });
+    }
+
+    switchLayout('bento');
+  </script>
+</body>
+</html>
