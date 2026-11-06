@@ -1,7 +1,7 @@
 {
   "name": "nextsem-css",
-  "version": "1.1.0",
-  "description": "NextSem CSS Suite — 117+ Modern CSS Tips & Interactive Studios (Bento Grids, Creative UI Components, Keyframes Lab & Modern Selectors)",
+  "version": "1.2.0",
+  "description": "NextSemCSS — Comprehensive CSS Master Suite, 117+ Modern CSS Tips & Interactive Studios, and 30-Day BCA Web Development Curriculum",
   "main": "server.mjs",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nextsem-manoj/css.git"
+    "url": "git+https://github.com/nextsem-manoj/NextSemCSS.git"
   },
   "keywords": [
     "css",

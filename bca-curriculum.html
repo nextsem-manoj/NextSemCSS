@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Practical Coding Portfolio | NextSem Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #060c18;
+      --card-bg: #0c1328;
+      --card-hover: #111a36;
+      --border: #1e293b;
+      --blue: #2563eb;
+      --blue-glow: #3b82f6;
+      --emerald: #10b981;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 2.5rem 1.5rem 4rem;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      color: #60a5fa;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 680px;
+      margin: 0 auto 1.5rem;
+    }
+    .student-card {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 0.85rem 1.75rem;
+      border-radius: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .student-card span {
+      color: var(--text-muted);
+    }
+    .student-card strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .portal-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      background: var(--blue);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.85rem;
+      border-radius: 0.75rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+    .portal-link-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    .sprint-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 2.5rem 0 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .sprint-header h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sprint-header span {
+      font-size: 0.8rem;
+      color: #38bdf8;
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      background: var(--card-hover);
+      border-color: var(--blue-glow);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(37, 99, 235, 0.35);
+    }
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.85rem;
+    }
+    .day-pill {
+      background: rgba(37, 99, 235, 0.2);
+      color: #93c5fd;
+      border: 1px solid rgba(37, 99, 235, 0.4);
+      padding: 0.25rem 0.65rem;
+      border-radius: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .status-pill {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: #64748b;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 1rem;
+    }
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: #60a5fa;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .card:hover .card-btn {
+      color: #ffffff;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">🚀 BCA Practical Coding Portfolio (Days 1–30 Live)</div>
+      <h1>Nextsem Academy BCA Practical Portfolio</h1>
+      <p class="bio">
+        Documenting full hands-on daily implementations across Semester 1: HTML5 semantics, modern CSS layout engines (Flexbox &amp; Grid), responsive media queries, and interactive JavaScript DOM applications.
+      </p>
+
+      <div class="student-card">
+        <div><span>Author:</span> <strong>Er. Manoj Kumar</strong></div>
+        <div><span>Degree:</span> <strong>BCA (Semester 1)</strong></div>
+        <div><span>Status:</span> <strong>Days 1–30 Verified (100%)</strong></div>
+        <div><span>Hosting:</span> <strong>GitHub Pages Live</strong></div>
+      </div>
+
+      <div>
+        <a href="https://ignou-study-notes-by-nextsem.web.app/bca/practical/" target="_blank" class="portal-link-btn">
+          <span>Explore NextSem BCA Practical Learning Portal</span>
+          <span>→</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- SPRINT 1 -->
+    <div class="sprint-header">
+      <h2><span>📁</span> Sprint 1: HTML5 &amp; CSS Foundations</h2>
+      <span>Days 01–10 • 10 Projects</span>
+    </div>
+    <div class="grid">
+      <!-- Day 01 -->
+      <a href="./bca-day-01/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 01</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>HTML Setup & First Webpage</h3>
+          <p class="card-desc">Homework Task: Student Launch Page</p>
+          <div class="card-meta">
+            <span>HTML Foundation</span>
+            <span>•</span>
+            <span>index.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 02 -->
+      <a href="./bca-day-02/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 02</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>HTML Headings, Paragraphs & Text Formatting</h3>
+          <p class="card-desc">Homework Task: Tech Biography Page</p>
+          <div class="card-meta">
+            <span>HTML Foundation</span>
+            <span>•</span>
+            <span>biography.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 03 -->
+      <a href="./bca-day-03/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 03</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>HTML Links & Images</h3>
+          <p class="card-desc">Homework Task: Multi-Page BCA Mini Site</p>
+          <div class="card-meta">
+            <span>HTML Foundation</span>
+            <span>•</span>
+            <span>index.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 04 -->
+      <a href="./bca-day-04/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 04</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>HTML Lists & Tables</h3>
+          <p class="card-desc">Homework Task: BCA Semester Syllabus Matrix</p>
+          <div class="card-meta">
+            <span>HTML Foundation</span>
+            <span>•</span>
+            <span>syllabus-matrix.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 05 -->
+      <a href="./bca-day-05/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 05</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>HTML Forms & Input Elements</h3>
+          <p class="card-desc">Homework Task: Comprehensive BCA Job Portal Form</p>
+          <div class="card-meta">
+            <span>HTML Foundation</span>
+            <span>•</span>
+            <span>job-apply.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 06 -->
+      <a href="./bca-day-06/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 06</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>HTML Semantic Elements & Page Architecture</h3>
+          <p class="card-desc">Homework Task: Semantic College Portal Homepage</p>
+          <div class="card-meta">
+            <span>HTML Foundation</span>
+            <span>•</span>
+            <span>college-portal.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 07 -->
+      <a href="./bca-day-07/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 07</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>HTML Mini Project — Student Developer Profile Website</h3>
+          <p class="card-desc">Mini Project Milestone: Deploy to GitHub Repository</p>
+          <div class="card-meta">
+            <span>HTML Foundation</span>
+            <span>•</span>
+            <span>index.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 08 -->
+      <a href="./bca-day-08/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 08</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Introduction & Connecting CSS to HTML</h3>
+          <p class="card-desc">Homework Task: Create Dedicated style.css File</p>
+          <div class="card-meta">
+            <span>CSS Foundation</span>
+            <span>•</span>
+            <span>style.css</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 09 -->
+      <a href="./bca-day-09/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 09</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Selectors & Basic Styling</h3>
+          <p class="card-desc">Homework Task: Component Library Card Sheet</p>
+          <div class="card-meta">
+            <span>CSS Foundation</span>
+            <span>•</span>
+            <span>component-library.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 10 -->
+      <a href="./bca-day-10/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 10</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Colors, Fonts & Text Styling</h3>
+          <p class="card-desc">Homework Task: Themed Tech Article Layout</p>
+          <div class="card-meta">
+            <span>CSS Foundation</span>
+            <span>•</span>
+            <span>themed-article.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- SPRINT 2 -->
+    <div class="sprint-header">
+      <h2><span>🎨</span> Sprint 2: Modern CSS Layouts, Flexbox &amp; Grid</h2>
+      <span>Days 11–20 • 10 Projects</span>
+    </div>
+    <div class="grid">
+      <!-- Day 11 -->
+      <a href="./bca-day-11/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 11</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Box Model: Margin, Border, Padding & Content</h3>
+          <p class="card-desc">Homework Task: Notification Alert Cards</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>alert-cards.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 12 -->
+      <a href="./bca-day-12/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 12</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Display Property: Block, Inline, Inline-Block & None</h3>
+          <p class="card-desc">Homework Task: Tech Skill Badge Cloud</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>nav-display.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 13 -->
+      <a href="./bca-day-13/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 13</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Positioning: Static, Relative, Absolute & Fixed</h3>
+          <p class="card-desc">Homework Task: Pinned Bottom Notification Bar</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>modal-overlay.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 14 -->
+      <a href="./bca-day-14/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 14</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>Flexbox Architecture 1: Flex Container & Justify-Content</h3>
+          <p class="card-desc">Homework Task: Social Media Share Toolbar</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>flex-navbar.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 15 -->
+      <a href="./bca-day-15/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 15</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>Flexbox Architecture 2: Align-Items, Flex-Wrap & Responsive Cards</h3>
+          <p class="card-desc">Homework Task: BCA 6-Semester Roadmap Cards</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>pricing-cards.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 16 -->
+      <a href="./bca-day-16/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 16</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Grid System 1: Templates, Columns & Fractional Units</h3>
+          <p class="card-desc">Homework Task: Student Portfolio Project Gallery</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>project-gallery.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 17 -->
+      <a href="./bca-day-17/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 17</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Grid System 2: Spanning & Newspaper Magazine Layout</h3>
+          <p class="card-desc">Homework Task: Tech News Editorial Dashboard</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>magazine-layout.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 18 -->
+      <a href="./bca-day-18/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 18</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>Responsive Design & Media Queries: Mobile-First Strategy</h3>
+          <p class="card-desc">Homework Task: Responsive BCA Course Landing Page</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>responsive-course.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 19 -->
+      <a href="./bca-day-19/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 19</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>CSS Transitions, Transforms & Hover Micro-Interactions</h3>
+          <p class="card-desc">Homework Task: Interactive Pricing / Tier Cards</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>tier-cards.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 20 -->
+      <a href="./bca-day-20/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 20</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>Sprint 2 Capstone: Responsive University Campus Portal</h3>
+          <p class="card-desc">Homework Task: Production Campus Portal GitHub Release</p>
+          <div class="card-meta">
+            <span>CSS Layouts</span>
+            <span>•</span>
+            <span>campus-portal.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- SPRINT 3 -->
+    <div class="sprint-header">
+      <h2><span>⚡</span> Sprint 3: JavaScript Core, DOM &amp; SGPA Capstone</h2>
+      <span>Days 21–30 • 10 Projects</span>
+    </div>
+    <div class="grid">
+      <!-- Day 21 -->
+      <a href="./bca-day-21/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 21</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>JavaScript Introduction: <script> Tag, Variables (let, const) & Data Types</h3>
+          <p class="card-desc">Personal Developer Specification Script</p>
+          <div class="card-meta">
+            <span>JavaScript Basics</span>
+            <span>•</span>
+            <span>developer-spec.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 22 -->
+      <a href="./bca-day-22/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 22</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>JavaScript Operators: Arithmetic, Strict Equality (===) & Logical Conditions</h3>
+          <p class="card-desc">Admission Eligibility Calculator Script</p>
+          <div class="card-meta">
+            <span>JavaScript Basics</span>
+            <span>•</span>
+            <span>eligibility-calculator.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 23 -->
+      <a href="./bca-day-23/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 23</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>Control Flow: Decision Making with if, else if, else & switch Statements</h3>
+          <p class="card-desc">University Traffic Light / Fee Discount Engine</p>
+          <div class="card-meta">
+            <span>Control Flow</span>
+            <span>•</span>
+            <span>fee-engine.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 24 -->
+      <a href="./bca-day-24/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 24</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>Loops & Iteration: for, while, and for...of Statements</h3>
+          <p class="card-desc">Student Marksheet Statistical Analyzer</p>
+          <div class="card-meta">
+            <span>Control Flow & Algorithms</span>
+            <span>•</span>
+            <span>marks-analyzer.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 25 -->
+      <a href="./bca-day-25/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 25</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>JavaScript Functions: Declarations, Arrow Syntax, Parameters & Scope</h3>
+          <p class="card-desc">Universal BCA Marksheet Utility Module</p>
+          <div class="card-meta">
+            <span>Functions & Architecture</span>
+            <span>•</span>
+            <span>marksheet-util.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 26 -->
+      <a href="./bca-day-26/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 26</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>JavaScript Arrays & Modern Transformation Methods: push, map, filter & reduce</h3>
+          <p class="card-desc">BCA Course Credits & GPA Aggregator</p>
+          <div class="card-meta">
+            <span>Data Structures</span>
+            <span>•</span>
+            <span>credits-aggregator.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 27 -->
+      <a href="./bca-day-27/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 27</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>JavaScript Objects, Nested Data & JSON Serialization Basics</h3>
+          <p class="card-desc">University Department Course Catalog Object</p>
+          <div class="card-meta">
+            <span>Data Structures</span>
+            <span>•</span>
+            <span>course-catalog.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 28 -->
+      <a href="./bca-day-28/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 28</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>DOM Selection: querySelector, textContent, innerHTML & Dynamic Styles</h3>
+          <p class="card-desc">Interactive University Campus Announcement Banner</p>
+          <div class="card-meta">
+            <span>DOM & Web APIs</span>
+            <span>•</span>
+            <span>announcement-banner.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 29 -->
+      <a href="./bca-day-29/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 29</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>DOM Events: addEventListener, Click, Input & Form Submission with preventDefault</h3>
+          <p class="card-desc">Interactive Live Note Taker with Character Count</p>
+          <div class="card-meta">
+            <span>DOM & Web APIs</span>
+            <span>•</span>
+            <span>note-taker.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+
+      <!-- Day 30 -->
+      <a href="./bca-day-30/index.html" class="card">
+        <div>
+          <div class="card-top">
+            <span class="day-pill">Day 30</span>
+            <span class="status-pill">✔ Verified Solution</span>
+          </div>
+          <h3>Sprint 3 Capstone: Interactive Student SGPA & Grade Portal</h3>
+          <p class="card-desc">Production BCA SGPA & Semester Transcript Portal</p>
+          <div class="card-meta">
+            <span>Mini Project Capstone</span>
+            <span>•</span>
+            <span>sgpa-portal.html</span>
+          </div>
+        </div>
+        <div class="card-btn">
+          <span>Launch Project</span>
+          <span>→</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>
+      <p>
+        Curriculum and practical architecture followed via <a href="https://ignou-study-notes-by-nextsem.web.app/bca/practical/" target="_blank">NextSem Academy BCA Practical Portal</a> • Authored by <strong>Er. Manoj Kumar</strong>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

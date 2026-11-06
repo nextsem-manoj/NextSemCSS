@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Tech Job Portal - Application Form</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 25px; line-height: 1.6; max-width: 650px; margin: 0 auto; }
+    fieldset { border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px; }
+    legend { font-weight: bold; color: #0f172a; padding: 0 8px; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select { width: 100%; padding: 8px 12px; margin-top: 4px; border: 1px solid #94a3b8; border-radius: 6px; box-sizing: border-box; }
+    button { padding: 10px 20px; font-weight: bold; border-radius: 6px; border: none; cursor: pointer; }
+    button[type="submit"] { background-color: #2563eb; color: white; margin-right: 10px; }
+    button[type="reset"] { background-color: #e2e8f0; color: #334155; }
+  </style>
+</head>
+<body>
+  <h1>Junior Software Engineer Application</h1>
+  <p>Please complete all required fields below to submit your job profile.</p>
+
+  <form action="/submit-job-application" method="POST" enctype="multipart/form-data">
+    <fieldset>
+      <legend>1. Personal & Contact Details</legend>
+      <p>
+        <label for="fullName">Full Legal Name *</label>
+        <input type="text" id="fullName" name="fullName" placeholder="e.g. Pankaj Sharma" required minlength="3">
+      </p>
+      <p>
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="student@example.com" required>
+      </p>
+      <p>
+        <label for="phone">Mobile Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" pattern="[0-9+ -]{10,15}" required>
+      </p>
+      <p>
+        <label for="resume">Upload Resume (PDF only) *</label><br>
+        <input type="file" id="resume" name="resume" accept=".pdf" required>
+      </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Technical Background</legend>
+      <p><strong>Professional Experience Level *</strong></p>
+      <label><input type="radio" name="experience" value="fresher" required checked> Fresher (BCA Graduate)</label><br>
+      <label><input type="radio" name="experience" value="1-2"> 1 - 2 Years Software Experience</label><br>
+      <label><input type="radio" name="experience" value="3+"> 3+ Years Industry Experience</label>
+
+      <p style="margin-top: 15px;"><strong>Core Technical Skills:</strong></p>
+      <label><input type="checkbox" name="tech" value="html" checked> HTML5</label><br>
+      <label><input type="checkbox" name="tech" value="css" checked> CSS3</label><br>
+      <label><input type="checkbox" name="tech" value="js"> JavaScript (ES6+)</label><br>
+      <label><input type="checkbox" name="tech" value="c"> C / C++ Systems</label><br>
+      <label><input type="checkbox" name="tech" value="sql"> SQL & Relational Databases</label>
+
+      <p style="margin-top: 15px;">
+        <label for="coverLetter">Statement of Purpose / Cover Letter:</label>
+        <textarea id="coverLetter" name="coverLetter" rows="4" placeholder="Highlight your academic projects and career objectives..."></textarea>
+      </p>
+    </fieldset>
+
+    <p>
+      <button type="submit">Submit Application 🚀</button>
+      <button type="reset">Clear All Fields</button>
+    </p>
+  </form>
+</body>
+</html>

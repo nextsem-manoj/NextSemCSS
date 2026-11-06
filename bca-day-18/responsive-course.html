@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 18 - Mobile-First Responsive Course Page</title>
+  <style>
+    /* 1. Mobile-First Base Styles (< 640px) */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      padding: 16px;
+      line-height: 1.6;
+    }
+    .header {
+      text-align: center;
+      padding: 24px 0;
+      border-bottom: 1px solid #1e293b;
+    }
+    .header h1 { font-size: 22px; color: #38bdf8; }
+    .header p { font-size: 13px; color: #94a3b8; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* 1 column on mobile */
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .course-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .course-card h3 { font-size: 16px; color: white; margin-bottom: 6px; }
+    .course-card p { font-size: 13px; color: #cbd5e1; }
+
+    /* 2. Tablet Viewport (>= 640px): 2 Columns */
+    @media (min-width: 640px) {
+      body { padding: 32px; }
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .header h1 { font-size: 26px; }
+    }
+
+    /* 3. Desktop Viewport (>= 1024px): 3 Columns */
+    @media (min-width: 1024px) {
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        max-width: 1040px;
+        margin: 0 auto;
+      }
+      .card-grid {
+        max-width: 1040px;
+        margin: 32px auto 0;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .header h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1>BCA Semester 1 Course Modules</h1>
+      <p>Responsive Media Query Strategy (Mobile -> Tablet -> Desktop)</p>
+    </div>
+  </header>
+
+  <main class="card-grid">
+    <div class="course-card">
+      <h3>BCS-011: Computer Basics</h3>
+      <p>Foundations of computer hardware, operating systems, and memory hierarchy.</p>
+    </div>
+    <div class="course-card">
+      <h3>BCSL-013: PC Software Lab</h3>
+      <p>Hands-on practical development with HTML5, CSS3, JavaScript, and Linux CLI.</p>
+    </div>
+    <div class="course-card">
+      <h3>BCS-012: Mathematics</h3>
+      <p>Discrete mathematics, linear programming, matrices, and computational calculus.</p>
+    </div>
+  </main>
+</body>
+</html>

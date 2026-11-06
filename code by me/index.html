@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Like Heart Button</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div class="avatar">👨‍💻</div>
+      <div class="user-meta">
+        <h3>Manoj Kumar</h3>
+        <p>Frontend Craft • NextSem</p>
+      </div>
+    </div>
+    
+    <div class="post-content">
+      <p>Building clean, reactive CSS micro-interactions with zero JavaScript dependency!</p>
+      <div style="margin-top: 12px;">
+        <a href="./css-test.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #38bdf8; text-decoration: none; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); padding: 6px 12px; border-radius: 6px; transition: all 0.2s ease;">
+          📝 Take CSS Code Master Test (Line-by-Line) →
+        </a>
+      </div>
+    </div>
+
+    <!-- Interactive Pure CSS Like Button (Checkbox-driven) -->
+    <div class="like-container">
+      <label class="like-btn" for="like-toggle">
+        <input type="checkbox" id="like-toggle" class="like-checkbox">
+        
+        <!-- Ripple Ring Effect -->
+        <span class="ring"></span>
+        
+        <!-- Flying Particle Sparkles -->
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+        <span class="particle p5"></span>
+        <span class="particle p6"></span>
+
+        <!-- SVG Heart Icon -->
+        <svg class="heart-icon" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+
+        <span class="like-label">Like</span>
+      </label>
+      
+      <span class="hint-text">Click the heart to like/unlike</span>
+    </div>
+  </div>
+</body>
+</html>
+

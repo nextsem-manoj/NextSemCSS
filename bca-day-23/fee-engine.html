@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 23 - University Fee Discount Engine</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 28px;
+      max-width: 480px;
+      width: 100%;
+    }
+    h1 { font-size: 20px; color: #38bdf8; margin-bottom: 12px; }
+    .receipt {
+      background: #0f172a;
+      border: 1px dashed #334155;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #38bdf8;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>BCA Fee Discount Engine</h1>
+    <div class="receipt" id="receipt">Generating fee structure receipt...</div>
+  </div>
+
+  <script>
+    const standardSemesterFee = 7500; // in INR
+    const studentCategory = "OBC";     // "General", "OBC", "SC", "ST"
+    const meritScore = 85;             // 0 to 100
+
+    let discountPercentage = 0;
+
+    // Switch case for category concession
+    switch (studentCategory.toUpperCase()) {
+      case "SC":
+      case "ST":
+        discountPercentage = 25;
+        break;
+      case "OBC":
+        discountPercentage = 10;
+        break;
+      case "GENERAL":
+      default:
+        discountPercentage = 0;
+        break;
+    }
+
+    // Additional merit bonus (if meritScore >= 80, add extra 5%)
+    if (meritScore >= 80 && meritScore <= 100) {
+      discountPercentage += 5;
+    }
+
+    const discountAmount = (standardSemesterFee * discountPercentage) / 100;
+    const finalFeePayable = standardSemesterFee - discountAmount;
+
+    const receiptText = `==================================
+   IGNOU BCA SEMESTER 1 FEE RECEIPT
+==================================
+Base Semester Fee : ₹${standardSemesterFee}
+Student Category  : ${studentCategory}
+Merit Score       : ${meritScore}/100
+Total Discount    : ${discountPercentage}%
+Discount Amount   : -₹${discountAmount}
+----------------------------------
+Final Fee Payable : ₹${finalFeePayable}
+==================================`;
+
+    console.log(receiptText);
+    document.getElementById("receipt").innerHTML = receiptText.replace(/\n/g, "<br>").replace(/ /g, "&nbsp;");
+  </script>
+</body>
+</html>

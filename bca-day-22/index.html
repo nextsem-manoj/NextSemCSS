@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 22 - Admission Eligibility Calculator</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .calc-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 480px;
+      width: 100%;
+    }
+    h1 { font-size: 20px; color: #38bdf8; margin-bottom: 16px; }
+    .result-box {
+      background: #0f172a;
+      padding: 16px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+    .status { font-weight: bold; font-size: 16px; margin-top: 12px; }
+    .pass { color: #10b981; }
+    .fail { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <div class="calc-card">
+    <h1>BCA Admission Eligibility Check</h1>
+    <div class="result-box" id="resultBox">Computing eligibility...</div>
+  </div>
+
+  <script>
+    // Test Scores
+    const mathScore = 72;
+    const physicsScore = 65;
+    const csScore = 88;
+
+    // Arithmetic Formulas
+    const totalMarks = mathScore + physicsScore + csScore;
+    const maxMarks = 300;
+    const average = (totalMarks / 3).toFixed(2);
+    const percentage = ((totalMarks / maxMarks) * 100).toFixed(2);
+
+    // Compound Logical Condition
+    const isEligible = (mathScore >= 60 && physicsScore >= 55 && csScore >= 65);
+
+    const logOutput = `Mathematics: ${mathScore}/100
+Physics: ${physicsScore}/100
+Computer Science: ${csScore}/100
+------------------------------
+Total: ${totalMarks}/${maxMarks}
+Average: ${average}
+Percentage: ${percentage}%`;
+
+    console.log(logOutput);
+    console.log("Admission Status:", isEligible ? "ELIGIBLE FOR ADMISSION" : "NOT ELIGIBLE");
+
+    document.getElementById("resultBox").innerHTML = `
+      <div>${logOutput.replace(/\n/g, "<br>")}</div>
+      <div class="status ${isEligible ? 'pass' : 'fail'}">
+        Status: ${isEligible ? "✓ ELIGIBLE FOR BCA ADMISSION" : "✕ NOT ELIGIBLE"}
+      </div>
+    `;
+  </script>
+</body>
+</html>

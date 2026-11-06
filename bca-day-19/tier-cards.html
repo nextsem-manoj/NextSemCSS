@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 19 - CSS Transitions & Transform Effects</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    .tier-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Card with Smooth Transitions */
+    .tier-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 32px 24px;
+      flex: 1 1 240px;
+      max-width: 280px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      cursor: pointer;
+    }
+
+    /* Elevate on Hover */
+    .tier-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.25);
+      border-color: #38bdf8;
+    }
+
+    .tier-card h3 { font-size: 20px; color: #38bdf8; margin-bottom: 8px; }
+    .price { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+    .features { list-style: none; font-size: 13px; color: #cbd5e1; margin-bottom: 24px; }
+    .features li { margin-bottom: 8px; }
+
+    /* Interactive Button with Click Scale */
+    .btn-select {
+      width: 100%;
+      padding: 12px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .btn-select:hover { background: #1d4ed8; }
+    .btn-select:active { transform: scale(0.96); }
+  </style>
+</head>
+<body>
+  <div class="tier-container">
+    <div class="tier-card">
+      <h3>Starter</h3>
+      <div class="price">Free</div>
+      <ul class="features">
+        <li>Days 1–10 Curriculum</li>
+        <li>Community Discord</li>
+        <li>Automated Quizzes</li>
+      </ul>
+      <button class="btn-select">Select Starter</button>
+    </div>
+
+    <div class="tier-card" style="border-color: #2563eb;">
+      <h3>Pro Developer</h3>
+      <div class="price">Free</div>
+      <ul class="features">
+        <li>Full 360-Day Pathway</li>
+        <li>1-on-1 Viva Reviews</li>
+        <li>GitHub Certification</li>
+      </ul>
+      <button class="btn-select" style="background: #3b82f6;">Select Pro</button>
+    </div>
+
+    <div class="tier-card">
+      <h3>Enterprise</h3>
+      <div class="price">Free</div>
+      <ul class="features">
+        <li>Capstone Review</li>
+        <li>Job Portal Access</li>
+        <li>Direct Mentorship</li>
+      </ul>
+      <button class="btn-select">Select Enterprise</button>
+    </div>
+  </div>
+</body>
+</html>

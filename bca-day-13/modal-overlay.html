@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 13 - CSS Positioning & Modal Dialog</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0f172a;
+      color: white;
+      padding: 32px;
+      min-height: 200vh; /* demonstrate sticky/fixed behavior */
+    }
+    /* Fixed trigger button at bottom right */
+    .floating-help-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 12px 20px;
+      border-radius: 50px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      z-index: 10;
+    }
+    /* Fixed Modal Backdrop Overlay */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+    /* Modal Card with Relative Position for Absolute Close Button */
+    .modal-card {
+      position: relative;
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 28px;
+      border-radius: 16px;
+      max-width: 440px;
+      width: 90%;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: #334155;
+      border: none;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .modal-card h2 { font-size: 18px; color: #38bdf8; margin-bottom: 8px; }
+    .modal-card p { font-size: 13px; color: #cbd5e1; line-height: 1.5; margin-bottom: 16px; }
+    .btn-action {
+      width: 100%;
+      padding: 10px;
+      background: #2563eb;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Positioning: Static, Relative, Absolute, Fixed</h1>
+  <p style="color: #94a3b8; margin-top: 8px;">Scroll down to verify the floating button stays anchored to the viewport.</p>
+
+  <!-- Modal Dialog -->
+  <div class="modal-backdrop">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="alert('Close clicked')">✕</button>
+      <h2>BCA Practical Viva Verification</h2>
+      <p>Demonstrating position: fixed (modal backdrop covering 100vw/100vh) and position: absolute (close button pinned to top-right).</p>
+      <button class="btn-action" onclick="alert('Submission Approved!')">Confirm Submission</button>
+    </div>
+  </div>
+
+  <button class="floating-help-btn" onclick="alert('Help desk active')">💬 Ask Mentor</button>
+</body>
+</html>

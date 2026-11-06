@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 24 - Student Marksheet Statistical Analyzer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .analyzer-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 28px;
+      max-width: 500px;
+      width: 100%;
+    }
+    h1 { font-size: 20px; color: #38bdf8; margin-bottom: 12px; }
+    pre {
+      background: #0f172a;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #34d399;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="analyzer-card">
+    <h1>BCA Semester Marks Analyzer</h1>
+    <pre id="output">Running statistical loops...</pre>
+  </div>
+
+  <script>
+    // 6 Semester Subject Scores
+    const subjectMarks = [78, 85, 92, 64, 88, 71];
+
+    let sum = 0;
+    let highest = subjectMarks[0];
+    let lowest = subjectMarks[0];
+
+    // For Loop: Compute statistics
+    for (let i = 0; i < subjectMarks.length; i++) {
+      const score = subjectMarks[i];
+      sum += score;
+      if (score > highest) highest = score;
+      if (score < lowest) lowest = score;
+    }
+
+    const average = (sum / subjectMarks.length).toFixed(2);
+
+    // While Loop: Simulated Exam Timer Countdown
+    let timer = 5;
+    const countdownSteps = [];
+    while (timer > 0) {
+      countdownSteps.push(`Exam Timer: ${timer}s remaining...`);
+      timer--;
+    }
+    countdownSteps.push("Exam Timer: 0s - Time Up!");
+
+    const result = `Marks Array: [${subjectMarks.join(", ")}]
+Total Marks Scored: ${sum}/600
+Highest Subject Mark: ${highest}
+Lowest Subject Mark: ${lowest}
+Average Percentage: ${average}%
+--------------------------------
+${countdownSteps.join("\n")}`;
+
+    console.log(result);
+    document.getElementById("output").textContent = result;
+  </script>
+</body>
+</html>

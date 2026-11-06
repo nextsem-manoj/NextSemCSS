@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 21 - JavaScript Variables & Data Types</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .spec-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 480px;
+      width: 100%;
+    }
+    h1 { font-size: 20px; color: #38bdf8; margin-bottom: 12px; }
+    pre {
+      background: #0f172a;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #34d399;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="spec-card">
+    <h1>JavaScript Developer Profile Specification</h1>
+    <pre id="output">Loading developer profile variables...</pre>
+  </div>
+
+  <script>
+    // 1. Declare 5 variables representing core primitive types
+    const developerName = "Er. Manoj Kumar";       // String
+    const semester = 1;                           // Number
+    const isEnrolledBCA = true;                   // Boolean
+    const graduationProject = null;               // Null (intentional absence of value)
+    let thesisAdvisor;                            // Undefined (unassigned)
+
+    // 2. Format a multiline summary using ES6 Template Literals
+    const summary = `Developer Name: ${developerName}
+Semester: Semester ${semester}
+Active Enrollment: ${isEnrolledBCA ? "Verified Active" : "Inactive"}
+Capstone Project: ${graduationProject === null ? "In Progress (Sprint 1)" : graduationProject}
+Thesis Advisor: ${typeof thesisAdvisor} (Assigned in Year 3)`;
+
+    // 3. Log to browser console and render to DOM
+    console.log(summary);
+    document.getElementById("output").textContent = summary;
+  </script>
+</body>
+</html>

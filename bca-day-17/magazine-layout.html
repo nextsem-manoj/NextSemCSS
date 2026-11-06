@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 17 - CSS Grid Newspaper Magazine Layout</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0f172a;
+      color: white;
+      padding: 32px 16px;
+    }
+    .magazine-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* Lead Story spans 2 columns and 2 rows */
+    .lead-story {
+      grid-column: span 2;
+      grid-row: span 2;
+      background: #1e293b;
+      border: 1px solid #3b82f6;
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .lead-story h2 { font-size: 26px; color: #38bdf8; margin: 12px 0; }
+    .lead-story p { color: #cbd5e1; font-size: 15px; line-height: 1.6; }
+
+    /* Regular News Cards */
+    .news-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .news-card h3 { font-size: 15px; color: white; margin-bottom: 8px; }
+    .news-card p { font-size: 12px; color: #94a3b8; line-height: 1.5; }
+
+    /* Footer spans full width (all 4 columns) */
+    .magazine-footer {
+      grid-column: 1 / -1;
+      background: #0f172a;
+      border-top: 1px solid #334155;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #2563eb;
+      font-size: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="magazine-container">
+    <article class="lead-story">
+      <div>
+        <span class="badge">BREAKING • TECH</span>
+        <h2>NextSem Launches 360-Day BCA Practical Curriculum</h2>
+        <p>A ground-breaking interactive engineering curriculum allowing students to study on their mobile phone while simultaneously building verified software in Visual Studio Code on their PC.</p>
+      </div>
+      <div style="font-size: 12px; color: #64748b; margin-top: 20px;">By Er. Manoj Kumar • 5 min read</div>
+    </article>
+
+    <article class="news-card">
+      <span class="badge" style="background: #10b981;">CLOUD</span>
+      <h3>Firebase Hosting Deployed</h3>
+      <p>Instant static assets delivered through global CDN endpoints with 0ms hydration.</p>
+    </article>
+
+    <article class="news-card">
+      <span class="badge" style="background: #7c3aed;">GITHUB</span>
+      <h3>CI/CD Pipeline Verification</h3>
+      <p>Automated repository checks verify student code pushes line-by-line.</p>
+    </article>
+
+    <article class="news-card">
+      <span class="badge" style="background: #f59e0b;">UI/UX</span>
+      <h3>CSS Grid 2 Spanning Rules</h3>
+      <p>Mastering grid-column: span 2 and grid-row: span 2 for responsive dashboards.</p>
+    </article>
+
+    <article class="news-card">
+      <span class="badge" style="background: #ef4444;">VIVA</span>
+      <h3>100% Viva Voce Pass Rate</h3>
+      <p>All active students scored 100% on their Day 17 technical inspection questions.</p>
+    </article>
+
+    <footer class="magazine-footer">
+      NextSem BCA Computer Science Gazette • All 4 Columns Spanned via grid-column: 1 / -1
+    </footer>
+  </div>
+</body>
+</html>

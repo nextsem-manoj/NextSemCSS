@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 15 - Flexbox Responsive Pricing Cards</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      padding: 40px 16px;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 { font-size: 26px; color: #38bdf8; margin-bottom: 8px; }
+    .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 36px; }
+
+    /* Flexbox Container with flex-wrap and align-items: stretch */
+    .card-deck {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      flex: 1 1 280px;
+      max-width: 320px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: left;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+    }
+    .card.featured {
+      border: 2px solid #2563eb;
+      background: #172554;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: bold;
+      background: #2563eb;
+      color: white;
+      margin-bottom: 12px;
+    }
+    .tier-name { font-size: 20px; font-weight: bold; margin-bottom: 6px; }
+    .price { font-size: 28px; font-weight: 800; color: #38bdf8; margin-bottom: 16px; }
+    .price span { font-size: 13px; color: #94a3b8; font-weight: normal; }
+
+    .features { list-style: none; margin-bottom: 24px; flex-grow: 1; }
+    .features li { font-size: 13px; color: #cbd5e1; margin-bottom: 8px; }
+    .features li::before { content: "✓ "; color: #10b981; font-weight: bold; }
+
+    .btn-enroll {
+      width: 100%;
+      padding: 12px;
+      background: #2563eb;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+    }
+    .btn-enroll:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BCA Specialization Learning Tracks</h1>
+    <p class="subtitle">Equally sized cards using Flexbox flex-grow, flex-wrap, and stretch alignment.</p>
+
+    <div class="card-deck">
+      <div class="card">
+        <div>
+          <span class="badge">Track 1</span>
+          <div class="tier-name">Web Development</div>
+          <div class="price">Free <span>/ Semester 1</span></div>
+          <ul class="features">
+            <li>Semantic HTML5 & Modern CSS</li>
+            <li>CSS Grid & Flexbox Layouts</li>
+            <li>GitHub Pages Deployment</li>
+          </ul>
+        </div>
+        <a href="#enroll" class="btn-enroll">Start Practice</a>
+      </div>
+
+      <div class="card featured">
+        <div>
+          <span class="badge">Track 2 (Most Popular)</span>
+          <div class="tier-name">Full-Stack Engineer</div>
+          <div class="price">Free <span>/ 360 Days</span></div>
+          <ul class="features">
+            <li>JavaScript ES6+ & DOM Projects</li>
+            <li>React & Next.js Framework</li>
+            <li>Node.js & MongoDB Backend</li>
+            <li>Technical Viva Voce Mastery</li>
+          </ul>
+        </div>
+        <a href="#enroll" class="btn-enroll">Enroll Full Track</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <span class="badge">Track 3</span>
+          <div class="tier-name">Systems & C++</div>
+          <div class="price">Free <span>/ Semester 2</span></div>
+          <ul class="features">
+            <li>Pointers & Memory Control</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Object-Oriented Programming</li>
+          </ul>
+        </div>
+        <a href="#enroll" class="btn-enroll">Start Practice</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

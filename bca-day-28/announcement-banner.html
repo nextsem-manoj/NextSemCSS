@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 28 - DOM Selection & Dynamic Styling</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .wrapper { max-width: 500px; width: 100%; }
+    .announcement-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+    .priority-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .card-title { font-size: 18px; margin-bottom: 8px; }
+    .card-date { font-size: 12px; color: #94a3b8; margin-bottom: 12px; }
+    .card-body { font-size: 13px; color: #cbd5e1; line-height: 1.5; }
+
+    /* Dynamic Priority Themes applied via DOM */
+    .priority-high {
+      border-left: 5px solid #ef4444;
+      background: #1c1917;
+    }
+    .priority-high .priority-badge { background: #ef4444; color: white; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="announcement-card" id="campusCard">
+      <span class="priority-badge" id="priorityTag">Normal</span>
+      <h2 class="card-title" id="cardTitle">Loading Announcement...</h2>
+      <div class="card-date" id="cardDate">--</div>
+      <p class="card-body" id="cardBody">Fetching campus records...</p>
+    </div>
+  </div>
+
+  <script>
+    // 1. Select DOM elements using document.querySelector
+    const card = document.querySelector("#campusCard");
+    const priorityTag = document.querySelector("#priorityTag");
+    const cardTitle = document.querySelector("#cardTitle");
+    const cardDate = document.querySelector("#cardDate");
+    const cardBody = document.querySelector("#cardBody");
+
+    // 2. Data payload
+    const notice = {
+      title: "BCA 1st Semester Term-End Practical Exam Schedule",
+      date: "October 2026 Notification",
+      body: "All registered BCA students must push their verified GitHub repositories for Days 1–30 prior to the final laboratory viva examination.",
+      priority: "high"
+    };
+
+    // 3. Update DOM content dynamically
+    cardTitle.textContent = notice.title;
+    cardDate.textContent = notice.date;
+    cardBody.textContent = notice.body;
+    priorityTag.textContent = notice.priority.toUpperCase() + " PRIORITY";
+
+    // 4. Apply dynamic style classes
+    if (notice.priority === "high") {
+      card.classList.add("priority-high");
+    }
+  </script>
+</body>
+</html>

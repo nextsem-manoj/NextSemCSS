@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 20 - University Campus Portal Capstone</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #060c18;
+      color: white;
+      line-height: 1.6;
+    }
+    /* Sticky Top Header */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: rgba(12, 19, 40, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      border-bottom: 1px solid #1e293b;
+      z-index: 100;
+    }
+    .navbar h2 { font-size: 18px; color: #38bdf8; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #cbd5e1; text-decoration: none; font-size: 14px; font-weight: 600; }
+    .nav-links a:hover { color: #38bdf8; }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: radial-gradient(circle at center, rgba(37,99,235,0.15) 0%, transparent 70%);
+    }
+    .hero h1 { font-size: 36px; color: white; margin-bottom: 12px; }
+    .hero p { font-size: 16px; color: #94a3b8; max-width: 600px; margin: 0 auto 24px; }
+    .btn-cta {
+      padding: 12px 28px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn-cta:hover { transform: translateY(-2px); background: #1d4ed8; }
+
+    /* Departments Grid */
+    .section-title { text-align: center; font-size: 24px; margin: 40px 0 20px; color: #38bdf8; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 1040px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+    .dept-card {
+      background: #0c1328;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s ease;
+    }
+    .dept-card:hover { transform: translateY(-5px); border-color: #38bdf8; }
+    .dept-card h3 { font-size: 18px; margin-bottom: 8px; color: white; }
+    .dept-card p { font-size: 13px; color: #94a3b8; }
+
+    /* Footer */
+    footer {
+      background: #050912;
+      border-top: 1px solid #1e293b;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <h2>🎓 IGNOU BCA Academy</h2>
+    <ul class="nav-links">
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#faculty">Faculty</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>National Campus Portal 2026</h1>
+    <p>Empowering Computer Science & Application students with modern industry lab experience.</p>
+    <a href="#apply" class="btn-cta">Apply for BCA 2026</a>
+  </header>
+
+  <h2 class="section-title" id="departments">Academic Departments</h2>
+  <div class="grid">
+    <div class="dept-card">
+      <h3>Computer Applications (BCA)</h3>
+      <p>Full-Stack Web Engineering, Systems Architecture, and Database Systems.</p>
+    </div>
+    <div class="dept-card">
+      <h3>Information Technology</h3>
+      <p>Cloud Computing, Linux Administration, and Computer Networking.</p>
+    </div>
+    <div class="dept-card">
+      <h3>Artificial Intelligence</h3>
+      <p>Data Science, Computational Statistics, and Machine Learning algorithms.</p>
+    </div>
+    <div class="dept-card">
+      <h3>Cybersecurity</h3>
+      <p>Network Defense, Secure Systems Design, and Vulnerability Assessment.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 NextSem IGNOU BCA Study Notes • Authored by Er. Manoj Kumar</p>
+  </footer>
+</body>
+</html>

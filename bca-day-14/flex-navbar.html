@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 14 - Flexbox Navigation Bar</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b1120;
+      color: #f8fafc;
+    }
+    
+    /* 1. Flexbox Navigation Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
+    }
+    
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: #38bdf8;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* 2. Flex Navigation Links */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+    
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: #38bdf8; }
+    
+    .btn-cta {
+      padding: 8px 18px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      transition: background 0.2s ease;
+    }
+    .btn-cta:hover { background: #1d4ed8; }
+
+    .hero {
+      max-width: 800px;
+      margin: 60px auto;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .hero h1 { font-size: 32px; color: white; margin-bottom: 12px; }
+    .hero p { color: #94a3b8; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo">🚀 BCA DevPortal</a>
+    <ul class="nav-links">
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#practicals">Practicals</a></li>
+      <li><a href="#viva">Viva Bank</a></li>
+      <li><a href="#github">GitHub</a></li>
+    </ul>
+    <a href="#login" class="btn-cta">Student Login</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Modern CSS Flexbox Navigation</h1>
+    <p>Using display: flex with justify-content: space-between to evenly distribute brand logo, nav links, and CTA button.</p>
+  </div>
+</body>
+</html>

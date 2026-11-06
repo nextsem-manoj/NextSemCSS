@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 27 - Objects & JSON Serialization</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .catalog-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 16px;
+      padding: 28px;
+      max-width: 520px;
+      width: 100%;
+    }
+    h1 { font-size: 20px; color: #38bdf8; margin-bottom: 12px; }
+    pre {
+      background: #0f172a;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #38bdf8;
+      overflow-x: auto;
+      max-height: 240px;
+    }
+  </style>
+</head>
+<body>
+  <div class="catalog-card">
+    <h1>BCA Department Course Catalog (JSON)</h1>
+    <pre id="jsonPreview">Serializing catalog...</pre>
+  </div>
+
+  <script>
+    // 1. Array of course objects with nested instructor object
+    const courseCatalog = [
+      {
+        code: "BCS-011",
+        title: "Computer Basics and PC Software",
+        credits: 3,
+        instructor: { name: "Er. Manoj Kumar", designation: "Lead Curriculum Architect" }
+      },
+      {
+        code: "BCSL-013",
+        title: "Software Lab (Linux & Web Basics)",
+        credits: 2,
+        instructor: { name: "Pankaj Sharma", designation: "Lab Instructor" }
+      },
+      {
+        code: "BCS-012",
+        title: "Basic Mathematics",
+        credits: 4,
+        instructor: { name: "Dr. Uday Verma", designation: "Mathematics Department" }
+      }
+    ];
+
+    // 2. Object destructuring
+    const [firstCourse] = courseCatalog;
+    const { code, title, credits, instructor: { name } } = firstCourse;
+    console.log(`Featured Course: ${code} - ${title} (${credits} Credits) by ${name}`);
+
+    // 3. JSON Serialization & Local Storage
+    const serialized = JSON.stringify(courseCatalog, null, 2);
+    localStorage.setItem("bca_course_catalog", serialized);
+
+    // 4. Retrieve and Parse
+    const retrieved = JSON.parse(localStorage.getItem("bca_course_catalog"));
+    console.log("Retrieved parsed count:", retrieved.length);
+
+    document.getElementById("jsonPreview").textContent = serialized;
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 30 - Production SGPA & Semester Transcript Portal</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #060c18;
+      color: white;
+      min-height: 100vh;
+      padding: 32px 16px;
+    }
+    .portal-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #0c1328;
+      border: 1px solid #1e293b;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    h1 { font-size: 22px; color: #38bdf8; margin-bottom: 6px; }
+    .sub { font-size: 13px; color: #94a3b8; margin-bottom: 24px; }
+    
+    .subject-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #070d1e;
+      border: 1px solid #1e293b;
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .subject-info div { font-size: 13px; font-weight: bold; }
+    .subject-info span { font-size: 11px; color: #64748b; }
+    
+    input[type="number"] {
+      width: 80px;
+      padding: 8px;
+      background: #0c1328;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      outline: none;
+    }
+    input[type="number"]:focus { border-color: #2563eb; }
+
+    .btn-calc {
+      width: 100%;
+      padding: 14px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: background 0.2s ease;
+    }
+    .btn-calc:hover { background: #1d4ed8; }
+
+    .result-sheet {
+      margin-top: 24px;
+      padding: 20px;
+      background: #070d1e;
+      border: 1px dashed #2563eb;
+      border-radius: 12px;
+      display: none;
+    }
+    .score-badge { font-size: 24px; font-weight: 800; color: #34d399; }
+    .division-text { font-size: 14px; color: #38bdf8; font-weight: bold; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="portal-card">
+    <h1>BCA Semester 1 SGPA Calculator</h1>
+    <p class="sub">Sprint 3 Capstone • 4 Core Subjects with Real-time Grade Evaluation</p>
+
+    <div class="subject-row">
+      <div class="subject-info">
+        <div>BCS-011: Computer Basics</div>
+        <span>3 Credits</span>
+      </div>
+      <input type="number" id="m1" value="78" min="0" max="100">
+    </div>
+
+    <div class="subject-row">
+      <div class="subject-info">
+        <div>BCSL-013: PC Software Lab</div>
+        <span>2 Credits</span>
+      </div>
+      <input type="number" id="m2" value="85" min="0" max="100">
+    </div>
+
+    <div class="subject-row">
+      <div class="subject-info">
+        <div>BCS-012: Mathematics</div>
+        <span>4 Credits</span>
+      </div>
+      <input type="number" id="m3" value="70" min="0" max="100">
+    </div>
+
+    <div class="subject-row">
+      <div class="subject-info">
+        <div>FEG-02: Communication Skills</div>
+        <span>3 Credits</span>
+      </div>
+      <input type="number" id="m4" value="75" min="0" max="100">
+    </div>
+
+    <button class="btn-calc" onclick="calculateTranscript()">Calculate SGPA &amp; Transcript</button>
+
+    <div class="result-sheet" id="resultSheet">
+      <div class="score-badge" id="sgpaVal">--</div>
+      <div class="division-text" id="divVal">--</div>
+      <div style="font-size: 12px; color: #94a3b8; margin-top: 8px;" id="breakdownVal">--</div>
+    </div>
+  </div>
+
+  <script>
+    function calculateTranscript() {
+      const s1 = parseFloat(document.getElementById("m1").value) || 0;
+      const s2 = parseFloat(document.getElementById("m2").value) || 0;
+      const s3 = parseFloat(document.getElementById("m3").value) || 0;
+      const s4 = parseFloat(document.getElementById("m4").value) || 0;
+
+      const credits = [3, 2, 4, 3];
+      const marks = [s1, s2, s3, s4];
+
+      const totalCredits = 12;
+      let totalWeightedScore = 0;
+      let rawTotal = 0;
+
+      for (let i = 0; i < 4; i++) {
+        rawTotal += marks[i];
+        totalWeightedScore += marks[i] * credits[i];
+      }
+
+      const percentage = (rawTotal / 400 * 100).toFixed(1);
+      const sgpa = (totalWeightedScore / (totalCredits * 10)).toFixed(2);
+
+      let division = "Fail";
+      if (percentage >= 75) division = "First Division with Distinction 🌟";
+      else if (percentage >= 60) division = "First Division";
+      else if (percentage >= 50) division = "Second Division";
+      else if (percentage >= 40) division = "Pass";
+
+      document.getElementById("sgpaVal").textContent = `SGPA: ${sgpa} / 10.0`;
+      document.getElementById("divVal").textContent = `Award: ${division}`;
+      document.getElementById("breakdownVal").textContent = 
+        `Total Marks: ${rawTotal}/400 (${percentage}%) • Total Credits: ${totalCredits}`;
+      document.getElementById("resultSheet").style.display = "block";
+    }
+  </script>
+</body>
+</html>

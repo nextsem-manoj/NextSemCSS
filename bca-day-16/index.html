@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 16 - CSS Grid Project Gallery</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0b1120;
+      color: white;
+      padding: 32px 16px;
+    }
+    .wrapper { max-width: 1040px; margin: 0 auto; }
+    h1 { font-size: 24px; color: #38bdf8; margin-bottom: 8px; text-align: center; }
+    p.lead { color: #94a3b8; font-size: 14px; text-align: center; margin-bottom: 32px; }
+
+    /* 6-Item CSS Grid with repeat(auto-fit, minmax(280px, 1fr)) */
+    .grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+    }
+
+    .day-badge {
+      font-size: 11px;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 8px;
+    }
+    .project-card h3 { font-size: 16px; margin-bottom: 8px; }
+    .project-card p { font-size: 13px; color: #94a3b8; line-height: 1.5; margin-bottom: 16px; }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .tag {
+      font-size: 10px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .btn-github {
+      padding: 8px 14px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .btn-github:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>BCA Semester 1 Practical Project Showcase</h1>
+    <p class="lead">Built using responsive CSS Grid with auto-fit fractional columns.</p>
+
+    <div class="grid-gallery">
+      <div class="project-card">
+        <div>
+          <div class="day-badge">DAY 01 • HTML SETUP</div>
+          <h3>Student Launch Webpage</h3>
+          <p>Initial HTML5 boilerplate with semantic structure and browser verification.</p>
+          <div class="tag-row"><span class="tag">HTML5</span><span class="tag">VSCode</span></div>
+        </div>
+        <a href="https://github.com" class="btn-github">View GitHub Repository</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="day-badge">DAY 04 • LISTS & TABLES</div>
+          <h3>Syllabus Matrix Portal</h3>
+          <p>Structured table formatting with rowspan, colspan, and accessibility captions.</p>
+          <div class="tag-row"><span class="tag">HTML Tables</span><span class="tag">Matrix</span></div>
+        </div>
+        <a href="https://github.com" class="btn-github">View GitHub Repository</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="day-badge">DAY 05 • FORMS</div>
+          <h3>Job Application Portal</h3>
+          <p>Client-side form validation with regex pattern matching and semantic fieldsets.</p>
+          <div class="tag-row"><span class="tag">Forms</span><span class="tag">Validation</span></div>
+        </div>
+        <a href="https://github.com" class="btn-github">View GitHub Repository</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="day-badge">DAY 06 • SEMANTICS</div>
+          <h3>College Campus Portal</h3>
+          <p>Clean semantic architecture with header, nav, main, article, aside, and footer.</p>
+          <div class="tag-row"><span class="tag">Semantics</span><span class="tag">SEO</span></div>
+        </div>
+        <a href="https://github.com" class="btn-github">View GitHub Repository</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="day-badge">DAY 09 • SELECTORS</div>
+          <h3>Component Library</h3>
+          <p>Modular button variants (.btn-success, .btn-danger) with hover states.</p>
+          <div class="tag-row"><span class="tag">CSS Selectors</span><span class="tag">DRY</span></div>
+        </div>
+        <a href="https://github.com" class="btn-github">View GitHub Repository</a>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="day-badge">DAY 15 • FLEXBOX</div>
+          <h3>Responsive Course Deck</h3>
+          <p>Equal height pricing and curriculum cards with flex-wrap and alignment.</p>
+          <div class="tag-row"><span class="tag">Flexbox</span><span class="tag">Layouts</span></div>
+        </div>
+        <a href="https://github.com" class="btn-github">View GitHub Repository</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

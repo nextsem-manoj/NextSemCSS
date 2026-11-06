@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 12 - CSS Display Modes Comparison</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0f172a;
+      color: #f1f5f9;
+      padding: 32px 16px;
+      line-height: 1.6;
+    }
+    .wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #1e293b;
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid #334155;
+    }
+    h1 { font-size: 22px; color: #38bdf8; margin-bottom: 16px; }
+    .demo-section {
+      background: #0f172a;
+      padding: 16px;
+      border-radius: 12px;
+      margin: 16px 0;
+      border: 1px solid #334155;
+    }
+    .demo-title { font-size: 13px; font-weight: bold; color: #fbbf24; margin-bottom: 8px; }
+    
+    /* Display: inline (No width/height respect) */
+    .inline-item {
+      display: inline;
+      background: #2563eb;
+      color: white;
+      padding: 4px 8px;
+      margin: 4px;
+      border-radius: 4px;
+    }
+    
+    /* Display: block (Takes full width) */
+    .block-item {
+      display: block;
+      background: #059669;
+      color: white;
+      padding: 8px 12px;
+      margin: 6px 0;
+      border-radius: 6px;
+    }
+    
+    /* Display: inline-block (Horizontal flow + accepts width/height) */
+    .inline-block-item {
+      display: inline-block;
+      width: 130px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: #7c3aed;
+      color: white;
+      margin: 4px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    
+    /* Display: none (Completely hidden from flow) */
+    .hidden-item {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>CSS Display Property in Action</h1>
+    
+    <div class="demo-section">
+      <div class="demo-title">1. Inline (Flows like text, ignores width/height):</div>
+      <span class="inline-item">Item One</span>
+      <span class="inline-item">Item Two</span>
+      <span class="inline-item">Item Three</span>
+    </div>
+
+    <div class="demo-section">
+      <div class="demo-title">2. Block (Full width, stacks vertically):</div>
+      <div class="block-item">Block Item A (100% available width)</div>
+      <div class="block-item">Block Item B (Stacks onto next line)</div>
+    </div>
+
+    <div class="demo-section">
+      <div class="demo-title">3. Inline-Block (Horizontal navbar pills with precise width/height):</div>
+      <div class="inline-block-item">BCS-011</div>
+      <div class="inline-block-item">BCSL-013</div>
+      <div class="inline-block-item">BCS-012</div>
+      <div class="inline-block-item">FEG-02</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Day 11 - CSS Box Model Notification Cards</title>
+  <style>
+    /* 1. Universal Box-Sizing Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b1120;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 580px;
+      width: 100%;
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: #38bdf8;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 24px;
+    }
+
+    /* 2. Base Alert Box Model Card */
+    .alert-card {
+      padding: 18px 20px;
+      margin: 14px 0;
+      border-radius: 12px;
+      border-left: 5px solid;
+      background-color: #0f172a;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .alert-card:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .alert-card h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .alert-card p {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* 3. Status Variants */
+    .alert-success {
+      border-left-color: #10b981;
+      background: rgba(16, 185, 129, 0.08);
+      border-top: 1px solid rgba(16, 185, 129, 0.2);
+      border-right: 1px solid rgba(16, 185, 129, 0.2);
+      border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+    }
+    .alert-success h3 { color: #34d399; }
+
+    .alert-warning {
+      border-left-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.08);
+      border-top: 1px solid rgba(245, 158, 11, 0.2);
+      border-right: 1px solid rgba(245, 158, 11, 0.2);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .alert-warning h3 { color: #fbbf24; }
+
+    .alert-error {
+      border-left-color: #ef4444;
+      background: rgba(239, 68, 68, 0.08);
+      border-top: 1px solid rgba(239, 68, 68, 0.2);
+      border-right: 1px solid rgba(239, 68, 68, 0.2);
+      border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+    }
+    .alert-error h3 { color: #f87171; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>BCA Practical Alert System</h1>
+    <p class="subtitle">Demonstrating CSS Box Model: padding (inside), border-box sizing, and margin (outside spacing).</p>
+
+    <!-- Success Alert -->
+    <div class="alert-card alert-success">
+      <h3>✓ Practical Lab Approved</h3>
+      <p>Your Day 11 practical code has passed the technical validation suite with 100% score.</p>
+    </div>
+
+    <!-- Warning Alert -->
+    <div class="alert-card alert-warning">
+      <h3>⚠ Unpushed Git Commits</h3>
+      <p>You have 2 local commits. Run git push origin main to synchronize your GitHub profile.</p>
+    </div>
+
+    <!-- Error Alert -->
+    <div class="alert-card alert-error">
+      <h3>✕ Missing CSS Reset</h3>
+      <p>Always verify * { box-sizing: border-box; } is loaded to prevent horizontal scrollbars.</p>
+    </div>
+  </div>
+
+</body>
+</html>
