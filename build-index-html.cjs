@@ -61,14 +61,13 @@ const htmlContent = `<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
 
-    /* Top Navigation Header */
     header {
       background: var(--bg-surface);
       border-bottom: 1px solid var(--border);
-      height: 64px;
+      height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -92,7 +91,7 @@ const htmlContent = `<!DOCTYPE html>
       width: 36px;
       height: 36px;
       background: linear-gradient(135deg, #0284c7, #38bdf8);
-      border-radius: 10px;
+      border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -118,12 +117,11 @@ const htmlContent = `<!DOCTYPE html>
       display: block;
     }
 
-    /* Center Navigation Tabs */
     .nav-mode-tabs {
       display: flex;
       background: var(--bg-card);
       padding: 3px;
-      border-radius: 10px;
+      border-radius: 9px;
       border: 1px solid var(--border);
       gap: 4px;
     }
@@ -132,7 +130,7 @@ const htmlContent = `<!DOCTYPE html>
       background: transparent;
       border: none;
       color: var(--text-muted);
-      padding: 7px 14px;
+      padding: 6px 14px;
       border-radius: 7px;
       font-size: 0.82rem;
       font-weight: 700;
@@ -179,7 +177,6 @@ const htmlContent = `<!DOCTYPE html>
       transform: translateY(-1px);
     }
 
-    /* Progress Pill */
     .progress-pill {
       background: rgba(16, 185, 129, 0.12);
       border: 1px solid rgba(16, 185, 129, 0.3);
@@ -193,7 +190,6 @@ const htmlContent = `<!DOCTYPE html>
       gap: 6px;
     }
 
-    /* View Container */
     .view-section {
       display: none;
       flex: 1;
@@ -203,7 +199,7 @@ const htmlContent = `<!DOCTYPE html>
       flex-direction: column;
     }
 
-    /* ─── 30 DAYS VIEW LAYOUT ─── */
+    /* ─── 30 DAYS CLEAN ENGLISH VIEW ─── */
     .curriculum-subbar {
       background: var(--bg-surface);
       border-bottom: 1px solid var(--border);
@@ -247,7 +243,7 @@ const htmlContent = `<!DOCTYPE html>
       font-size: 0.78rem;
       font-family: inherit;
       outline: none;
-      width: 220px;
+      width: 240px;
       transition: border-color 0.2s;
     }
     .days-search-input:focus {
@@ -256,13 +252,12 @@ const htmlContent = `<!DOCTYPE html>
 
     .curriculum-body {
       display: grid;
-      grid-template-columns: 330px 1fr;
+      grid-template-columns: 320px 1fr;
       flex: 1;
-      min-height: calc(100vh - 124px);
+      min-height: calc(100vh - 120px);
       overflow: hidden;
     }
 
-    /* Left Days Drawer */
     .days-sidebar {
       background: var(--bg-surface);
       border-right: 1px solid var(--border);
@@ -283,7 +278,6 @@ const htmlContent = `<!DOCTYPE html>
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      position: relative;
     }
     .day-card-item:hover {
       background: var(--bg-hover);
@@ -324,7 +318,7 @@ const htmlContent = `<!DOCTYPE html>
       text-overflow: ellipsis;
     }
 
-    .day-item-hindi {
+    .day-item-sub {
       font-size: 0.72rem;
       color: var(--text-muted);
       margin-top: 2px;
@@ -338,9 +332,6 @@ const htmlContent = `<!DOCTYPE html>
       color: var(--accent-emerald);
       font-weight: 700;
       margin-top: 4px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
     }
 
     .day-check-btn {
@@ -356,7 +347,6 @@ const htmlContent = `<!DOCTYPE html>
       color: var(--accent-emerald);
     }
 
-    /* Right Day Workspace */
     .day-workspace {
       display: flex;
       flex-direction: column;
@@ -382,8 +372,8 @@ const htmlContent = `<!DOCTYPE html>
       margin-top: 6px;
     }
 
-    .day-title-block .hindi-subtitle {
-      font-size: 0.90rem;
+    .day-title-block .english-subtitle {
+      font-size: 0.88rem;
       color: var(--accent-cyan);
       font-weight: 600;
       margin-top: 4px;
@@ -431,7 +421,6 @@ const htmlContent = `<!DOCTYPE html>
       color: #04101e;
     }
 
-    /* Day Content Grid */
     .day-grid-content {
       padding: 20px 24px;
       display: grid;
@@ -439,7 +428,6 @@ const htmlContent = `<!DOCTYPE html>
       gap: 20px;
     }
 
-    /* Explanation Left Card */
     .explanation-panel {
       display: flex;
       flex-direction: column;
@@ -558,7 +546,6 @@ const htmlContent = `<!DOCTYPE html>
       line-height: 1.4;
     }
 
-    /* Interactive Live Studio Right Card */
     .studio-panel {
       background: var(--bg-surface);
       border: 1px solid var(--border);
@@ -566,7 +553,7 @@ const htmlContent = `<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      min-height: 480px;
+      min-height: 520px;
     }
 
     .studio-panel-header {
@@ -620,10 +607,9 @@ const htmlContent = `<!DOCTYPE html>
       border-color: var(--accent-cyan);
     }
 
-    /* Live Output & Code split */
     .sandbox-split {
       display: grid;
-      grid-template-rows: 220px 1fr;
+      grid-template-rows: 240px 1fr;
       flex: 1;
       overflow: hidden;
     }
@@ -665,12 +651,12 @@ const htmlContent = `<!DOCTYPE html>
       white-space: pre;
     }
 
-    /* ─── 117 TIPS & PROJECTS VIEWS (Preserved) ─── */
+    /* ─── 117 TIPS & PROJECTS VIEWS ─── */
     .legacy-tips-view {
       display: grid;
       grid-template-columns: 320px 1fr;
       flex: 1;
-      min-height: calc(100vh - 64px);
+      min-height: calc(100vh - 60px);
     }
 
     .tips-sidebar {
@@ -793,7 +779,6 @@ const htmlContent = `<!DOCTYPE html>
     .project-desc { font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; }
     .project-link-label { font-size: 0.80rem; font-weight: 800; color: var(--accent-cyan); }
 
-    /* Responsive adjustments */
     @media (max-width: 960px) {
       .curriculum-body { grid-template-columns: 1fr; }
       .days-sidebar { max-height: 220px; }
@@ -816,7 +801,7 @@ const htmlContent = `<!DOCTYPE html>
           <span>NextSem CSS Mastery</span>
           <span class="progress-pill" id="headerProgressPill">Day 1/30 (3%)</span>
         </div>
-        <span class="brand-sub">Structured Day-Wise Curriculum • Easy &amp; Practical</span>
+        <span class="brand-sub">Structured 30-Day Curriculum • Clean &amp; Modern</span>
       </div>
     </a>
 
@@ -836,15 +821,14 @@ const htmlContent = `<!DOCTYPE html>
     <!-- Actions -->
     <div class="header-actions">
       <a class="btn-header" href="https://nextsem-staging.web.app/" title="Staging Home">🏠 Staging</a>
-      <button class="btn-header" onclick="toggleTheme()" id="themeToggleBtn" title="Toggle Dark/Light">🌙</button>
+      <button class="btn-header" onclick="toggleTheme()" id="themeToggleBtn" title="Toggle Theme">🌙</button>
       <a class="btn-header" href="https://github.com/nextsem-manoj/css" target="_blank" title="GitHub">🐙 Repo</a>
     </div>
   </header>
 
-  <!-- ════════════ VIEW 1: 30 DAYS LESSONS (DEFAULT) ════════════ -->
+  <!-- ════════════ VIEW 1: 30 DAYS LESSONS (100% ENGLISH) ════════════ -->
   <section class="view-section active-view" id="viewDaysSection">
     
-    <!-- Week Filter & Search Sub-bar -->
     <div class="curriculum-subbar">
       <div class="week-chips">
         <button class="week-chip active" onclick="filterWeek('all')">All 30 Days</button>
@@ -856,7 +840,6 @@ const htmlContent = `<!DOCTYPE html>
       <input type="text" id="daysSearchInput" class="days-search-input" placeholder="🔍 Search topic (e.g. flexbox, box model)..." oninput="searchDays(this.value)">
     </div>
 
-    <!-- Body Split: Days Drawer + Study Room -->
     <div class="curriculum-body">
       
       <!-- Left Drawer: 30 Days List -->
@@ -865,12 +848,11 @@ const htmlContent = `<!DOCTYPE html>
       <!-- Right Classroom / Workspace -->
       <main class="day-workspace">
         
-        <!-- Day Banner Header -->
         <div class="day-header-banner">
           <div class="day-title-block">
             <span class="day-badge-num" id="currentDayBadge" style="display:inline-block; font-size: 0.80rem;">Day 01 • Week 1</span>
-            <h1 id="currentDayTitle">CSS3 Introduction &amp; Syntax</h1>
-            <div class="hindi-subtitle" id="currentDayHindi">CSS क्या है और कैसे काम करता है?</div>
+            <h1 id="currentDayTitle">CSS3 Introduction &amp; Rule Syntax</h1>
+            <div class="english-subtitle" id="currentDaySubtitle">Understanding selectors, declaration blocks, and stylesheets</div>
           </div>
           <div class="day-nav-controls">
             <button class="nav-day-btn" id="prevDayBtn" onclick="navigateDay(-1)">← Prev Day</button>
@@ -879,34 +861,30 @@ const htmlContent = `<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- 2-Column Content: Explanation + Interactive Sandbox -->
         <div class="day-grid-content">
           
           <!-- Left Explanation Column -->
           <div class="explanation-panel">
             
-            <!-- Real-Life Analogy -->
             <div class="analogy-card">
-              <div class="analogy-title">💡 Real-Life Analogy (आसान भाषा में)</div>
-              <div class="analogy-text" id="currentAnalogy">HTML = Body Skeleton 🦴 | CSS = Designer Clothes &amp; Makeup 👔✨</div>
+              <div class="analogy-title">💡 Core Mental Model</div>
+              <div class="analogy-text" id="currentAnalogy">HTML is the concrete structure of a building; CSS is the interior design, lighting, textures, and paint.</div>
             </div>
 
-            <!-- Concept Card -->
             <div class="concept-card">
-              <span class="section-label">Core Concept (सरल व्याख्या)</span>
+              <span class="section-label">Concept Breakdown</span>
               <p class="concept-desc" id="currentConcept">Loading...</p>
               
               <ul class="key-points-list" id="currentKeyPointsList"></ul>
             </div>
 
-            <!-- Tips & Challenge row -->
             <div class="tips-and-challenges">
               <div class="protip-box">
                 <div class="box-head">💡 Pro-Tip</div>
                 <p id="currentProTip">Loading pro-tip...</p>
               </div>
               <div class="challenge-box">
-                <div class="box-head">🎯 Today's Mini Task</div>
+                <div class="box-head">🎯 Today's Hands-On Task</div>
                 <p id="currentChallenge">Loading challenge...</p>
               </div>
             </div>
@@ -927,12 +905,10 @@ const htmlContent = `<!DOCTYPE html>
             </div>
 
             <div class="sandbox-split">
-              <!-- Live Preview Output Frame -->
               <div class="live-preview-container">
                 <iframe id="dayPreviewIframe" class="preview-iframe" sandbox="allow-scripts allow-same-origin"></iframe>
               </div>
 
-              <!-- Live Editable Code Editor -->
               <div class="code-editor-wrap">
                 <textarea id="liveCodeTextarea" class="code-textarea" spellcheck="false" oninput="onCodeEdited()"></textarea>
               </div>
@@ -945,7 +921,7 @@ const htmlContent = `<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- ════════════ VIEW 2: 117+ TIPS STUDIO (PRESERVED) ════════════ -->
+  <!-- ════════════ VIEW 2: 117+ TIPS STUDIO ════════════ -->
   <section class="view-section" id="viewTipsSection">
     <div class="legacy-tips-view">
       <aside class="tips-sidebar">
@@ -975,7 +951,7 @@ const htmlContent = `<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- ════════════ VIEW 3: 4 PROJECT STUDIOS (PRESERVED) ════════════ -->
+  <!-- ════════════ VIEW 3: 4 PROJECT STUDIOS ════════════ -->
   <section class="view-section" id="viewProjectsSection">
     <div class="projects-grid-view">
       <a href="./projects/01-modern-layouts-bento-studio/index.html" class="project-card">
@@ -1016,36 +992,31 @@ const htmlContent = `<!DOCTYPE html>
     </div>
   </section>
 
-  <!-- Inlined Curriculum Data -->
+  <!-- Inlined Clean English Curriculum Data -->
   <script id="curriculum-data" type="application/json">
 ${JSON.stringify(days)}
   </script>
 
   <script>
-    // ── DATA & STATE ──
     const DAYS_DATA = JSON.parse(document.getElementById('curriculum-data').textContent);
     let currentDayIndex = 0;
     let activeWeekFilter = 'all';
-    let currentEditorTab = 'css'; // 'css' | 'html'
+    let currentEditorTab = 'css';
     let currentEditedCss = '';
     let currentEditedHtml = '';
     let completedDays = JSON.parse(localStorage.getItem('nextsem_css_completed_days') || '[]');
 
-    // Tips state
     let allTips = [];
     let filteredTips = [];
     let currentTipIndex = 0;
 
-    // ── INITIALIZATION ──
     window.addEventListener('DOMContentLoaded', async () => {
-      // Check saved theme
       const savedTheme = localStorage.getItem('nextsem_css_theme');
       if (savedTheme === 'light') {
         document.body.classList.add('light-theme');
         document.getElementById('themeToggleBtn').textContent = '☀️';
       }
 
-      // Check last visited day
       const lastDay = parseInt(localStorage.getItem('nextsem_css_last_day') || '1', 10);
       const initialIdx = DAYS_DATA.findIndex(d => d.day === lastDay);
       currentDayIndex = initialIdx !== -1 ? initialIdx : 0;
@@ -1054,11 +1025,9 @@ ${JSON.stringify(days)}
       loadDay(currentDayIndex);
       updateProgressPill();
 
-      // Load 117 tips in background for tips view
       loadTipsData();
     });
 
-    // ── PROGRESS TRACKER ──
     function updateProgressPill() {
       const total = DAYS_DATA.length;
       const done = completedDays.length;
@@ -1096,7 +1065,6 @@ ${JSON.stringify(days)}
       }
     }
 
-    // ── DAYS SIDEBAR RENDER ──
     function renderDaysSidebar() {
       const container = document.getElementById('daysListContainer');
       const query = (document.getElementById('daysSearchInput')?.value || '').toLowerCase();
@@ -1105,7 +1073,7 @@ ${JSON.stringify(days)}
         const matchesWeek = activeWeekFilter === 'all' || item.week === activeWeekFilter;
         const matchesQuery = !query || 
           item.title.toLowerCase().includes(query) || 
-          item.hindiTitle.toLowerCase().includes(query) ||
+          item.subtitle.toLowerCase().includes(query) ||
           \`day \${item.day}\`.includes(query);
         return matchesWeek && matchesQuery;
       });
@@ -1121,7 +1089,7 @@ ${JSON.stringify(days)}
             <span class="day-badge-num">D\${paddedDay}</span>
             <div class="day-item-meta">
               <div class="day-item-title">\${item.title}</div>
-              <div class="day-item-hindi">\${item.hindiTitle}</div>
+              <div class="day-item-sub">\${item.subtitle}</div>
               <div class="day-item-time">⏱️ \${item.time}</div>
             </div>
             <button class="day-check-btn \${isDone ? 'checked' : ''}" onclick="event.stopPropagation(); toggleDayDoneFromList(\${item.day})">
@@ -1155,7 +1123,6 @@ ${JSON.stringify(days)}
       }
     }
 
-    // ── LOAD DAY WORKSPACE ──
     function loadDay(index) {
       const day = DAYS_DATA[index];
       if (!day) return;
@@ -1165,13 +1132,12 @@ ${JSON.stringify(days)}
       const padded = day.day < 10 ? '0' + day.day : day.day;
       document.getElementById('currentDayBadge').textContent = \`Day \${padded} • \${day.weekTitle}\`;
       document.getElementById('currentDayTitle').textContent = day.title;
-      document.getElementById('currentDayHindi').textContent = day.hindiTitle;
+      document.getElementById('currentDaySubtitle').textContent = day.subtitle;
       document.getElementById('currentAnalogy').textContent = day.analogy;
       document.getElementById('currentConcept').textContent = day.concept;
       document.getElementById('currentProTip').textContent = day.proTip;
       document.getElementById('currentChallenge').textContent = day.challenge;
 
-      // Key points
       const keyPointsList = document.getElementById('currentKeyPointsList');
       keyPointsList.innerHTML = day.keyPoints.map(kp => \`
         <li class="key-point-item">
@@ -1180,11 +1146,9 @@ ${JSON.stringify(days)}
         </li>
       \`).join('');
 
-      // Nav buttons state
       document.getElementById('prevDayBtn').disabled = index === 0;
       document.getElementById('nextDayBtn').disabled = index === DAYS_DATA.length - 1;
 
-      // Reset code states
       currentEditedCss = day.starterCss;
       currentEditedHtml = day.starterHtml;
 
@@ -1253,6 +1217,8 @@ ${JSON.stringify(days)}
               justify-content: center;
               min-height: 100vh;
               background-color: transparent;
+              color: #f8fafc;
+              font-family: system-ui, sans-serif;
               box-sizing: border-box;
             }
             \${currentEditedCss}
@@ -1281,7 +1247,6 @@ ${JSON.stringify(days)}
       renderDaysSidebar();
     }
 
-    // ── TOP VIEW SWITCHER ──
     function switchView(viewName) {
       document.getElementById('viewDaysSection').classList.toggle('active-view', viewName === 'days');
       document.getElementById('viewTipsSection').classList.toggle('active-view', viewName === 'tips');
@@ -1292,7 +1257,6 @@ ${JSON.stringify(days)}
       document.getElementById('tabViewProjects').classList.toggle('active', viewName === 'projects');
     }
 
-    // ── THEME TOGGLE ──
     function toggleTheme() {
       const isLight = document.body.classList.toggle('light-theme');
       document.getElementById('themeToggleBtn').textContent = isLight ? '☀️' : '🌙';
@@ -1301,7 +1265,6 @@ ${JSON.stringify(days)}
       if (allTips.length > 0) renderTipPreview();
     }
 
-    // ── 117+ TIPS INTEGRATION (VIEW 2) ──
     async function loadTipsData() {
       try {
         let res;
@@ -1393,7 +1356,7 @@ ${JSON.stringify(days)}
               min-height: 100vh;
               background-color: transparent;
               color: white;
-              font-family: sans-serif;
+              font-family: system-ui, sans-serif;
             }
             \${tip.cssCode || ''}
           </style>
@@ -1423,4 +1386,4 @@ ${JSON.stringify(days)}
 `;
 
 fs.writeFileSync(path.join(__dirname, 'index.html'), htmlContent, 'utf-8');
-console.log('Successfully generated complete Day-Wise index.html in c:\\Users\\Manoj\\nextsemorg\\css\\index.html');
+console.log('Successfully regenerated 100% English index.html');
