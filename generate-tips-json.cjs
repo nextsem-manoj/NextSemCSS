@@ -58,3 +58,4 @@ const tips = folders.map(folder => {
 
 fs.writeFileSync(path.join(cssDir, 'tips.json'), JSON.stringify(tips, null, 2), 'utf-8');
 console.log('Successfully generated ' + tips.length + ' tips into ' + path.join(cssDir, 'tips.json'));
+
