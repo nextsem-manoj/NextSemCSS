@@ -1,7 +1,7 @@
 [
   {
     "id": "AlignText",
-    "name": "lign ext",
+    "name": "Align Text",
     "category": "Typography & Text",
     "path": "./tips/AlignText/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Align Text</title>\n</head>\n<body>\n    <p>Lorem ipsum dolor sit amet, consectetur \n        adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n    </p>\n</body>\n\n</html>",
@@ -9,7 +9,7 @@
   },
   {
     "id": "AnimationHand",
-    "name": "nimation and",
+    "name": "Animation Hand",
     "category": "Animations & Loaders",
     "path": "./tips/AnimationHand/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Animation Hand</title>\n</head>\n\n<body>\n  <h1><span>🐣</span> Panchi! 🐣</h1>\n</body>\n\n</html>",
@@ -17,7 +17,7 @@
   },
   {
     "id": "AutocompleteInput",
-    "name": "utocomplete nput",
+    "name": "Autocomplete Input",
     "category": "Forms & Inputs",
     "path": "./tips/AutocompleteInput/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Autocomplete Input</title>\n</head>\n<body> \n  <label>Lenguajes:</label>\n  <input type=\"text\" list=\"lista\">\n\n  <datalist id=\"lista\">\n    <!-- <option value=\"JavaScript\"></option>\n    <option value=\"Python\"></option>\n    <option value=\"Java\"></option>\n    <option value=\"C#\"></option> -->\n  </datalist>\n  \n  <script>\n    const callApi = async () => {\n      const data = await fetch(\"https://dog.ceo/api/breeds/list\");\n      const dataJson = await data.json();\n      //console.log(dataJson.message);\n      let lista = document.querySelector(\"#lista\");\n      console.log(lista);\n      dataJson.message.forEach(item => {\n        let element = document.createElement(\"option\");\n        element.value = item;\n        //console.log(element);\n        lista.appendChild(element);\n      });\n    }\n    callApi();\n\n  </script>\n</body>\n\n</html>",
@@ -25,7 +25,7 @@
   },
   {
     "id": "BentoGridCard",
-    "name": "ento rid ard",
+    "name": "Bento Grid Card",
     "category": "Layout & Flexbox",
     "path": "./tips/BentoGridCard/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Bento Grid Modern Layout</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"bento-container\">\n    <div class=\"bento-item featured\">\n      <span class=\"tag\">Flagship</span>\n      <h3>AI Design Engine</h3>\n      <p>Generative layouts, automated palettes, and instantaneous code export.</p>\n    </div>\n    <div class=\"bento-item stat-item\">\n      <div class=\"num\">99.9%</div>\n      <div class=\"lbl\">Uptime SLA</div>\n    </div>\n    <div class=\"bento-item stat-item\">\n      <div class=\"num\">107+</div>\n      <div class=\"lbl\">CSS Components</div>\n    </div>\n  </div>\n</body>\n</html>\n",
@@ -33,7 +33,7 @@
   },
   {
     "id": "BgGradientAnimated",
-    "name": "g radient nimated",
+    "name": "Bg Gradient Animated",
     "category": "Backgrounds & Gradients",
     "path": "./tips/BgGradientAnimated/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Background Gradient Animated</title>\n</head>\n\n<body>\n  <div class=\"bg-gradient\"></div>\n</body>\n\n</html>",
@@ -41,7 +41,7 @@
   },
   {
     "id": "BgImageText",
-    "name": "g mage ext",
+    "name": "Bg Image Text",
     "category": "Backgrounds & Gradients",
     "path": "./tips/BgImageText/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Bg Image</title>\n</head>\n\n<body>\n  <h2 class=\"text\">BgImage</h2>\n  <h2 class=\"text\">Flag</h2>\n</body>\n\n</html>",
@@ -49,7 +49,7 @@
   },
   {
     "id": "BgProperties",
-    "name": "g roperties",
+    "name": "Bg Properties",
     "category": "Backgrounds & Gradients",
     "path": "./tips/BgProperties/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Bg with CSS</title>\n</head>\n<body>\n    <div class=\"bg-image\">\n        <h3>Title</h3>\n        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora maxime deserunt ea corrupti sequi dignissimos voluptate asperiores</p>\n    </div>\n</body>\n\n</html>",
@@ -57,7 +57,7 @@
   },
   {
     "id": "BgTextAnimado",
-    "name": "g ext nimado",
+    "name": "Bg Text Animado",
     "category": "Backgrounds & Gradients",
     "path": "./tips/BgTextAnimado/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Bg Text Animado</title>\n</head>\n\n<body>\n  <h2>BLACKCODE</h2>\n</body>\n\n</html>",
@@ -65,7 +65,7 @@
   },
   {
     "id": "BlurImage",
-    "name": "lur mage",
+    "name": "Blur Image",
     "category": "Images & Media",
     "path": "./tips/BlurImage/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Image Blur</title>\n</head>\n<body>\n<div class=\"bg-box\">\n    <div class=\"glass\">\n        <p>Merry Christmas</p>\n    </div>\n</div>\n</body>\n\n</html>",
@@ -73,7 +73,7 @@
   },
   {
     "id": "BorderAnimation",
-    "name": "order nimation",
+    "name": "Border Animation",
     "category": "Animations & Loaders",
     "path": "./tips/BorderAnimation/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border Animation</title>\n</head>\n<body>\n\n<div class=\"box\">Content</div>\n\n</body>\n\n</html>",
@@ -81,7 +81,7 @@
   },
   {
     "id": "BorderGradient",
-    "name": "order radient",
+    "name": "Border Gradient",
     "category": "Backgrounds & Gradients",
     "path": "./tips/BorderGradient/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border Gradient</title>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n\n</html>",
@@ -89,7 +89,7 @@
   },
   {
     "id": "BorderGradient02",
-    "name": "order radient02",
+    "name": "Border Gradient02",
     "category": "Backgrounds & Gradients",
     "path": "./tips/BorderGradient02/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border Gradient 02</title>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n</html>",
@@ -97,7 +97,7 @@
   },
   {
     "id": "BorderHover",
-    "name": "order over",
+    "name": "Border Hover",
     "category": "Layout & Flexbox",
     "path": "./tips/BorderHover/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border Hover</title>\n</head>\n<body>\n  <div class=\"profile\"></div>\n</body>\n\n</html>",
@@ -105,7 +105,7 @@
   },
   {
     "id": "BorderVsOutline",
-    "name": "order s utline",
+    "name": "Border Vs Outline",
     "category": "Layout & Flexbox",
     "path": "./tips/BorderVsOutline/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border vs Outline</title>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n\n</html>",
@@ -113,7 +113,7 @@
   },
   {
     "id": "BoxShadow",
-    "name": "ox hadow",
+    "name": "Box Shadow",
     "category": "Borders & Shadows",
     "path": "./tips/BoxShadow/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Box Shadow</title>\n</head>\n<body>\n    <div class=\"box\"></div>\n</body>\n\n</html>",
@@ -121,7 +121,7 @@
   },
   {
     "id": "BoxShadowImage",
-    "name": "ox hadow mage",
+    "name": "Box Shadow Image",
     "category": "Images & Media",
     "path": "./tips/BoxShadowImage/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Drop Shadow to Image</title>\n</head>\n<body>\n    <img src=\"./images/rick-sanchez.png\">\n</body>\n\n</html>",
@@ -129,7 +129,7 @@
   },
   {
     "id": "BtnAnimation",
-    "name": "tn nimation",
+    "name": "Btn Animation",
     "category": "Buttons & Hovers",
     "path": "./tips/BtnAnimation/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Background Rainbow Animation</title>\n</head>\n<body>\n  <a href=\"#\">Boton</a> <br>\n</body>\n\n</html>",
@@ -137,7 +137,7 @@
   },
   {
     "id": "BtnStyle",
-    "name": "tn tyle",
+    "name": "Btn Style",
     "category": "Buttons & Hovers",
     "path": "./tips/BtnStyle/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Style BTN</title>\n</head>\n<body>\n    <a href=\"#\">Enviar Email</a>\n</body>\n\n</html>",
@@ -145,7 +145,7 @@
   },
   {
     "id": "CardClickable",
-    "name": "ard lickable",
+    "name": "Card Clickable",
     "category": "UI Components & Misc",
     "path": "./tips/CardClickable/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Card Clickable</title>\n</head>\n\n<body>\n  <div class=\"card\">\n    <a href=\"#\"></a>\n    <h2>Title</h2>\n    <p>\n      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, expedita? voluptatibus eaque.\n    </p>\n  </div>\n\n</body>\n\n</html>",
@@ -153,7 +153,7 @@
   },
   {
     "id": "CaseInsensitive",
-    "name": "ase nsensitive",
+    "name": "Case Insensitive",
     "category": "UI Components & Misc",
     "path": "./tips/CaseInsensitive/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Case Insensitive</title>\n</head>\n\n<body>\n  <a href=\"namePdf.pdf\">pdf link</a> <br>\n  <a href=\"namePdf.PDF\">pdf link</a> <br>\n  <a href=\"namePdf.zip\">pdf link</a> <br>\n</body>\n\n</html>",
@@ -161,7 +161,7 @@
   },
   {
     "id": "CenterDiv01",
-    "name": "enter iv01",
+    "name": "Center Div01",
     "category": "Layout & Flexbox",
     "path": "./tips/CenterDiv01/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Center DIV 01</title>\n</head>\n<body>\n    <section>\n        <div class=\"box\">Content</div>\n    </section>\n</body>\n\n</html>",
@@ -169,7 +169,7 @@
   },
   {
     "id": "CenterDivPosition",
-    "name": "enter iv osition",
+    "name": "Center Div Position",
     "category": "Layout & Flexbox",
     "path": "./tips/CenterDivPosition/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Center Div Position</title>\n</head>\n<body>\n  <section>\n    <div class=\"box\">content</div>\n  </section>\n</body>\n\n</html>",
@@ -177,7 +177,7 @@
   },
   {
     "id": "CheckBox",
-    "name": "heck ox",
+    "name": "Check Box",
     "category": "Forms & Inputs",
     "path": "./tips/CheckBox/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Check box</title>\n</head>\n<body>\n  <input class=\"check\" type=\"checkbox\" >\n  <span></span>\n  <!-- 😀 😔 -->\n</body>\n\n</html>",
@@ -185,7 +185,7 @@
   },
   {
     "id": "CheckBoxCustom",
-    "name": "heck ox ustom",
+    "name": "Check Box Custom",
     "category": "Forms & Inputs",
     "path": "./tips/CheckBoxCustom/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Custom Checkbox</title>\n</head>\n\n<body>\n  <label>\n    <input type=\"checkbox\">\n    Checkbox\n  </label>\n</body>\n\n</html>",
@@ -193,7 +193,7 @@
   },
   {
     "id": "ColorCursor",
-    "name": "olor ursor",
+    "name": "Color Cursor",
     "category": "UI Components & Misc",
     "path": "./tips/ColorCursor/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Color Cursor</title>\n</head>\n<body>\n    <textarea > </textarea>\n</body>\n\n</html>",
@@ -201,7 +201,7 @@
   },
   {
     "id": "ColorInput",
-    "name": "olor nput",
+    "name": "Color Input",
     "category": "Forms & Inputs",
     "path": "./tips/ColorInput/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Accent Color</title>\n</head>\n<body>\n  <form>\n    <label>Checkbox:</label>\n    <input type=\"checkbox\"><br>\n    <label>Radio1:</label>\n    <input type=\"radio\" name=\"test\">\n    <label>Radio2:</label>\n    <input type=\"radio\" name=\"test\"><br>\n    <label>Range:</label>\n    <input type=\"range\"><br>\n  </form>\n</body>\n\n</html>",
@@ -209,7 +209,7 @@
   },
   {
     "id": "ColorMixOklch",
-    "name": "olor ix klch",
+    "name": "Color Mix Oklch",
     "category": "Backgrounds & Gradients",
     "path": "./tips/ColorMixOklch/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Modern CSS color-mix() in OKLCH</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"swatches-container\">\n    <div class=\"swatch s-base\">Base (#38bdf8)</div>\n    <div class=\"swatch s-25\">color-mix 25%</div>\n    <div class=\"swatch s-50\">color-mix 50%</div>\n    <div class=\"swatch s-75\">color-mix 75%</div>\n    <div class=\"swatch s-target\">Target (#ec4899)</div>\n  </div>\n</body>\n</html>\n",
@@ -217,7 +217,7 @@
   },
   {
     "id": "ColumnDivider",
-    "name": "olumn ivider",
+    "name": "Column Divider",
     "category": "Layout & Flexbox",
     "path": "./tips/ColumnDivider/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Three Columns</title>\n</head>\n<body>\n    <p>It was the best of times, it was the worst\n       of times, it was the age of wisdom, it was \n       the age of foolishness, it was the epoch of belief, it was the </p>\n</body>\n\n</html>",
@@ -225,7 +225,7 @@
   },
   {
     "id": "ContainerQueries",
-    "name": "ontainer ueries",
+    "name": "Container Queries",
     "category": "Layout & Flexbox",
     "path": "./tips/ContainerQueries/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Container Queries Responsive Card</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"resize-wrapper\">\n    <div class=\"card-container\">\n      <div class=\"card\">\n        <div class=\"card-media\">🎨</div>\n        <div class=\"card-content\">\n          <span class=\"badge\">Modern CSS</span>\n          <h3>Container Queries</h3>\n          <p>This card adapts its layout based on its container's width, not the viewport! Resize the wrapper to see the transformation.</p>\n          <button class=\"btn\">Explore Now</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n</html>\n",
@@ -233,7 +233,7 @@
   },
   {
     "id": "CopyClipboard",
-    "name": "opy lipboard",
+    "name": "Copy Clipboard",
     "category": "UI Components & Misc",
     "path": "./tips/CopyClipboard/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Copy Clipboard</title>\n</head>\n\n<body>\n\n<input type=\"text\" class=\"input\">\n<button onclick=\"copyToClipboard()\">\n  Copiar al Portapapeles\n</button>\n\n<script>\n  function copyToClipboard(){\n    const copyText = document.querySelector('.input');\n    \n    copyText.select();\n    //document.execCommand('copy');\n    navigator.clipboard.writeText(copyText.value);\n\n  }\n</script>\n\n</body>\n</html>",
@@ -241,7 +241,7 @@
   },
   {
     "id": "Counter",
-    "name": "ounter",
+    "name": "Counter",
     "category": "UI Components & Misc",
     "path": "./tips/Counter/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Counter JS</title>\n</head>\n\n<body>\n  <h2>\n    <span class=\"count\">0</span>+\n  </h2>\n</body>\n<script>\n  let count = document.querySelector(\".count\");\n  let counter = 0;\n  let interval = setInterval(()=>{\n    if (counter < 200) {\n      counter++;\n      count.innerText = counter;\n    } else {\n      clearInterval(interval)\n    }\n    console.log('test');\n  }, 10)\n</script>\n\n\n</html>",
@@ -249,7 +249,7 @@
   },
   {
     "id": "CursorFollower",
-    "name": "ursor ollower",
+    "name": "Cursor Follower",
     "category": "UI Components & Misc",
     "path": "./tips/CursorFollower/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Cursor Follower</title>\n</head>\n<body>\n  <div class=\"cursor\"></div>\n</body>\n<script>\n  document.addEventListener('mousemove', (e) => {\n    const xPos = e.pageX;\n    const yPos = e.pageY;\n    let m = document.querySelector('.cursor')\n    m.style.left = xPos+'px'; \n    m.style.top = yPos+'px'; \n  })\n</script>\n\n</html>",
@@ -257,7 +257,7 @@
   },
   {
     "id": "CursorPersonalizado",
-    "name": "ursor ersonalizado",
+    "name": "Cursor Personalizado",
     "category": "UI Components & Misc",
     "path": "./tips/CursorPersonalizado/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Cursor Personalizado</title>\n</head>\n<body>\n    <button>Test Cursor</button>\n</body>\n\n</html>",
@@ -265,7 +265,7 @@
   },
   {
     "id": "CursorTypes",
-    "name": "ursor ypes",
+    "name": "Cursor Types",
     "category": "UI Components & Misc",
     "path": "./tips/CursorTypes/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Cursor Types</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div class=\"cr-waiting\">Waiting</div>\n\t<div class=\"cr-help\">Get help</div>\n\t<div class=\"cr-crosshair\">Crosshair</div>\n\t<div class=\"cr-grab\">Grab</div>\n</body>\n\n</html>",
@@ -273,7 +273,7 @@
   },
   {
     "id": "CustomRadioButon",
-    "name": "ustom adio uton",
+    "name": "Custom Radio Buton",
     "category": "Forms & Inputs",
     "path": "./tips/CustomRadioButon/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Custom Radio Button</title>\n</head>\n<body>\n  <form>\n    <label>Radio1:</label>\n    <input type=\"radio\" name=\"test\">\n    <label>Radio2:</label>\n    <input type=\"radio\" name=\"test\"><br>\n  </form>\n</body>\n\n</html>",
@@ -281,7 +281,7 @@
   },
   {
     "id": "DestacarPrimeraLetra",
-    "name": "estacar rimera etra",
+    "name": "Destacar Primera Letra",
     "category": "UI Components & Misc",
     "path": "./tips/DestacarPrimeraLetra/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Destacar Primera Letra</title>\n</head>\n<body>\n    <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. \n        Asperiores laborum amet cumque dolore facere praesentium\n    </p>\n</body>\n</html>",
@@ -289,7 +289,7 @@
   },
   {
     "id": "DisplayAttr",
-    "name": "isplay ttr",
+    "name": "Display Attr",
     "category": "UI Components & Misc",
     "path": "./tips/DisplayAttr/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Display Attributes</title>\n</head>\n<body>\n  <span data=\"Black\">Code 💻</span>\n</body>\n\n</html>",
@@ -297,7 +297,7 @@
   },
   {
     "id": "DownloadBtn",
-    "name": "ownload tn",
+    "name": "Download Btn",
     "category": "Buttons & Hovers",
     "path": "./tips/DownloadBtn/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Download Button</title>\n</head>\n\n<body>\n  <a href=\"abstract.jpeg\" download=\"NewImage\">\n    Download\n  </a>\n</body>\n\n</html>",
@@ -305,7 +305,7 @@
   },
   {
     "id": "Ellipsis Multiline",
-    "name": "llipsis  ultiline",
+    "name": "Ellipsis  Multiline",
     "category": "UI Components & Misc",
     "path": "./tips/Ellipsis Multiline/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 01</title>\n</head>\n<body>\n  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, iure? Voluptatem necessitatibus praesentium culpa rem odit neque facilis, hic quisquam, incidunt nobis omnis, laborum molestias voluptas eaque vitae eligendi ratione!\n  </p>\n</body>\n\n</html>",
@@ -313,7 +313,7 @@
   },
   {
     "id": "EnumerarTitulos",
-    "name": "numerar itulos",
+    "name": "Enumerar Titulos",
     "category": "UI Components & Misc",
     "path": "./tips/EnumerarTitulos/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Enumerar Headings</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div class=\"titulos\">\n        <h1>Título unoff</h1>\n        <h1>Título dos</h1>\n        <h1>Título tres</h1>\n        <h1>Título cuatro</h1>\n    </div>\n   \n</body>\n\n</html>",
@@ -321,7 +321,7 @@
   },
   {
     "id": "ExpandTag",
-    "name": "xpand ag",
+    "name": "Expand Tag",
     "category": "UI Components & Misc",
     "path": "./tips/ExpandTag/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Expand Tag</title>\n</head>\n<body>\n  <details>\n    <summary>\n      Read more:\n    </summary>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta obcaecati deleniti quia, saepe nostrum incidunt, dicta \n  </details>\n\n  <details>\n    <summary>\n      Read more:\n    </summary>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.\n  </details>\n</body>\n\n</html>",
@@ -329,7 +329,7 @@
   },
   {
     "id": "FiltrosCSS",
-    "name": "iltros",
+    "name": "Filtros C S S",
     "category": "UI Components & Misc",
     "path": "./tips/FiltrosCSS/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <title>Filter CSS</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div class=\"image\">\n        <img src=\"./images/jungle.jpg\" alt=\"jngle image\" width=\"400\" height=\"300\">\n    </div>\n</body>\n</html>",
@@ -337,7 +337,7 @@
   },
   {
     "id": "FormaCircular",
-    "name": "orma ircular",
+    "name": "Forma Circular",
     "category": "Forms & Inputs",
     "path": "./tips/FormaCircular/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Forma circular border-radius</title>\n</head>\n<body>\n    <img src=\"./images/dunas.jpg\" alt=\"dunas\">\n   \n</body>\n\n</html>",
@@ -345,7 +345,7 @@
   },
   {
     "id": "GlassmorphismCard",
-    "name": "lassmorphism ard",
+    "name": "Glassmorphism Card",
     "category": "Borders & Shadows",
     "path": "./tips/GlassmorphismCard/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Modern Glassmorphism Card</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"glass-scene\">\n    <div class=\"orb orb-1\"></div>\n    <div class=\"orb orb-2\"></div>\n    <div class=\"glass-card\">\n      <div class=\"icon\">✨</div>\n      <h3>Glassmorphism 2.0</h3>\n      <p>Multi-layered frosted glass with backdrop-filter, inner highlight borders, and dynamic blurred neon glow.</p>\n      <button class=\"glass-btn\">Explore Component</button>\n    </div>\n  </div>\n</body>\n</html>\n",
@@ -353,7 +353,7 @@
   },
   {
     "id": "GlitchEffect",
-    "name": "litch ffect",
+    "name": "Glitch Effect",
     "category": "Animations & Loaders",
     "path": "./tips/GlitchEffect/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Glitch Effect</title>\n</head>\n<body>\n  <p>GLITCH</p>\n</body>\n\n</html>",
@@ -361,7 +361,7 @@
   },
   {
     "id": "HasSelectorParent",
-    "name": "as elector arent",
+    "name": "Has Selector Parent",
     "category": "Modern CSS Specs",
     "path": "./tips/HasSelectorParent/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS :has() Relational Selector</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"cards-grid\">\n    <label class=\"item-card\">\n      <input type=\"checkbox\" class=\"card-check\">\n      <div class=\"card-body\">\n        <h4>Pro Subscription</h4>\n        <p>Full access to 100+ CSS components & studios.</p>\n        <span class=\"price\">$19/mo</span>\n      </div>\n    </label>\n\n    <label class=\"item-card\">\n      <input type=\"checkbox\" class=\"card-check\">\n      <div class=\"card-body\">\n        <h4>Enterprise Cloud</h4>\n        <p>Dedicated team servers & custom themes.</p>\n        <span class=\"price\">$49/mo</span>\n      </div>\n    </label>\n  </div>\n</body>\n</html>\n",
@@ -369,7 +369,7 @@
   },
   {
     "id": "HeartAnimation",
-    "name": "eart nimation",
+    "name": "Heart Animation",
     "category": "Animations & Loaders",
     "path": "./tips/HeartAnimation/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Heart Animation</title>\n</head>\n<body>\n  <div class=\"heart\">❤️</div>\n</body>\n\n</html>",
@@ -377,7 +377,7 @@
   },
   {
     "id": "Hover-v1",
-    "name": "over-v1",
+    "name": "Hover-v1",
     "category": "UI Components & Misc",
     "path": "./tips/Hover-v1/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Hover V1</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <h2>EXAMPLE HOVER</h2>\n</body>\n\n</html>",
@@ -385,7 +385,7 @@
   },
   {
     "id": "HoverBtn01",
-    "name": "over tn01",
+    "name": "Hover Btn01",
     "category": "Buttons & Hovers",
     "path": "./tips/HoverBtn01/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 01</title>\n</head>\n<body>\n  <a href=\"#\">Hover 01</a>\n</body>\n\n</html>",
@@ -393,7 +393,7 @@
   },
   {
     "id": "HoverBtn02",
-    "name": "over tn02",
+    "name": "Hover Btn02",
     "category": "Buttons & Hovers",
     "path": "./tips/HoverBtn02/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 02</title>\n</head>\n<body>\n  <a href=\"#\">Hover 02</a>\n</body>\n\n</html>",
@@ -401,7 +401,7 @@
   },
   {
     "id": "HoverBtn03",
-    "name": "over tn03",
+    "name": "Hover Btn03",
     "category": "Buttons & Hovers",
     "path": "./tips/HoverBtn03/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 03</title>\n</head>\n<body>\n  <a href=\"#\">HOVER 03</a>\n</body>\n\n</html>",
@@ -409,7 +409,7 @@
   },
   {
     "id": "HoverBtnRipple",
-    "name": "over tn ipple",
+    "name": "Hover Btn Ripple",
     "category": "Buttons & Hovers",
     "path": "./tips/HoverBtnRipple/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover btn ripple</title>\n</head>\n\n<body>\n  <a href=\"#\" class=\"btn\">\n    <span>Button</span>\n  </a>\n  <script src=\"custom.js\"></script>\n</body>\n\n</html>",
@@ -417,7 +417,7 @@
   },
   {
     "id": "HoverDosImagenes",
-    "name": "over os magenes",
+    "name": "Hover Dos Imagenes",
     "category": "Images & Media",
     "path": "./tips/HoverDosImagenes/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Hover Images</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div class=\"contenedor\">\n        <img src=\"./images/dunas.jpg\" />\n        <img class=\"over\" src=\"./images/sea.jpg\" />\n    </div>\n</body>\n\n</html>",
@@ -425,7 +425,7 @@
   },
   {
     "id": "HoverImageScale",
-    "name": "over mage cale",
+    "name": "Hover Image Scale",
     "category": "Images & Media",
     "path": "./tips/HoverImageScale/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover Scale Image</title>\n</head>\n<body>\n  <div class=\"card\">\n    <img src=\"./controller.png\" alt=\"image\">\n  </div>\n</body>\n\n</html>",
@@ -433,7 +433,7 @@
   },
   {
     "id": "HoverZoonImages",
-    "name": "over oon mages",
+    "name": "Hover Zoon Images",
     "category": "Images & Media",
     "path": "./tips/HoverZoonImages/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover Images</title>\n</head>\n<body>\n<div class=\"container\">\n  <div class=\"card\">\n    <img src=\"./one.jpg\" alt=\"...\">\n  </div>\n  <div class=\"card\">\n    <img src=\"./two2.jpg\" alt=\"...\">\n  </div>\n  <div class=\"card\">\n    <img src=\"./three.jpg\" alt=\"...\">\n  </div>\n  <div class=\"card\">\n    <img src=\"./four.jpg\" alt=\"...\">\n  </div>\n</div>\n</body>\n\n</html>",
@@ -441,7 +441,7 @@
   },
   {
     "id": "Href",
-    "name": "ref",
+    "name": "Href",
     "category": "UI Components & Misc",
     "path": "./tips/Href/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>::empty</title>\n</head>\n<body>\n  <section>\n    <a href=\"https://google.com/\">\n      Google\n    </a>                                           </br>\n    <a href=\"https://google.com/\"></a>\n  </section>\n</body>\n</html>",
@@ -449,7 +449,7 @@
   },
   {
     "id": "IconListImages",
-    "name": "con ist mages",
+    "name": "Icon List Images",
     "category": "Images & Media",
     "path": "./tips/IconListImages/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Image Icon List</title>\n</head>\n<body>\n  <ul>\n    <li>Example list 1</li>\n    <li>Example list 2</li>\n    <li>Example list 3</li>\n    <li>Example list 4</li>\n    <li>Example list 4</li>\n    <li>Example list 4</li>\n  </ul>\n</body>\n\n</html>",
@@ -457,7 +457,7 @@
   },
   {
     "id": "ImageCircle",
-    "name": "mage ircle",
+    "name": "Image Circle",
     "category": "Images & Media",
     "path": "./tips/ImageCircle/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Shape Circle</title>\n</head>\n<body>\n  <div class=\"circle\">\n    <img src=\"./aple.png\" alt=\"aple\">\n  </div>\n  <p>Lorem ipsum dolor, sit amet consec tetur adipi sicLorem ipsum dolor, sit amet consec tetur adipi sim ipsum dolor, sit amet consectetur adipisim ipsum dolor, sit amet consec tetur adipi sicing elit. Enim omnis veniam facilis autem, ipsa doloribus dolor quasi repre henderit quod in quis atque facere consec tetur iste? Ipsam dolorum dignissimos facere ad! Lorem ipsum dolor, sit amet consec tetur adipisic Lorem ipsum \n  </p>\n</body>\n\n</html>",
@@ -465,7 +465,7 @@
   },
   {
     "id": "ImagePreview",
-    "name": "mage review",
+    "name": "Image Preview",
     "category": "Images & Media",
     "path": "./tips/ImagePreview/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Image Preview</title>\n</head>\n<body>\n  <img id=\"preview\" \n    src=\"./preview.jpg\" \n    height=\"200\"\n  > <br>\n  <input type=\"file\" id=\"input\">\n\n  <script>\n    let img = document.querySelector(\"#preview\")\n    let file = document.querySelector(\"#input\")\n\n    file.onchange = (e) => {\n      if (file.files[0]) {\n        img.src = URL.createObjectURL(\n          file.files[0]\n        )\n      }\n    }\n  </script>\n</body>\n\n</html>",
@@ -473,7 +473,7 @@
   },
   {
     "id": "ImagenEspejo",
-    "name": "magen spejo",
+    "name": "Imagen Espejo",
     "category": "Images & Media",
     "path": "./tips/ImagenEspejo/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Image Espejo</title>\n</head>\n<body>\n    <img src=\"./images/rick-sanchez.png\">\n    <img src=\"./images/arrow-right.png\">\n</body>\n\n</html>",
@@ -481,7 +481,7 @@
   },
   {
     "id": "InputField",
-    "name": "nput ield",
+    "name": "Input Field",
     "category": "Forms & Inputs",
     "path": "./tips/InputField/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Input Custom</title>\n</head>\n<body>\n  <div class=\"box-email\">\n    <input type=\"email\" >\n  </div>\n</body>\n\n</html>",
@@ -489,7 +489,7 @@
   },
   {
     "id": "InputFile",
-    "name": "nput ile",
+    "name": "Input File",
     "category": "Forms & Inputs",
     "path": "./tips/InputFile/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Input File</title>\n</head>\n\n<body>\n  <input type=\"file\" id=\"fileInput\" accept=\".jpg, .png\" multiple required>\n</body>\n\n<script>\n  const file =\n    document.querySelector('#fileInput')\n\n  file.addEventListener('change', (e) => {\n    const files = e.target.files;\n    console.log(files);\n  })\n\n</script>\n\n</html>",
@@ -497,7 +497,7 @@
   },
   {
     "id": "InputShake",
-    "name": "nput hake",
+    "name": "Input Shake",
     "category": "Forms & Inputs",
     "path": "./tips/InputShake/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Invalid Input</title>\n</head>\n<body>\n  <input type=\"text\" pattern=\"[a-z]*\">\n</body>\n\n</html>",
@@ -505,7 +505,7 @@
   },
   {
     "id": "LastOfType",
-    "name": "ast f ype",
+    "name": "Last Of Type",
     "category": "UI Components & Misc",
     "path": "./tips/LastOfType/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Last of Type, First of Type</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <section>\n        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, asperiores.</p>\n        <p>Optio nulla perferendis officiis quo deserunt eum sint saepe praesentium quis aliquam dignissimos</p>\n        <p>quas aperiam vero eius dolorem corporis asperiores?</p>\n        <!-- <img src=\"\" alt=\"\">  -->\n    </section>\n</body>\n\n</html>",
@@ -513,7 +513,7 @@
   },
   {
     "id": "LinearGradient",
-    "name": "inear radient",
+    "name": "Linear Gradient",
     "category": "Backgrounds & Gradients",
     "path": "./tips/LinearGradient/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Linear Gradient</title> \n</head>\n<body>\n    <div class=\"box\"></div>\n</body>\n\n</html>",
@@ -521,7 +521,7 @@
   },
   {
     "id": "LinearGradientRepeat",
-    "name": "inear radient epeat",
+    "name": "Linear Gradient Repeat",
     "category": "Backgrounds & Gradients",
     "path": "./tips/LinearGradientRepeat/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Linear Gradient Reapeat</title>\n</head>\n<body>\n  <div class=\"box-bg\"></div>\n</body>\n\n</html>",
@@ -529,7 +529,7 @@
   },
   {
     "id": "Loader01",
-    "name": "oader01",
+    "name": "Loader01",
     "category": "Animations & Loaders",
     "path": "./tips/Loader01/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Loader 01</title>\n</head>\n<body>\n  <div class=\"loader\"></div>\n</body>\n\n</html>",
@@ -537,7 +537,7 @@
   },
   {
     "id": "Loader02",
-    "name": "oader02",
+    "name": "Loader02",
     "category": "Animations & Loaders",
     "path": "./tips/Loader02/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Loader 3 dots</title>\n</head>\n<body>\n  <div class=\"dots\">\n      <div class=\"dot\"></div>\n      <div class=\"dot\"></div>\n      <div class=\"dot\"></div>\n  </div>\n</body>\n\n</html>",
@@ -545,7 +545,7 @@
   },
   {
     "id": "LoaderClock",
-    "name": "oader lock",
+    "name": "Loader Clock",
     "category": "Animations & Loaders",
     "path": "./tips/LoaderClock/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Clock Loader</title>\n</head>\n<body>\n  <div class=\"loader\"></div>\n</body>\n\n</html>",
@@ -553,7 +553,7 @@
   },
   {
     "id": "MarkerLista",
-    "name": "arker ista",
+    "name": "Marker Lista",
     "category": "UI Components & Misc",
     "path": "./tips/MarkerLista/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Marker li ol</title>\n</head>\n<body>\n  <ul>\n    <li>First item</li>\n    <li>Second item</li>\n    <li>Third item</li>\n    <li>Fourth item</li>\n  </ul>\n</body>\n\n</html>",
@@ -561,7 +561,7 @@
   },
   {
     "id": "MirrorImage",
-    "name": "irror mage",
+    "name": "Mirror Image",
     "category": "Images & Media",
     "path": "./tips/MirrorImage/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Image Mirror</title>\n</head>\n<body>\n  <img src=\"./example.png\" alt=\"rick\">\n  <img src=\"./example.png\" alt=\"rick\">\n</body>\n\n</html>",
@@ -569,7 +569,7 @@
   },
   {
     "id": "Modal",
-    "name": "odal",
+    "name": "Modal",
     "category": "UI Components & Misc",
     "path": "./tips/Modal/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Modal only with CSS</title>\n</head>\n\n<body>\n  <a href=\"#modal\">Open Modal</a>\n  <div id=\"modal\" class=\"new-modal\">\n    <div>\n      <h2>Modal Title</h2>\n      <p>Modal without javascript only with CSS.</p>\n      <a href=\"#close\">Close</a>\n    </div>\n  </div>\n</body>\n\n</html>",
@@ -577,7 +577,7 @@
   },
   {
     "id": "ModernToggleSwitch",
-    "name": "odern oggle witch",
+    "name": "Modern Toggle Switch",
     "category": "Forms & Inputs",
     "path": "./tips/ModernToggleSwitch/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Modern CSS Toggle Switch</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"toggle-card\">\n    <div class=\"toggle-row\">\n      <span>Dark Mode Mode</span>\n      <label class=\"switch\">\n        <input type=\"checkbox\" checked>\n        <span class=\"slider\"></span>\n      </label>\n    </div>\n    <div class=\"toggle-row\">\n      <span>Auto-Save Code</span>\n      <label class=\"switch\">\n        <input type=\"checkbox\">\n        <span class=\"slider\"></span>\n      </label>\n    </div>\n  </div>\n</body>\n</html>\n",
@@ -585,7 +585,7 @@
   },
   {
     "id": "NeonEffect",
-    "name": "eon ffect",
+    "name": "Neon Effect",
     "category": "Typography & Text",
     "path": "./tips/NeonEffect/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  \n    <title>Neon Effect</title>\n</head>\n<body>\n    <div class=\"neon\"></div>\n</body>\n\n\n</html>",
@@ -593,7 +593,7 @@
   },
   {
     "id": "OpacityBox",
-    "name": "pacity ox",
+    "name": "Opacity Box",
     "category": "UI Components & Misc",
     "path": "./tips/OpacityBox/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 01</title>\n</head>\n<body>\n<section>\n    <div class=\"card\"></div>\n    <div class=\"card\"></div>\n    <div class=\"card\"></div>\n    <div class=\"card\"></div>\n</section>\n</body>\n\n</html>",
@@ -601,7 +601,7 @@
   },
   {
     "id": "OpacityImage",
-    "name": "pacity mage",
+    "name": "Opacity Image",
     "category": "Images & Media",
     "path": "./tips/OpacityImage/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Opacity Image</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div>\n        <h4>Title Card</h4>\n        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam in modi quibusdam.</p>\n    </div>\n</body>\n\n</html>",
@@ -609,7 +609,7 @@
   },
   {
     "id": "OrderFlex",
-    "name": "rder lex",
+    "name": "Order Flex",
     "category": "Layout & Flexbox",
     "path": "./tips/OrderFlex/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Flex Order</title>\n</head>\n<body>\n  <div class=\"flex-container\">\n    <div class=\"item c-1\">1</div>\n    <div class=\"item c-2\">2</div>\n    <div class=\"item c-3\">3</div>\n  </div>\n</body>  <!-- FlexBox Order -->\n\n</html>",
@@ -617,7 +617,7 @@
   },
   {
     "id": "Paralax",
-    "name": "aralax",
+    "name": "Paralax",
     "category": "UI Components & Misc",
     "path": "./tips/Paralax/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Paralax</title>\n</head>\n<body>\n  <section>\n    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis numquam nisi corporis tenetur consequuntur voluptatibus? Neque quaerat omnis est! Voluptas quae eligendi iure, aliquid consequuntur amet corrupti odit perferendis explicabo.</p>\n    <div class=\"image\"></div>\n    <p>numquam nisi corporis tenetur consequuntur voluptatibus? Neque quaerat omnis est! Voluptas quae eligendi iure, aliquid consequuntur amet corrupti odit perferendis explicabo.</p>\n  </section>\n</body>\n\n</html>",
@@ -625,7 +625,7 @@
   },
   {
     "id": "ParrafoVertical",
-    "name": "arrafo ertical",
+    "name": "Parrafo Vertical",
     "category": "UI Components & Misc",
     "path": "./tips/ParrafoVertical/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Vertical Word</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <!-- <h2>Vertical Word.</h2> -->\n    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, asperiores. Optio nulla perferendis officiis quo deserunt eum sint saepe praesentium quis aliquam dignissimos, quas aperiam vero eius dolorem corporis asperiores?</p>\n</body>\n\n</html>",
@@ -633,7 +633,7 @@
   },
   {
     "id": "ProfileRotate",
-    "name": "rofile otate",
+    "name": "Profile Rotate",
     "category": "UI Components & Misc",
     "path": "./tips/ProfileRotate/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Profile Image Hover</title>\n</head>\n<body>\n\n  <figure>\n    <img src=\"./profile.jpg\" alt=\"profile\">\n  </figure>\n\n</body>\n\n</html>",
@@ -641,7 +641,7 @@
   },
   {
     "id": "ResposiveColumns",
-    "name": "esposive olumns",
+    "name": "Resposive Columns",
     "category": "Layout & Flexbox",
     "path": "./tips/ResposiveColumns/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 01</title>\n</head>\n<body>\n  <div>\n    <h2>The Title</h2>\n    <p>\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo esse temporibus accusantium iure sint. Dignissimos illum quaerat eveniet placeat, eum error blanditiis quos est hic tenetur quia aliquam corporis maxime?\n    </p>\n  </div>\n</body>\n\n</html>",
@@ -649,7 +649,7 @@
   },
   {
     "id": "ScrollBar",
-    "name": "croll ar",
+    "name": "Scroll Bar",
     "category": "Animations & Loaders",
     "path": "./tips/ScrollBar/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Custon ScrollBar</title>\n</head>\n<body>\n    <div>\n        Lorem ipsum dolor sit amet, consectetur \n        adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n        adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n        adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n    </div>\n</body>\n\n</html>",
@@ -657,7 +657,7 @@
   },
   {
     "id": "ScrollDiv",
-    "name": "croll iv",
+    "name": "Scroll Div",
     "category": "Animations & Loaders",
     "path": "./tips/ScrollDiv/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>overflow scroll</title>\n</head>\n<body>\n  <div>\n    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto \n    de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y estándar de las industrias desde el año.\n  </div>\n</body>\n\n</html>",
@@ -665,7 +665,7 @@
   },
   {
     "id": "ScrollDrivenAnimation",
-    "name": "croll riven nimation",
+    "name": "Scroll Driven Animation",
     "category": "Animations & Loaders",
     "path": "./tips/ScrollDrivenAnimation/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Pure CSS Scroll-Driven Animation</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"progress-bar\"></div>\n\n  <div class=\"content-scroll\">\n    <h2>Scroll Down to See Pure CSS Animation</h2>\n    <div class=\"card reveal-card\">🚀 Card 1: Scroll-driven progress bar at top</div>\n    <div class=\"card reveal-card\">⚡ Card 2: animation-timeline: scroll()</div>\n    <div class=\"card reveal-card\">🎨 Card 3: No JavaScript required!</div>\n    <div class=\"card reveal-card\">💎 Card 4: Modern CSS Specification</div>\n  </div>\n</body>\n</html>\n",
@@ -673,7 +673,7 @@
   },
   {
     "id": "ScrollProgressBar",
-    "name": "croll rogress ar",
+    "name": "Scroll Progress Bar",
     "category": "Animations & Loaders",
     "path": "./tips/ScrollProgressBar/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Scroll Progress Bar</title>\n</head>\n\n<body>\n  <div id=\"bar\"></div>\n\n  <script>\n    // Simular contenido en la pagina\n    document.body.appendChild(document.createTextNode(\n      \"Lorem Ipsum Lorem Ipsum \".repeat(1000)));\n\n    // Código necesario para la funcionalidad\n    let bar = document.querySelector('#bar');\n    window.addEventListener('scroll', () => {\n      let max = document.body.scrollHeight - innerHeight;\n      bar.style.width = (pageYOffset / max) * 100 + '%';\n    })\n  </script>\n</body>\n\n</html>",
@@ -681,7 +681,7 @@
   },
   {
     "id": "SearchInput",
-    "name": "earch nput",
+    "name": "Search Input",
     "category": "Forms & Inputs",
     "path": "./tips/SearchInput/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Search Input</title>\n</head>\n<body>\n  <div class=\"search\">\n      <img src=\"./lenss.png\" alt=\"icon\">\n      <input type=\"search\" placeholder=\"search\">\n  </div>\n</body>\n\n</html>",
@@ -689,7 +689,7 @@
   },
   {
     "id": "SeleccionTexto",
-    "name": "eleccion exto",
+    "name": "Seleccion Texto",
     "category": "Typography & Text",
     "path": "./tips/SeleccionTexto/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Seleccionar Texto</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit.\n        Pariatur, doloribus incidunt. Modi asperiores corrupti \n        accusantium beatae corporis iure rem, animi ea velit?\n    </p>\n   \n</body>\n\n</html>",
@@ -697,7 +697,7 @@
   },
   {
     "id": "SeparadorLista",
-    "name": "eparador ista",
+    "name": "Separador Lista",
     "category": "UI Components & Misc",
     "path": "./tips/SeparadorLista/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>:not(:last-child)</title>\n</head>\n<body>\n    <ul>\n        <li>ListOne</li>\n        <li>ListTwo</li>\n        <li>ListThree</li>\n    </ul>\n</body>\n</html>",
@@ -705,7 +705,7 @@
   },
   {
     "id": "Shorthands",
-    "name": "horthands",
+    "name": "Shorthands",
     "category": "UI Components & Misc",
     "path": "./tips/Shorthands/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Shorthands</title>\n</head>\n<body>\n \n<div class=\"Shorthands\">\n  Shorthands\n</div>\n</body>\n\n</html>",
@@ -713,7 +713,7 @@
   },
   {
     "id": "ShowPassword",
-    "name": "how assword",
+    "name": "Show Password",
     "category": "Forms & Inputs",
     "path": "./tips/ShowPassword/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Show Password</title>\n</head>\n\n<body>\n  <label>\n    Password:\n    <input type=\"password\" id=\"field\">\n  </label>\n  <br>\n  <label>\n    Show Password:\n    <input type=\"checkbox\" onclick=\"showPwd()\">\n  </label>\n\n  <script>\n    const showPwd = () => {\n      let input = document.querySelector(\"#field\")\n      if (input.type === \"password\") {\n        input.type = \"text\"\n      } else {\n        input.type = \"password\"\n      }\n    }\n  </script>\n</body>\n\n</html>",
@@ -721,7 +721,7 @@
   },
   {
     "id": "ShowPasswordEye",
-    "name": "how assword ye",
+    "name": "Show Password Eye",
     "category": "Forms & Inputs",
     "path": "./tips/ShowPasswordEye/index.html",
     "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Show Password Eye</title>\n</head>\n\n<body>\n  <div class=\"input-row\">\n    <input type=\"password\" id=\"field\">\n    <p class=\"eye\"><img src=\"eyeclose.svg\"></p>\n  </div>\n\n  <script>\n    const eye = document.querySelector('.eye')\n    eye.addEventListener('click',()=>{\n      showPwd()\n    })\n\n    const icon = document.querySelector('.eye img')\n\n    const showPwd = () => {\n      let input = document.querySelector(\"#field\")\n      if (input.type === \"password\") {\n        input.type = \"text\"\n        icon.setAttribute('src', 'eyeopen.svg')\n      } else {\n        input.type = \"password\"\n        icon.setAttribute('src', 'eyeclose.svg')\n      }\n    }\n  </script>\n</body>\n\n</html>",
@@ -729,7 +729,7 @@
   },
   {
     "id": "SliceEffect",
-    "name": "lice ffect",
+    "name": "Slice Effect",
     "category": "UI Components & Misc",
     "path": "./tips/SliceEffect/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Slice Effect</title>\n</head>\n<body>\n  <div class=\"box\">\n    Description\n  </div>\n</body>\n\n</html>",
@@ -737,7 +737,7 @@
   },
   {
     "id": "Spiner01",
-    "name": "piner01",
+    "name": "Spiner01",
     "category": "Animations & Loaders",
     "path": "./tips/Spiner01/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Spiner</title>\n</head>\n<body>\n  <div class=\"spinner\"></div>\n</body>\n\n</html>",
@@ -745,7 +745,7 @@
   },
   {
     "id": "StartingStyleTransitions",
-    "name": "tarting tyle ransitions",
+    "name": "Starting Style Transitions",
     "category": "Modern CSS Specs",
     "path": "./tips/StartingStyleTransitions/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS @starting-style Entry Transition</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"demo-box\">\n    <button class=\"trigger-btn\" onclick=\"togglePopover()\">Toggle Toast with @starting-style</button>\n    <div class=\"toast\" id=\"myToast\">\n      🎉 Modern CSS @starting-style allows smooth entrance animations from display:none!\n    </div>\n  </div>\n\n  <script>\n    function togglePopover() {\n      const toast = document.getElementById('myToast');\n      toast.classList.toggle('open');\n    }\n  </script>\n</body>\n</html>\n",
@@ -753,7 +753,7 @@
   },
   {
     "id": "SubgridLayout",
-    "name": "ubgrid ayout",
+    "name": "Subgrid Layout",
     "category": "Backgrounds & Gradients",
     "path": "./tips/SubgridLayout/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Grid Subgrid Alignment</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"parent-grid\">\n    <div class=\"card subgrid-card\">\n      <h3>Title 1 (Short)</h3>\n      <p>A quick summary sentence that takes little space.</p>\n      <button>Action</button>\n    </div>\n\n    <div class=\"card subgrid-card\">\n      <h3>Title 2 (Much Longer Multiline Heading to Demonstrate Subgrid Alignment)</h3>\n      <p>This paragraph contains multiple sentences with detailed explanation. Notice how all buttons align on the same line!</p>\n      <button>Action</button>\n    </div>\n  </div>\n</body>\n</html>\n",
@@ -761,7 +761,7 @@
   },
   {
     "id": "SupSub",
-    "name": "up ub",
+    "name": "Sup Sub",
     "category": "UI Components & Misc",
     "path": "./tips/SupSub/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Tags \n    subíndice & superíndice\n  </title>\n</head>\n<body>\n  <h2>CO<sub>2</sub></h2>\n  <h2>E = mc<sup>2</sup></h2>\n</body>\n\n</html>",
@@ -769,7 +769,7 @@
   },
   {
     "id": "Text Decoration",
-    "name": "ext  ecoration",
+    "name": "Text  Decoration",
     "category": "Typography & Text",
     "path": "./tips/Text Decoration/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Text Decoration</title>\n</head>\n<body>\n    <p>\n        Lorem ipsum dolor, modi consequatur voluptates possimus.\n        <a href=\"#\">consectetur adipisicing</a>\n        aperiam atque beatae odit, cupiditate voluptatibus rem \n        <a href=\"#\">aperiam atque beatae odit, cupiditate voluptatibus rem </a>\n    </p>\n   \n</body>\n\n</html>",
@@ -777,7 +777,7 @@
   },
   {
     "id": "TextArea",
-    "name": "ext rea",
+    "name": "Text Area",
     "category": "Typography & Text",
     "path": "./tips/TextArea/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Area</title>\n</head>\n<body>\n  <textarea cols=\"30\" rows=\"10\"></textarea>\n</body>\n\n</html>",
@@ -785,7 +785,7 @@
   },
   {
     "id": "TextGradient",
-    "name": "ext radient",
+    "name": "Text Gradient",
     "category": "Backgrounds & Gradients",
     "path": "./tips/TextGradient/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Gradient</title>\n</head>\n<body>\n  <h2>Gradient Text</h2>\n</body>\n\n</html>",
@@ -793,7 +793,7 @@
   },
   {
     "id": "TextGradientShimmer",
-    "name": "ext radient himmer",
+    "name": "Text Gradient Shimmer",
     "category": "Backgrounds & Gradients",
     "path": "./tips/TextGradientShimmer/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Text Gradient Shimmer</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"shimmer-box\">\n    <h1 class=\"shimmer-text\">Next-Gen CSS Engineering</h1>\n    <p>Pure CSS animated linear-gradient background clipped to text with continuous smooth flow.</p>\n  </div>\n</body>\n</html>\n",
@@ -801,7 +801,7 @@
   },
   {
     "id": "TextHover",
-    "name": "ext over",
+    "name": "Text Hover",
     "category": "Typography & Text",
     "path": "./tips/TextHover/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Hover</title>\n</head>\n<body>\n  <p>Hover</p>\n</body>\n\n</html>",
@@ -809,7 +809,7 @@
   },
   {
     "id": "TextImage",
-    "name": "ext mage",
+    "name": "Text Image",
     "category": "Images & Media",
     "path": "./tips/TextImage/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Texto Image</title>\n</head>\n<body>\n  <p>Simply dummy text of the printing and \n    <img src=\"./images/dunas.jpg\" alt=\"dunas\">\n    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.text ever since the 1500s, when an unknown It has survived not only five centuries, but also the leap into electronic\n  </p>\n</body>\n\n</html>",
@@ -817,7 +817,7 @@
   },
   {
     "id": "TextStroke",
-    "name": "ext troke",
+    "name": "Text Stroke",
     "category": "Typography & Text",
     "path": "./tips/TextStroke/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Stroke</title>\n</head>\n<body>\n  <h1>TITLE</h1>\n</body>\n\n</html>",
@@ -825,7 +825,7 @@
   },
   {
     "id": "TextStyle",
-    "name": "ext tyle",
+    "name": "Text Style",
     "category": "Typography & Text",
     "path": "./tips/TextStyle/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Font Style</title>\n</head>\n<body>\n    <p>This is a example paragraph</p>\n</body>\n\n</html>",
@@ -833,7 +833,7 @@
   },
   {
     "id": "TextTransform",
-    "name": "ext ransform",
+    "name": "Text Transform",
     "category": "Forms & Inputs",
     "path": "./tips/TextTransform/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Text Transform</title>\n</head>\n<body>\n    <h2>Texto De ejemplo</h2>\n</body>\n\n</html>",
@@ -841,7 +841,7 @@
   },
   {
     "id": "Toggle",
-    "name": "oggle",
+    "name": "Toggle",
     "category": "UI Components & Misc",
     "path": "./tips/Toggle/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Toggle</title>\n  <script src=\"./custom.js\" defer></script>\n</head>\n<body>\n  <div class=\"toggle-box \">\n    <div class=\"circle\"></div>\n  </div>\n</body>\n\n</html>",
@@ -849,7 +849,7 @@
   },
   {
     "id": "TooltipCSS",
-    "name": "ooltip",
+    "name": "Tooltip C S S",
     "category": "UI Components & Misc",
     "path": "./tips/TooltipCSS/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n\t<title>ToolTip</title>\n\t<link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n\t<p>Lorem \n\t\t<span tooltip=\"Tooltip Content\">ipsum</span> \n\t\tdolor sit, eius dolorem corporis asperiores?\n\t</p>\n</body>\n\n</html>",
@@ -857,7 +857,7 @@
   },
   {
     "id": "Translate",
-    "name": "ranslate",
+    "name": "Translate",
     "category": "UI Components & Misc",
     "path": "./tips/Translate/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Hover Translate</title>\n</head>\n<body>\n  <div class=\"box\">\n    <div class=\"child\">this is a title</div>\n  </div>\n</body>\n\n</html>",
@@ -865,7 +865,7 @@
   },
   {
     "id": "TreeSVG",
-    "name": "ree",
+    "name": "Tree S V G",
     "category": "UI Components & Misc",
     "path": "./tips/TreeSVG/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Christmas Tree SVG</title>\n</head>\n\n<body>\n  <svg width=\"200\" height=\"300\"\n    viewBox=\"-50 -50 200 300\">\n    <rect x=\"40\" y=\"95\"\n      width=\"20\" height=\"30\"\n      fill=\"Brown\" />\n\n    <polygon \n      points=\"50,20 100,100 0,100\"\n      fill=\"DarkGreen\"/>\n      \n    <polygon \n      points=\"50,0 90,60 10,60\"\n      fill=\"Green\"/>\n    \n  </svg>\n</body>\n</html>",
@@ -873,7 +873,7 @@
   },
   {
     "id": "Triangle",
-    "name": "riangle",
+    "name": "Triangle",
     "category": "UI Components & Misc",
     "path": "./tips/Triangle/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Triangle</title>\n</head>\n<body>\n  <div class=\"triangle\"></div>\n</body>\n\n</html>",
@@ -881,7 +881,7 @@
   },
   {
     "id": "TruncateText",
-    "name": "runcate ext",
+    "name": "Truncate Text",
     "category": "Typography & Text",
     "path": "./tips/TruncateText/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Truncar texto</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit.\n        Pariatur, doloribus incidunt. Modi asperiores corrupti \n        accusantium beatae corporis iure rem, animi ea velit?\n    </p>\n   \n</body>\n\n</html>",
@@ -889,7 +889,7 @@
   },
   {
     "id": "TypingEffect",
-    "name": "yping ffect",
+    "name": "Typing Effect",
     "category": "Animations & Loaders",
     "path": "./tips/TypingEffect/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Typing Effect</title>\n</head>\n<body>\n  <h1>TYPING</h1>\n</body>\n\n</html>",
@@ -897,7 +897,7 @@
   },
   {
     "id": "Unset",
-    "name": "nset",
+    "name": "Unset",
     "category": "UI Components & Misc",
     "path": "./tips/Unset/index.html",
     "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>All Unset</title>\n</head>\n<body>\n    <a href=\"#\">Example</a>\n</body>\n</html>",
@@ -905,7 +905,7 @@
   },
   {
     "id": "UpperCaseFirstLetter",
-    "name": "pper ase irst etter",
+    "name": "Upper Case First Letter",
     "category": "Typography & Text",
     "path": "./tips/UpperCaseFirstLetter/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Letra Capital</title>\n</head>\n<body>\n  <p>Lorem ipsum dolor sit amet, consectetur \n    adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n  </p>\n</body>\n\n</html>",
@@ -913,7 +913,7 @@
   },
   {
     "id": "VinietasTriangulares",
-    "name": "inietas riangulares",
+    "name": "Vinietas Triangulares",
     "category": "UI Components & Misc",
     "path": "./tips/VinietasTriangulares/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>ViñetasTriangulares</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <ul>\n        <li>Título uno</li>\n        <li>Título dos</li>\n        <li>Título tres</li>\n        <li>Título cuatro</li>\n    </ul>\n   \n</body>\n\n</html>",
@@ -921,7 +921,7 @@
   },
   {
     "id": "WaveText",
-    "name": "ave ext",
+    "name": "Wave Text",
     "category": "Animations & Loaders",
     "path": "./tips/WaveText/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Wave Text</title>\n</head>\n<body>\n  <span style=\"--n:1\">B</span>\n  <span style=\"--n:2\">L</span>\n  <span style=\"--n:3\">A</span>\n  <span style=\"--n:4\">C</span>\n  <span style=\"--n:5\">K</span>\n</body>\n\n</html>",
@@ -929,7 +929,7 @@
   },
   {
     "id": "WordBreak",
-    "name": "ord reak",
+    "name": "Word Break",
     "category": "Typography & Text",
     "path": "./tips/WordBreak/index.html",
     "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Word Break</title>\n</head>\n<body>\n    <h1>WORDBREAK</h1>\n</body>\n\n</html>",
