@@ -1,0 +1,938 @@
+[
+  {
+    "id": "AlignText",
+    "name": "lign ext",
+    "category": "Typography & Text",
+    "path": "./tips/AlignText/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Align Text</title>\n</head>\n<body>\n    <p>Lorem ipsum dolor sit amet, consectetur \n        adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n    </p>\n</body>\n\n</html>",
+    "css": "/* body {\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n    margin-top: 0.1%;\n} */\n\np {\n    width: 300px;\n    text-align: justify;\n}\n\n* {\n    margin: 0px;\n}"
+  },
+  {
+    "id": "AnimationHand",
+    "name": "nimation and",
+    "category": "Animations & Loaders",
+    "path": "./tips/AnimationHand/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Animation Hand</title>\n</head>\n\n<body>\n  <h1><span>🐣</span> Panchi! 🐣</h1>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 22px;\n  font-family: 'Courier New', Courier, monospace;\n  font-weight: 600;\n  margin-left: 18%;\n  margin-top: 3%;\n  background-color: lightyellow;\n  /* background-image: url(); */\n}\n\n\n\nh1 {\n  /* transform: rotate(-10deg); */\n  /* transform: rotate(+40deg); */\n  display: inline-block;\n  animation: 1s infinite movehand;\n}\n\n@keyframes movehand {\n  0% {\n    transform: rotate(0deg) translate(10px);\n  }\n\n  25% {\n    transform: rotate(90deg) translate(20px);\n  }\n\n\n  50% {\n    transform: rotate(180deg) translate(30px);\n  }\n\n  100% {\n    transform: rotate(360deg) translate(40px);\n  }\n}"
+  },
+  {
+    "id": "AutocompleteInput",
+    "name": "utocomplete nput",
+    "category": "Forms & Inputs",
+    "path": "./tips/AutocompleteInput/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Autocomplete Input</title>\n</head>\n<body> \n  <label>Lenguajes:</label>\n  <input type=\"text\" list=\"lista\">\n\n  <datalist id=\"lista\">\n    <!-- <option value=\"JavaScript\"></option>\n    <option value=\"Python\"></option>\n    <option value=\"Java\"></option>\n    <option value=\"C#\"></option> -->\n  </datalist>\n  \n  <script>\n    const callApi = async () => {\n      const data = await fetch(\"https://dog.ceo/api/breeds/list\");\n      const dataJson = await data.json();\n      //console.log(dataJson.message);\n      let lista = document.querySelector(\"#lista\");\n      console.log(lista);\n      dataJson.message.forEach(item => {\n        let element = document.createElement(\"option\");\n        element.value = item;\n        //console.log(element);\n        lista.appendChild(element);\n      });\n    }\n    callApi();\n\n  </script>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 28%;\n  margin-top: 1%;\n}"
+  },
+  {
+    "id": "BentoGridCard",
+    "name": "ento rid ard",
+    "category": "Layout & Flexbox",
+    "path": "./tips/BentoGridCard/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Bento Grid Modern Layout</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"bento-container\">\n    <div class=\"bento-item featured\">\n      <span class=\"tag\">Flagship</span>\n      <h3>AI Design Engine</h3>\n      <p>Generative layouts, automated palettes, and instantaneous code export.</p>\n    </div>\n    <div class=\"bento-item stat-item\">\n      <div class=\"num\">99.9%</div>\n      <div class=\"lbl\">Uptime SLA</div>\n    </div>\n    <div class=\"bento-item stat-item\">\n      <div class=\"num\">107+</div>\n      <div class=\"lbl\">CSS Components</div>\n    </div>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n}\n\n/* 🌟 Bento Grid Layout */\n.bento-container {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 16px;\n  width: 100%;\n  max-width: 520px;\n}\n\n.bento-item {\n  background: #151f34;\n  border: 1px solid rgba(255, 255, 255, 0.08);\n  border-radius: 18px;\n  padding: 24px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  transition: all 0.25s ease;\n}\n\n.bento-item:hover {\n  border-color: rgba(56, 189, 248, 0.4);\n  transform: translateY(-2px);\n}\n\n.featured {\n  grid-column: span 2;\n  background: linear-gradient(135deg, #151f34 0%, #0d1627 100%);\n  border-color: rgba(56, 189, 248, 0.25);\n  position: relative;\n  overflow: hidden;\n}\n\n.featured::after {\n  content: '';\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 150px;\n  height: 150px;\n  background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);\n}\n\n.tag {\n  align-self: flex-start;\n  background: rgba(56, 189, 248, 0.15);\n  color: #38bdf8;\n  font-size: 0.72rem;\n  font-weight: 800;\n  padding: 3px 10px;\n  border-radius: 9999px;\n  margin-bottom: 10px;\n}\n\nh3 {\n  font-size: 1.3rem;\n  margin-bottom: 6px;\n}\n\np {\n  font-size: 0.88rem;\n  color: #94a3b8;\n  line-height: 1.5;\n}\n\n.stat-item {\n  text-align: center;\n  align-items: center;\n}\n\n.num {\n  font-size: 2rem;\n  font-weight: 900;\n  color: #38bdf8;\n}\n\n.lbl {\n  font-size: 0.78rem;\n  color: #64748b;\n  font-weight: 700;\n  text-transform: uppercase;\n  margin-top: 4px;\n}\n\n"
+  },
+  {
+    "id": "BgGradientAnimated",
+    "name": "g radient nimated",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/BgGradientAnimated/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Background Gradient Animated</title>\n</head>\n\n<body>\n  <div class=\"bg-gradient\"></div>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n.bg-gradient {\n  width: 300px; height: 150px;\n  background: linear-gradient(\n    90deg, cyan, blueviolet\n  );\n  background-size: 400% 400%;\n  border-radius: 10px; \n  animation: 2s gradient infinite;\n}\n@keyframes gradient {\n  0% { background-position: 0 50%; }\n  50% { background-position: 100% 50%; }\n  100% { background-position: 0 50%; }\n}"
+  },
+  {
+    "id": "BgImageText",
+    "name": "g mage ext",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/BgImageText/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Bg Image</title>\n</head>\n\n<body>\n  <h2 class=\"text\">BgImage</h2>\n  <h2 class=\"text\">Flag</h2>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 12%;\n  margin-top: 3%;\n}\n\n* {\n  margin: 0;\n}\n\n.text {\n  font-size: 70px;\n  background: url(./textImage.jpg);\n  /* background: url(./flag.png); */\n  width: fit-content;\n  background-size: cover;\n  background-clip: text;\n  -webkit-background-clip: text;\n  color: transparent;\n  font-weight: 900;\n  text-transform: uppercase;\n}"
+  },
+  {
+    "id": "BgProperties",
+    "name": "g roperties",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/BgProperties/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Bg with CSS</title>\n</head>\n<body>\n    <div class=\"bg-image\">\n        <h3>Title</h3>\n        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempora maxime deserunt ea corrupti sequi dignissimos voluptate asperiores</p>\n    </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 6%;\n    margin-top: 3%;\n}\n\n.bg-image {\n    width: 400px;\n    height: 270px;\n    background-image: \n    linear-gradient(#ffffff79, #ffffff79),\n    url(./rick-morty.jpg);\n    background-repeat: no-repeat;\n    background-size: cover;\n    background-position: 0 10%;\n}"
+  },
+  {
+    "id": "BgTextAnimado",
+    "name": "g ext nimado",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/BgTextAnimado/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Bg Text Animado</title>\n</head>\n\n<body>\n  <h2>BLACKCODE</h2>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 30px;\n  font-family: fantasy;\n  font-weight: 600;\n  margin-left: 10%;\n  margin-top: 0%;\n}\n\nh2 {\n  margin-top: 20px;\n}\n\nh2 {\n  background: linear-gradient(to right, blueviolet, cyan, blueviolet);\n  width: fit-content;\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n  background-size: 200% auto;\n  animation: 3s gradient linear infinite;\n}\n\n@keyframes gradient {\n  0% {\n    background-position: 0% 75%;\n  }\n\n  50% {\n    background-position: 100% 50%;\n  }\n\n  100% {\n    background-position: 0% 75%;\n  }\n}"
+  },
+  {
+    "id": "BlurImage",
+    "name": "lur mage",
+    "category": "Images & Media",
+    "path": "./tips/BlurImage/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Image Blur</title>\n</head>\n<body>\n<div class=\"bg-box\">\n    <div class=\"glass\">\n        <p>Merry Christmas</p>\n    </div>\n</div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 30px;\n    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n    font-weight: 600;\n    margin-left: 8%;\n    margin-top: 3%;\n}\n\n.bg-box {\n  width: 400px; height: 250px;\n  background-image: url(./example.jpg);\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.glass {\n  background-color: #ffffff44;\n  backdrop-filter: blur(5px);\n  padding: 0 20px;\n  border-radius: 9px;\n}"
+  },
+  {
+    "id": "BorderAnimation",
+    "name": "order nimation",
+    "category": "Animations & Loaders",
+    "path": "./tips/BorderAnimation/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border Animation</title>\n</head>\n<body>\n\n<div class=\"box\">Content</div>\n\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 3%;\n}\n.box {\n  width: 150px; \n  height: 100px;\n  background-color: blueviolet;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: relative;\n  z-index: 99;\n}\n.box::before {\n  content: '';\n  width: 70px; \n  height: 200px;\n  background-color: white;\n  position: absolute;\n  animation: 4s rotate linear infinite;\n  z-index: -1;\n}\n.box::after {\n  content: '';\n  background-color: gold;\n  position: absolute;\n  inset: 5px;\n  z-index: -1;\n}\n@keyframes rotate {\n  0% {transform: rotate(0deg);}\n  100% {transform: rotate(360deg);}\n}"
+  },
+  {
+    "id": "BorderGradient",
+    "name": "order radient",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/BorderGradient/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border Gradient</title>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 19%;\n    margin-top: 5%;\n}\n\n.box {\n    width: 300px;\n    height: 100px;\n    border: 10px solid;\n    border-image-slice: 1;\n    border-image-source: \n      linear-gradient(\n        to right, blueviolet, pink\n      );\n}\n"
+  },
+  {
+    "id": "BorderGradient02",
+    "name": "order radient02",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/BorderGradient02/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border Gradient 02</title>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\n.box {\n  width: 100px; height: 100px;\n  border-style: solid;\n  border-width: 10px;\n  border-image: linear-gradient(cyan, violet) 1;\n  animation: 1s newBorder infinite alternate;\n}\n@keyframes newBorder {\n  0% {\n    border-image: linear-gradient(violet, cyan ) 1;\n  }\n  100% {\n    border-image: linear-gradient(cyan, violet) 1;\n  }\n}\n"
+  },
+  {
+    "id": "BorderHover",
+    "name": "order over",
+    "category": "Layout & Flexbox",
+    "path": "./tips/BorderHover/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border Hover</title>\n</head>\n<body>\n  <div class=\"profile\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 19%;\n    margin-top: 3%;\n}\n\n.profile {\n  width: 150px; height: 150px;\n  background: url(./profile.jpg);\n  background-size: cover;\n}\n.profile::before {\n  content: \"\";\n  width: 90%; height: 90%;\n  border: 10px solid cyan;\n  display: block;\n  transition: 0.5s;\n}\n.profile:hover:before {\n  transform: rotate(45deg);\n}\n\n\n"
+  },
+  {
+    "id": "BorderVsOutline",
+    "name": "order s utline",
+    "category": "Layout & Flexbox",
+    "path": "./tips/BorderVsOutline/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Border vs Outline</title>\n</head>\n<body>\n  <div class=\"box\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 8%;\n    margin-top: 8%;\n}\n\n.box {\n  width: 200px;\n  height: 100px;\n  background-color: aquamarine;\n  border: 10px dashed blueviolet;\n  border-top: 10px dotted violet;\n  border-bottom: 20px double blue;\n  outline: 10px dotted gold;\n  outline-offset: 10px;\n  outline-style: outset;\n}"
+  },
+  {
+    "id": "BoxShadow",
+    "name": "ox hadow",
+    "category": "Borders & Shadows",
+    "path": "./tips/BoxShadow/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Box Shadow</title>\n</head>\n<body>\n    <div class=\"box\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n    margin-top: 3%;\n}\n\n.box {\n    width: 50px;\n    height: 100px;\n    background-color: green;\n    box-shadow: 50px 0px white, 100px 0px red;\n}"
+  },
+  {
+    "id": "BoxShadowImage",
+    "name": "ox hadow mage",
+    "category": "Images & Media",
+    "path": "./tips/BoxShadowImage/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Drop Shadow to Image</title>\n</head>\n<body>\n    <img src=\"./images/rick-sanchez.png\">\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n    margin-top: 3%;\n}\n\nimg {\n    /* drop-shadow(x y blur color) */\n    filter: drop-shadow(10px 10px 30px gold);\n}"
+  },
+  {
+    "id": "BtnAnimation",
+    "name": "tn nimation",
+    "category": "Buttons & Hovers",
+    "path": "./tips/BtnAnimation/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Background Rainbow Animation</title>\n</head>\n<body>\n  <a href=\"#\">Boton</a> <br>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 15px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\na {\n  border: 7px solid gold;\n  /* background: cyan; */\n  text-decoration: none;\n  padding: 10px 20px;\n  border-radius: 10px;\n  color: #000;\n  animation: 2s btnfilter infinite linear;\n}\n@keyframes btnfilter {\n  to {\n    filter: hue-rotate(0deg);\n  }\n  from {\n    filter: hue-rotate(360deg);\n  }\n}\n"
+  },
+  {
+    "id": "BtnStyle",
+    "name": "tn tyle",
+    "category": "Buttons & Hovers",
+    "path": "./tips/BtnStyle/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Style BTN</title>\n</head>\n<body>\n    <a href=\"#\">Enviar Email</a>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 20%;\n    margin-top: 8%;\n}\n\na {\n    background-color: blueviolet;\n    color: #fff;\n    text-decoration: none;\n    padding: 4px 12px;\n    border: solid 2px blueviolet;\n    border-radius: 8px;\n    transition: 0.3s;\n}\na:hover {\n    background-color: #fff;\n    color: blueviolet;\n}"
+  },
+  {
+    "id": "CardClickable",
+    "name": "ard lickable",
+    "category": "UI Components & Misc",
+    "path": "./tips/CardClickable/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Card Clickable</title>\n</head>\n\n<body>\n  <div class=\"card\">\n    <a href=\"#\"></a>\n    <h2>Title</h2>\n    <p>\n      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, expedita? voluptatibus eaque.\n    </p>\n  </div>\n\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 400;\n  margin-left: 16%;\n  margin-top: 4%;\n}\n.card {\n  border: 2px solid blueviolet;\n  width: 300px;\n  padding: 10px;\n  position: relative;\n}\n.card a {\n  position: absolute;\n  inset: 0;\n}"
+  },
+  {
+    "id": "CaseInsensitive",
+    "name": "ase nsensitive",
+    "category": "UI Components & Misc",
+    "path": "./tips/CaseInsensitive/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Case Insensitive</title>\n</head>\n\n<body>\n  <a href=\"namePdf.pdf\">pdf link</a> <br>\n  <a href=\"namePdf.PDF\">pdf link</a> <br>\n  <a href=\"namePdf.zip\">pdf link</a> <br>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 22px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 2%;\n}\n\na[href$=\".pdf\" i]::after {\n  content: \"\";\n  width: 30px; height: 30px;\n  background-image: url(pdf.png);\n  background-size: contain;\n  background-repeat: no-repeat;\n  display: inline-block;\n}\na[href$=\".zip\" i]::after {\n  content: \"\";\n  width: 30px; height: 30px;\n  background-image: url(zip.png);\n  background-size: contain;\n  background-repeat: no-repeat;\n  display: inline-block;\n}"
+  },
+  {
+    "id": "CenterDiv01",
+    "name": "enter iv01",
+    "category": "Layout & Flexbox",
+    "path": "./tips/CenterDiv01/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Center DIV 01</title>\n</head>\n<body>\n    <section>\n        <div class=\"box\">Content</div>\n    </section>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n    margin-top: 3%;\n}\n\n\nsection{\n    display: grid;\n    place-content: center;\n    /* display: flex;\n    justify-content: center; */\n}\n.box {\n    border: solid;\n    width: 200px;\n    /* margin: 0 auto; */\n    display: flex;\n    justify-content: center;\n}"
+  },
+  {
+    "id": "CenterDivPosition",
+    "name": "enter iv osition",
+    "category": "Layout & Flexbox",
+    "path": "./tips/CenterDivPosition/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Center Div Position</title>\n</head>\n<body>\n  <section>\n    <div class=\"box\">content</div>\n  </section>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 8%;\n    margin-top: 3%;\n}\nsection {\n    border: 1px solid black;\n    width: 350px; height: 200px;\n    position: relative;\n}\n.box {\n    border: 2px solid blueviolet;\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n}"
+  },
+  {
+    "id": "CheckBox",
+    "name": "heck ox",
+    "category": "Forms & Inputs",
+    "path": "./tips/CheckBox/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Check box</title>\n</head>\n<body>\n  <input class=\"check\" type=\"checkbox\" >\n  <span></span>\n  <!-- 😀 😔 -->\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 13%;\n    margin-top: 3%;\n}\n\nspan::after {\n    content: \"😔\";\n}\n.check:checked ~ span:after {\n    content: \"😀\";\n}"
+  },
+  {
+    "id": "CheckBoxCustom",
+    "name": "heck ox ustom",
+    "category": "Forms & Inputs",
+    "path": "./tips/CheckBoxCustom/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Custom Checkbox</title>\n</head>\n\n<body>\n  <label>\n    <input type=\"checkbox\">\n    Checkbox\n  </label>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 14px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 400;\n  margin-left: 25%;\n  margin-top: 28%;\n}\ninput[type=\"checkbox\"] {\n  appearance: none;\n  width: 15px; height: 15px;\n  background: tomato;\n  border-radius: 3px;\n}\ninput:checked::before {\n  content: \"✔️\";\n  font-size: 11px;\n  width: 100%; height: 100%;\n  /* background: url(./check.svg);\n  background-size: 100%; */\n  display: block;\n}\nlabel {\n  display: flex;\n  align-items: center;\n}"
+  },
+  {
+    "id": "ColorCursor",
+    "name": "olor ursor",
+    "category": "UI Components & Misc",
+    "path": "./tips/ColorCursor/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Color Cursor</title>\n</head>\n<body>\n    <textarea > </textarea>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n    margin-top: 3%;\n}\n\ntextarea {\n    padding: 5px 14px;\n    font-size: 21px;\n    caret-color: orangered;\n}"
+  },
+  {
+    "id": "ColorInput",
+    "name": "olor nput",
+    "category": "Forms & Inputs",
+    "path": "./tips/ColorInput/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Accent Color</title>\n</head>\n<body>\n  <form>\n    <label>Checkbox:</label>\n    <input type=\"checkbox\"><br>\n    <label>Radio1:</label>\n    <input type=\"radio\" name=\"test\">\n    <label>Radio2:</label>\n    <input type=\"radio\" name=\"test\"><br>\n    <label>Range:</label>\n    <input type=\"range\"><br>\n  </form>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 45%;\n    margin-top: 1%;\n}\n\n\ninput {\n    accent-color: gold;\n}\ninput[type=radio] {\n    accent-color: blueviolet;\n}\ninput[type=range] {\n    accent-color: cyan;\n}\n"
+  },
+  {
+    "id": "ColorMixOklch",
+    "name": "olor ix klch",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/ColorMixOklch/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Modern CSS color-mix() in OKLCH</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"swatches-container\">\n    <div class=\"swatch s-base\">Base (#38bdf8)</div>\n    <div class=\"swatch s-25\">color-mix 25%</div>\n    <div class=\"swatch s-50\">color-mix 50%</div>\n    <div class=\"swatch s-75\">color-mix 75%</div>\n    <div class=\"swatch s-target\">Target (#ec4899)</div>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\n:root {\n  --c1: #38bdf8;\n  --c2: #ec4899;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n}\n\n.swatches-container {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  width: 100%;\n  max-width: 380px;\n}\n\n.swatch {\n  padding: 16px 20px;\n  border-radius: 12px;\n  font-weight: 800;\n  font-size: 0.9rem;\n  color: #0f172a;\n  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);\n  text-align: center;\n}\n\n/* 🌟 Dynamic color-mix in modern perceptual OKLCH color space */\n.s-base {\n  background: var(--c1);\n}\n\n.s-25 {\n  background: color-mix(in oklch, var(--c1) 75%, var(--c2) 25%);\n}\n\n.s-50 {\n  background: color-mix(in oklch, var(--c1) 50%, var(--c2) 50%);\n}\n\n.s-75 {\n  background: color-mix(in oklch, var(--c1) 25%, var(--c2) 75%);\n}\n\n.s-target {\n  background: var(--c2);\n  color: #ffffff;\n}\n\n"
+  },
+  {
+    "id": "ColumnDivider",
+    "name": "olumn ivider",
+    "category": "Layout & Flexbox",
+    "path": "./tips/ColumnDivider/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Three Columns</title>\n</head>\n<body>\n    <p>It was the best of times, it was the worst\n       of times, it was the age of wisdom, it was \n       the age of foolishness, it was the epoch of belief, it was the </p>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n    margin-top: 3%;\n    margin-right: 8%;\n}\n\np {\n   columns: 3;\n   column-rule-style: solid; \n   column-rule-color: blueviolet;\n}"
+  },
+  {
+    "id": "ContainerQueries",
+    "name": "ontainer ueries",
+    "category": "Layout & Flexbox",
+    "path": "./tips/ContainerQueries/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Container Queries Responsive Card</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"resize-wrapper\">\n    <div class=\"card-container\">\n      <div class=\"card\">\n        <div class=\"card-media\">🎨</div>\n        <div class=\"card-content\">\n          <span class=\"badge\">Modern CSS</span>\n          <h3>Container Queries</h3>\n          <p>This card adapts its layout based on its container's width, not the viewport! Resize the wrapper to see the transformation.</p>\n          <button class=\"btn\">Explore Now</button>\n        </div>\n      </div>\n    </div>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n}\n\n.resize-wrapper {\n  width: 100%;\n  max-width: 600px;\n  resize: horizontal;\n  overflow: auto;\n  padding: 16px;\n  background: #0f172a;\n  border: 1px dashed #38bdf8;\n  border-radius: 16px;\n}\n\n/* 1. Define container context */\n.card-container {\n  container-type: inline-size;\n  container-name: cardbox;\n}\n\n/* Base Card Style (Vertical layout for small container) */\n.card {\n  display: flex;\n  flex-direction: column;\n  background: #1e293b;\n  border-radius: 12px;\n  overflow: hidden;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  transition: all 0.3s ease;\n}\n\n.card-media {\n  background: linear-gradient(135deg, #0284c7, #38bdf8);\n  font-size: 3rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  min-height: 120px;\n}\n\n.card-content {\n  padding: 16px;\n  display: flex;\n  flex-direction: column;\n  gap: 8px;\n}\n\n.badge {\n  align-self: flex-start;\n  background: rgba(56, 189, 248, 0.2);\n  color: #38bdf8;\n  font-size: 0.72rem;\n  font-weight: 800;\n  padding: 2px 8px;\n  border-radius: 9999px;\n  text-transform: uppercase;\n}\n\nh3 {\n  font-size: 1.1rem;\n}\n\np {\n  font-size: 0.85rem;\n  color: #94a3b8;\n  line-height: 1.5;\n}\n\n.btn {\n  margin-top: 8px;\n  background: #38bdf8;\n  color: #0f172a;\n  border: none;\n  padding: 8px 14px;\n  border-radius: 8px;\n  font-weight: 700;\n  cursor: pointer;\n  align-self: flex-start;\n}\n\n/* 2. Container Query for larger container width */\n@container cardbox (min-width: 420px) {\n  .card {\n    flex-direction: row;\n    align-items: center;\n  }\n  .card-media {\n    width: 140px;\n    min-height: 140px;\n    flex-shrink: 0;\n  }\n}\n\n"
+  },
+  {
+    "id": "CopyClipboard",
+    "name": "opy lipboard",
+    "category": "UI Components & Misc",
+    "path": "./tips/CopyClipboard/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Copy Clipboard</title>\n</head>\n\n<body>\n\n<input type=\"text\" class=\"input\">\n<button onclick=\"copyToClipboard()\">\n  Copiar al Portapapeles\n</button>\n\n<script>\n  function copyToClipboard(){\n    const copyText = document.querySelector('.input');\n    \n    copyText.select();\n    //document.execCommand('copy');\n    navigator.clipboard.writeText(copyText.value);\n\n  }\n</script>\n\n</body>\n</html>",
+    "css": "body {\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 8%;\n  margin-top: 5%;\n}"
+  },
+  {
+    "id": "Counter",
+    "name": "ounter",
+    "category": "UI Components & Misc",
+    "path": "./tips/Counter/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Counter JS</title>\n</head>\n\n<body>\n  <h2>\n    <span class=\"count\">0</span>+\n  </h2>\n</body>\n<script>\n  let count = document.querySelector(\".count\");\n  let counter = 0;\n  let interval = setInterval(()=>{\n    if (counter < 200) {\n      counter++;\n      count.innerText = counter;\n    } else {\n      clearInterval(interval)\n    }\n    console.log('test');\n  }, 10)\n</script>\n\n\n</html>",
+    "css": "body{\n  font-size: 48px;\n  font-family: sans-serif;\n  font-weight: 600;\n  margin-left: 39%;\n  margin-top: 35%;\n}"
+  },
+  {
+    "id": "CursorFollower",
+    "name": "ursor ollower",
+    "category": "UI Components & Misc",
+    "path": "./tips/CursorFollower/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Cursor Follower</title>\n</head>\n<body>\n  <div class=\"cursor\"></div>\n</body>\n<script>\n  document.addEventListener('mousemove', (e) => {\n    const xPos = e.pageX;\n    const yPos = e.pageY;\n    let m = document.querySelector('.cursor')\n    m.style.left = xPos+'px'; \n    m.style.top = yPos+'px'; \n  })\n</script>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n.cursor {\n  width: 50px; \n  height: 50px;\n  background: blueviolet;\n  position: absolute;\n}"
+  },
+  {
+    "id": "CursorPersonalizado",
+    "name": "ursor ersonalizado",
+    "category": "UI Components & Misc",
+    "path": "./tips/CursorPersonalizado/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Cursor Personalizado</title>\n</head>\n<body>\n    <button>Test Cursor</button>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 6%;\n    margin-top: 3%;\n}\nbutton {\n    width: 150px;\n    cursor: var(--pizza), auto;\n    cursor: var(--corazon), auto;\n}\nhtml {\n    cursor: var(--mano), auto;\n    --pizza: url(\"./images/pizza.png\");\n    --mano: url(\"./images/hand.png\");\n    --corazon: url(\"./images/heard.png\");\n}"
+  },
+  {
+    "id": "CursorTypes",
+    "name": "ursor ypes",
+    "category": "UI Components & Misc",
+    "path": "./tips/CursorTypes/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Cursor Types</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div class=\"cr-waiting\">Waiting</div>\n\t<div class=\"cr-help\">Get help</div>\n\t<div class=\"cr-crosshair\">Crosshair</div>\n\t<div class=\"cr-grab\">Grab</div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 18px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n    margin-top: 3%;\n    display: flex;\n    gap: 10px;\n}\ndiv {\n    border: solid 2px #cecdcd;\n    padding: 8px 3px;\n    color: #5a5858;\n}\n\n.cr-waiting:hover { cursor: wait; }\n\n.cr-help:hover { cursor: help; }\n\n.cr-crosshair:hover { cursor: crosshair; }\n\n.cr-grab:hover { cursor: grab; }\n\n"
+  },
+  {
+    "id": "CustomRadioButon",
+    "name": "ustom adio uton",
+    "category": "Forms & Inputs",
+    "path": "./tips/CustomRadioButon/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Custom Radio Button</title>\n</head>\n<body>\n  <form>\n    <label>Radio1:</label>\n    <input type=\"radio\" name=\"test\">\n    <label>Radio2:</label>\n    <input type=\"radio\" name=\"test\"><br>\n  </form>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 22px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 500;\n  margin-left: 16%;\n  margin-top: 6%;\n}\n\ninput[type=radio] {\n  appearance: none;\n  width: 25px; \n  height: 25px;\n  border: 2px solid gold;\n  border-radius: 50%;\n}\ninput[type=radio]:checked::before {\n  content: \"\";\n  width: 100%; \n  height: 100%;\n  background: linear-gradient(\n    45deg,purple, red, gold\n  );\n  display: block;\n  border-radius: 50%;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "id": "DestacarPrimeraLetra",
+    "name": "estacar rimera etra",
+    "category": "UI Components & Misc",
+    "path": "./tips/DestacarPrimeraLetra/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Destacar Primera Letra</title>\n</head>\n<body>\n    <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit. \n        Asperiores laborum amet cumque dolore facere praesentium\n    </p>\n</body>\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    width: 400px;\n    margin-left: 4%;\n}\n\np::first-letter {\n    font-size: 40px;\n    color: blue;\n    text-shadow: 5px 5px 5px black;\n}"
+  },
+  {
+    "id": "DisplayAttr",
+    "name": "isplay ttr",
+    "category": "UI Components & Misc",
+    "path": "./tips/DisplayAttr/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Display Attributes</title>\n</head>\n<body>\n  <span data=\"Black\">Code 💻</span>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 25px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\n\nspan:after {\n  content: attr(data);\n}"
+  },
+  {
+    "id": "DownloadBtn",
+    "name": "ownload tn",
+    "category": "Buttons & Hovers",
+    "path": "./tips/DownloadBtn/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Download Button</title>\n</head>\n\n<body>\n  <a href=\"abstract.jpeg\" download=\"NewImage\">\n    Download\n  </a>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 18px;\n  font-family: Arial, Helvetica, sans-serif;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\na {\n  border: 1px solid black;\n  border-radius: 5px;\n  padding: 10px 20px;\n  text-decoration: none;\n  color: black;\n}"
+  },
+  {
+    "id": "Ellipsis Multiline",
+    "name": "llipsis  ultiline",
+    "category": "UI Components & Misc",
+    "path": "./tips/Ellipsis Multiline/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 01</title>\n</head>\n<body>\n  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, iure? Voluptatem necessitatibus praesentium culpa rem odit neque facilis, hic quisquam, incidunt nobis omnis, laborum molestias voluptas eaque vitae eligendi ratione!\n  </p>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 18px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\np {\n  width: 320px;\n  display: -webkit-box;\n  white-space: normal;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 3;\n  overflow: hidden;\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "id": "EnumerarTitulos",
+    "name": "numerar itulos",
+    "category": "UI Components & Misc",
+    "path": "./tips/EnumerarTitulos/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Enumerar Headings</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div class=\"titulos\">\n        <h1>Título unoff</h1>\n        <h1>Título dos</h1>\n        <h1>Título tres</h1>\n        <h1>Título cuatro</h1>\n    </div>\n   \n</body>\n\n</html>",
+    "css": ".titulos {\n    counter-reset: heading;\n  }\n  h1:before{\n    content: counter(heading)\". \";\n    counter-increment: heading;\n  }"
+  },
+  {
+    "id": "ExpandTag",
+    "name": "xpand ag",
+    "category": "UI Components & Misc",
+    "path": "./tips/ExpandTag/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Expand Tag</title>\n</head>\n<body>\n  <details>\n    <summary>\n      Read more:\n    </summary>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta obcaecati deleniti quia, saepe nostrum incidunt, dicta \n  </details>\n\n  <details>\n    <summary>\n      Read more:\n    </summary>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit.\n  </details>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 400;\n  margin-left: 14%;\n  margin-top: 5%;\n}\n\ndetails {\n  width: 300px;\n  border: 1px solid gray;\n  padding: 10px;\n  border-radius: 10px;\n  margin-bottom: 10px;\n}\n"
+  },
+  {
+    "id": "FiltrosCSS",
+    "name": "iltros",
+    "category": "UI Components & Misc",
+    "path": "./tips/FiltrosCSS/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <title>Filter CSS</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div class=\"image\">\n        <img src=\"./images/jungle.jpg\" alt=\"jngle image\" width=\"400\" height=\"300\">\n    </div>\n</body>\n</html>",
+    "css": ".image img {\n    filter: grayscale(100%);\n    filter: brightness();\n    filter: contrast();\n    filter: saturate()\n}"
+  },
+  {
+    "id": "FormaCircular",
+    "name": "orma ircular",
+    "category": "Forms & Inputs",
+    "path": "./tips/FormaCircular/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Forma circular border-radius</title>\n</head>\n<body>\n    <img src=\"./images/dunas.jpg\" alt=\"dunas\">\n   \n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-top: 6%;\n    margin-left: 8%;\n}\n\nimg {\n    width: 200px;\n    height: 200px;\n    aspect-ratio: 4/3;\n    object-fit: cover;\n    border-radius: 50%;\n}\n\n\n"
+  },
+  {
+    "id": "GlassmorphismCard",
+    "name": "lassmorphism ard",
+    "category": "Borders & Shadows",
+    "path": "./tips/GlassmorphismCard/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Modern Glassmorphism Card</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"glass-scene\">\n    <div class=\"orb orb-1\"></div>\n    <div class=\"orb orb-2\"></div>\n    <div class=\"glass-card\">\n      <div class=\"icon\">✨</div>\n      <h3>Glassmorphism 2.0</h3>\n      <p>Multi-layered frosted glass with backdrop-filter, inner highlight borders, and dynamic blurred neon glow.</p>\n      <button class=\"glass-btn\">Explore Component</button>\n    </div>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #060913;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: hidden;\n  padding: 20px;\n}\n\n.glass-scene {\n  position: relative;\n  width: 100%;\n  max-width: 360px;\n}\n\n.orb {\n  position: absolute;\n  border-radius: 50%;\n  filter: blur(50px);\n  z-index: 1;\n}\n\n.orb-1 {\n  width: 160px;\n  height: 160px;\n  background: #38bdf8;\n  top: -40px;\n  left: -40px;\n}\n\n.orb-2 {\n  width: 180px;\n  height: 180px;\n  background: #ec4899;\n  bottom: -40px;\n  right: -40px;\n}\n\n/* 🌟 Frosted Glass Card */\n.glass-card {\n  position: relative;\n  z-index: 2;\n  background: rgba(255, 255, 255, 0.06);\n  backdrop-filter: blur(18px);\n  -webkit-backdrop-filter: blur(18px);\n  border: 1px solid rgba(255, 255, 255, 0.16);\n  border-top-color: rgba(255, 255, 255, 0.35);\n  border-left-color: rgba(255, 255, 255, 0.35);\n  border-radius: 20px;\n  padding: 28px;\n  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n\n.icon {\n  font-size: 2rem;\n}\n\nh3 {\n  font-size: 1.25rem;\n  font-weight: 800;\n}\n\np {\n  font-size: 0.88rem;\n  color: #cbd5e1;\n  line-height: 1.6;\n}\n\n.glass-btn {\n  margin-top: 8px;\n  background: rgba(255, 255, 255, 0.15);\n  border: 1px solid rgba(255, 255, 255, 0.25);\n  color: #fff;\n  padding: 10px 18px;\n  border-radius: 10px;\n  font-weight: 700;\n  cursor: pointer;\n  transition: all 0.2s ease;\n}\n\n.glass-btn:hover {\n  background: rgba(255, 255, 255, 0.25);\n  transform: translateY(-2px);\n}\n\n"
+  },
+  {
+    "id": "GlitchEffect",
+    "name": "litch ffect",
+    "category": "Animations & Loaders",
+    "path": "./tips/GlitchEffect/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Glitch Effect</title>\n</head>\n<body>\n  <p>GLITCH</p>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 50px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 800;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\np:hover {\n  animation: 0.3s glitch infinite;\n}\n\n@keyframes glitch {\n  0% {\n    text-shadow: red -4px 0, cyan 4px 0;\n  }\n  50% {\n    text-shadow: red 4px 0, cyan -4px 0;\n  }\n  100% {\n    text-shadow: red -4px 0, cyan 4px 0;\n  }\n}"
+  },
+  {
+    "id": "HasSelectorParent",
+    "name": "as elector arent",
+    "category": "Modern CSS Specs",
+    "path": "./tips/HasSelectorParent/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS :has() Relational Selector</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"cards-grid\">\n    <label class=\"item-card\">\n      <input type=\"checkbox\" class=\"card-check\">\n      <div class=\"card-body\">\n        <h4>Pro Subscription</h4>\n        <p>Full access to 100+ CSS components & studios.</p>\n        <span class=\"price\">$19/mo</span>\n      </div>\n    </label>\n\n    <label class=\"item-card\">\n      <input type=\"checkbox\" class=\"card-check\">\n      <div class=\"card-body\">\n        <h4>Enterprise Cloud</h4>\n        <p>Dedicated team servers & custom themes.</p>\n        <span class=\"price\">$49/mo</span>\n      </div>\n    </label>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n}\n\n.cards-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\n  gap: 16px;\n  width: 100%;\n  max-width: 500px;\n}\n\n.item-card {\n  position: relative;\n  display: block;\n  background: #151f34;\n  border: 2px solid rgba(255, 255, 255, 0.08);\n  border-radius: 14px;\n  padding: 20px;\n  cursor: pointer;\n  transition: all 0.25s ease;\n}\n\n.item-card:hover {\n  border-color: rgba(56, 189, 248, 0.5);\n  transform: translateY(-2px);\n}\n\n.card-check {\n  margin-bottom: 12px;\n  accent-color: #38bdf8;\n  width: 18px;\n  height: 18px;\n  cursor: pointer;\n}\n\n.card-body h4 {\n  font-size: 1.05rem;\n  margin-bottom: 6px;\n}\n\n.card-body p {\n  font-size: 0.82rem;\n  color: #94a3b8;\n  margin-bottom: 12px;\n}\n\n.price {\n  font-size: 1.15rem;\n  font-weight: 800;\n  color: #38bdf8;\n}\n\n/* 🌟 MAGIC OF :has() — Styling the parent when child is checked! */\n.item-card:has(.card-check:checked) {\n  border-color: #10b981;\n  background: rgba(16, 185, 129, 0.12);\n  box-shadow: 0 0 24px rgba(16, 185, 129, 0.25);\n}\n\n.item-card:has(.card-check:checked) .price {\n  color: #10b981;\n}\n\n/* Dim sibling cards when any card is hovered */\n.cards-grid:has(.item-card:hover) .item-card:not(:hover) {\n  opacity: 0.5;\n  transform: scale(0.98);\n}\n\n"
+  },
+  {
+    "id": "HeartAnimation",
+    "name": "eart nimation",
+    "category": "Animations & Loaders",
+    "path": "./tips/HeartAnimation/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Heart Animation</title>\n</head>\n<body>\n  <div class=\"heart\">❤️</div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 19%;\n    margin-top: 3%;\n}\n\n.heart {\n  font-size: 50px;\n  width: fit-content;\n  animation: 0.5s bigHeart\n   alternate infinite;\n}\n\n@keyframes bigHeart {\n  to { transform: scale(1); }\n  from { transform: scale(1.5); }\n}\n"
+  },
+  {
+    "id": "Hover-v1",
+    "name": "over-v1",
+    "category": "UI Components & Misc",
+    "path": "./tips/Hover-v1/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Hover V1</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <h2>EXAMPLE HOVER</h2>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    /* font-family: 'Courier New', Courier, monospace; */\n    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n    font-weight: 800;\n\n    height: 100vh;\n  margin: 0;\n  display: grid;\n  place-content: center;\n}\nh2 {\n    --c: #1095c1; \n    /* background-color: #1095c1; */\n    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);\n    /* background: \n    linear-gradient(90deg,#fff 50%,var(--c) 0) calc(100% - var(--_p,0%))/200% 100%,\n    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) 100% no-repeat;  */\n    -webkit-background-clip: text,padding-box; \n          background-clip: text,padding-box;\n    transition: 0.5s;\n    color: #0000;\n}\nh2:hover {\n    --_p: 100%\n  }\n\n\n"
+  },
+  {
+    "id": "HoverBtn01",
+    "name": "over tn01",
+    "category": "Buttons & Hovers",
+    "path": "./tips/HoverBtn01/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 01</title>\n</head>\n<body>\n  <a href=\"#\">Hover 01</a>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: Arial, Helvetica, sans-serif;\n    font-weight: 600;\n    margin-left: 16%;\n    margin-top: 5%;\n}\n\na {\n  border: 3px solid gold;\n  text-decoration: none;\n  padding: 20px;\n  color: #000;\n  background: linear-gradient(\n    45deg, gold 50%, transparent 50%\n  );\n  background-position: 100%;\n  background-size: 250%;\n  transition: 0.5s background\n}\na:hover {\n  background-position: 0;\n}"
+  },
+  {
+    "id": "HoverBtn02",
+    "name": "over tn02",
+    "category": "Buttons & Hovers",
+    "path": "./tips/HoverBtn02/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 02</title>\n</head>\n<body>\n  <a href=\"#\">Hover 02</a>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: Arial, Helvetica, sans-serif;\n    font-weight: 600;\n    margin-left: 16%;\n    margin-top: 5%;\n    background-color: #000;\n}\n\na {\n  color: #fff;\n  text-decoration: none;\n  background-color: cyan;\n  padding: 20px;\n  border-radius: 10px;\n}\na:hover {\n  /* x, y, desenfoque, propagacion, color */\n  box-shadow: 0 0 10px 0 cyan inset, \n  0 0 10px 4px cyan;\n  background-color: transparent;\n}"
+  },
+  {
+    "id": "HoverBtn03",
+    "name": "over tn03",
+    "category": "Buttons & Hovers",
+    "path": "./tips/HoverBtn03/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 03</title>\n</head>\n<body>\n  <a href=\"#\">HOVER 03</a>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: 'Montserrat', sans-serif;\n  font-weight: 500;\n  margin-left: 16%;\n  margin-top: 5%;\n  letter-spacing: 1px;\n}\na {\n  text-decoration: none;\n  background: linear-gradient(\n    90deg, aqua, fuchsia\n  );\n  padding: 15px 35px;\n  color: #fff;\n  border-radius: 7px;\n  display: inline-block;\n  transition: 0.4s transform;\n}\na:hover {\n  background-size: 200%;\n  transform: scale(1.1);\n}"
+  },
+  {
+    "id": "HoverBtnRipple",
+    "name": "over tn ipple",
+    "category": "Buttons & Hovers",
+    "path": "./tips/HoverBtnRipple/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover btn ripple</title>\n</head>\n\n<body>\n  <a href=\"#\" class=\"btn\">\n    <span>Button</span>\n  </a>\n  <script src=\"custom.js\"></script>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\n.btn {\n  background-color: lightcyan;\n  padding: 20px 40px;\n  border-radius: 5px;\n  text-decoration: none;\n  color: black;\n  position: absolute;\n  overflow: hidden;\n}\n\n.btn span {\n  position: relative;\n  z-index: 1;\n}\n\n.btn::before {\n  content: \"\";\n  width: 0px;\n  height: 0px;\n  background-color: deepskyblue;\n  position: absolute;\n  left: var(--xPos);\n  top: var(--yPos);\n  border-radius: 50%;\n  transform: translate(-50%, -50%);\n  transition: width 0.5s, height 0.5s;\n}\n\n.btn:hover::before {\n  width: 340px;\n  height: 340px;\n}"
+  },
+  {
+    "id": "HoverDosImagenes",
+    "name": "over os magenes",
+    "category": "Images & Media",
+    "path": "./tips/HoverDosImagenes/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Hover Images</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div class=\"contenedor\">\n        <img src=\"./images/dunas.jpg\" />\n        <img class=\"over\" src=\"./images/sea.jpg\" />\n    </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n}\n\n.contenedor {\n    position: relative;\n    width: 250px;\n    height: 160px;\n}\n.contenedor img {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    transition: 1.5s;\n}\n.contenedor img.over:hover {\n    opacity: 0;\n}\n\n"
+  },
+  {
+    "id": "HoverImageScale",
+    "name": "over mage cale",
+    "category": "Images & Media",
+    "path": "./tips/HoverImageScale/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover Scale Image</title>\n</head>\n<body>\n  <div class=\"card\">\n    <img src=\"./controller.png\" alt=\"image\">\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\n.card {\n  width: 200px; height: 200px;\n  overflow: hidden;\n  border-radius: 10px;\n}\nimg {\n  width: 100%; height: 100%;\n  object-fit: cover;\n  border-radius: 10px;\n  transition: 0.5s;\n}\n.card:hover img {\n  transform: scale(1.2);\n}\n"
+  },
+  {
+    "id": "HoverZoonImages",
+    "name": "over oon mages",
+    "category": "Images & Media",
+    "path": "./tips/HoverZoonImages/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover Images</title>\n</head>\n<body>\n<div class=\"container\">\n  <div class=\"card\">\n    <img src=\"./one.jpg\" alt=\"...\">\n  </div>\n  <div class=\"card\">\n    <img src=\"./two2.jpg\" alt=\"...\">\n  </div>\n  <div class=\"card\">\n    <img src=\"./three.jpg\" alt=\"...\">\n  </div>\n  <div class=\"card\">\n    <img src=\"./four.jpg\" alt=\"...\">\n  </div>\n</div>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\n.container {\n  display: flex;\n  width: 200px;\n}\n.card {\n  flex: 1;\n  overflow: hidden;\n  filter: grayscale(1);\n  transition: 0.5s;\n}\n.card img {\n  width: 100px;\n  height: 100px;\n}\n.card:hover {\n  flex: 2;\n  filter: grayscale(0);\n}"
+  },
+  {
+    "id": "Href",
+    "name": "ref",
+    "category": "UI Components & Misc",
+    "path": "./tips/Href/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>::empty</title>\n</head>\n<body>\n  <section>\n    <a href=\"https://google.com/\">\n      Google\n    </a>                                           </br>\n    <a href=\"https://google.com/\"></a>\n  </section>\n</body>\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n}\n\na:empty::before {\n    content: attr(href);\n}\n\n"
+  },
+  {
+    "id": "IconListImages",
+    "name": "con ist mages",
+    "category": "Images & Media",
+    "path": "./tips/IconListImages/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Image Icon List</title>\n</head>\n<body>\n  <ul>\n    <li>Example list 1</li>\n    <li>Example list 2</li>\n    <li>Example list 3</li>\n    <li>Example list 4</li>\n    <li>Example list 4</li>\n    <li>Example list 4</li>\n  </ul>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 13%;\n    margin-top: 3%;\n}\nul {\n  list-style: none;\n}\nli { position: relative; }\nli:before {\n  content: \"\";\n  width: 20px;\n  height: 20px;\n  background-image: url(./iconStart.png);\n  background-size: 100%;\n  display: inline-block;\n  position: absolute;\n  left: -30px;\n  top: 3px;\n}"
+  },
+  {
+    "id": "ImageCircle",
+    "name": "mage ircle",
+    "category": "Images & Media",
+    "path": "./tips/ImageCircle/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Shape Circle</title>\n</head>\n<body>\n  <div class=\"circle\">\n    <img src=\"./aple.png\" alt=\"aple\">\n  </div>\n  <p>Lorem ipsum dolor, sit amet consec tetur adipi sicLorem ipsum dolor, sit amet consec tetur adipi sim ipsum dolor, sit amet consectetur adipisim ipsum dolor, sit amet consec tetur adipi sicing elit. Enim omnis veniam facilis autem, ipsa doloribus dolor quasi repre henderit quod in quis atque facere consec tetur iste? Ipsam dolorum dignissimos facere ad! Lorem ipsum dolor, sit amet consec tetur adipisic Lorem ipsum \n  </p>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 17px;\n  font-family: Arial, Helvetica, sans-serif;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\n.circle {\n  width: 100px;\n  height: 100px;\n  float: left;\n  shape-outside: circle(50%);\n}\nimg {\n  width: 90%;\n  height: 90%;\n}\n"
+  },
+  {
+    "id": "ImagePreview",
+    "name": "mage review",
+    "category": "Images & Media",
+    "path": "./tips/ImagePreview/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Image Preview</title>\n</head>\n<body>\n  <img id=\"preview\" \n    src=\"./preview.jpg\" \n    height=\"200\"\n  > <br>\n  <input type=\"file\" id=\"input\">\n\n  <script>\n    let img = document.querySelector(\"#preview\")\n    let file = document.querySelector(\"#input\")\n\n    file.onchange = (e) => {\n      if (file.files[0]) {\n        img.src = URL.createObjectURL(\n          file.files[0]\n        )\n      }\n    }\n  </script>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: Arial, Helvetica, sans-serif;\n    font-weight: 600;\n    margin-left: 18%;\n    margin-top: 1%;\n  }"
+  },
+  {
+    "id": "ImagenEspejo",
+    "name": "magen spejo",
+    "category": "Images & Media",
+    "path": "./tips/ImagenEspejo/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Image Espejo</title>\n</head>\n<body>\n    <img src=\"./images/rick-sanchez.png\">\n    <img src=\"./images/arrow-right.png\">\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n    margin-top: 3%;\n}\n\nimg {\n    transform: rotateY(0deg);\n    transform: rotateX(0deg);\n    transform: rotate(360deg);\n}"
+  },
+  {
+    "id": "InputField",
+    "name": "nput ield",
+    "category": "Forms & Inputs",
+    "path": "./tips/InputField/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Input Custom</title>\n</head>\n<body>\n  <div class=\"box-email\">\n    <input type=\"email\" >\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 18px;\n    font-weight: 500;\n    font-family: Arial, Helvetica, sans-serif;\n    margin-left: 40%;\n    margin-top: 40%;\n}\ninput {\n    font-size: inherit;\n    padding: 10px;\n    border-radius: 10px;\n    border: 2px solid blueviolet;\n    outline: none;\n}\n.box-email { position: relative; }\n.box-email:before {\n    content: \"email\";\n    position: absolute;\n    top: -10px;\n    left: 20px;\n    background-color: #fff;\n    padding: 0 4px;\n    color: blueviolet;\n}"
+  },
+  {
+    "id": "InputFile",
+    "name": "nput ile",
+    "category": "Forms & Inputs",
+    "path": "./tips/InputFile/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Input File</title>\n</head>\n\n<body>\n  <input type=\"file\" id=\"fileInput\" accept=\".jpg, .png\" multiple required>\n</body>\n\n<script>\n  const file =\n    document.querySelector('#fileInput')\n\n  file.addEventListener('change', (e) => {\n    const files = e.target.files;\n    console.log(files);\n  })\n\n</script>\n\n</html>",
+    "css": "body {\n  font-size: 20px;\n  font-family: 'Courier New', Courier, monospace;\n  font-weight: 600;\n  margin-left: 11%;\n  margin-top: 14%;\n}"
+  },
+  {
+    "id": "InputShake",
+    "name": "nput hake",
+    "category": "Forms & Inputs",
+    "path": "./tips/InputShake/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Invalid Input</title>\n</head>\n<body>\n  <input type=\"text\" pattern=\"[a-z]*\">\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 20%;\n  margin-top: 5%;\n}\n\ninput {\n  padding: 10px;\n  border-radius: 5px;\n  outline: none;\n}\ninput:invalid {\n  border: 2px solid tomato;\n  animation: 0.2s valid 3;\n}\n@keyframes valid {\n  to { transform: translateX(0); }\n  from { transform: translateX(10px); }\n}"
+  },
+  {
+    "id": "LastOfType",
+    "name": "ast f ype",
+    "category": "UI Components & Misc",
+    "path": "./tips/LastOfType/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Last of Type, First of Type</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <section>\n        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, asperiores.</p>\n        <p>Optio nulla perferendis officiis quo deserunt eum sint saepe praesentium quis aliquam dignissimos</p>\n        <p>quas aperiam vero eius dolorem corporis asperiores?</p>\n        <!-- <img src=\"\" alt=\"\">  -->\n    </section>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    margin-left: 4%;\n}\n\np:last-of-type {\n    color: red;\n}\np:first-of-type {\n    font-weight: 800;\n}\np:last-child {\n    color: violet;\n}\n\n"
+  },
+  {
+    "id": "LinearGradient",
+    "name": "inear radient",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/LinearGradient/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Linear Gradient</title> \n</head>\n<body>\n    <div class=\"box\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 8%;\n    margin-top: 8%;\n}\n\n.box {\n  border: 1px solid gray;\n  width: 300px;\n  height: 200px;\n  /*lg(direccion, color %, color %)*/\n  background: \n    linear-gradient(violet 10%, aqua 50%);\n}"
+  },
+  {
+    "id": "LinearGradientRepeat",
+    "name": "inear radient epeat",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/LinearGradientRepeat/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Linear Gradient Reapeat</title>\n</head>\n<body>\n  <div class=\"box-bg\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 14%;\n    margin-top: 3%;\n}\n\n.box-bg {\n  border: 1px solid gray;\n  width: 400px; height: 200px;\n  background: \n    repeating-linear-gradient(\n      45deg,\n      tomato 0px,\n      tomato 20px,\n      white 20px,\n      white 40px\n    );\n}"
+  },
+  {
+    "id": "Loader01",
+    "name": "oader01",
+    "category": "Animations & Loaders",
+    "path": "./tips/Loader01/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Loader 01</title>\n</head>\n<body>\n  <div class=\"loader\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 19%;\n    margin-top: 3%;\n}\n.loader {\n  width: 60px; height: 60px;\n  background-color: blueviolet;\n  border-radius: 50%;\n  animation: 1s scaler infinite linear;\n}\n@keyframes scaler {\n  to {\n    transform: scale(0);\n    opacity: 1;\n  }\n  from {\n    transform: scale(1);\n    opacity: 0;\n  }\n}\n"
+  },
+  {
+    "id": "Loader02",
+    "name": "oader02",
+    "category": "Animations & Loaders",
+    "path": "./tips/Loader02/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Loader 3 dots</title>\n</head>\n<body>\n  <div class=\"dots\">\n      <div class=\"dot\"></div>\n      <div class=\"dot\"></div>\n      <div class=\"dot\"></div>\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n.dots {\n  display: flex; gap: 5px;\n}\n.dot {\n  width: 30px; height: 30px;\n  background-color: blueviolet;\n  border-radius: 50%;\n  animation: 0.3s updown infinite\n    alternate ease-in-out;\n}\n.dot:nth-child(2) {\n  animation-delay: 0.1s;\n}\n@keyframes updown {\n  0% { transform: translateY(25px); }\n}"
+  },
+  {
+    "id": "LoaderClock",
+    "name": "oader lock",
+    "category": "Animations & Loaders",
+    "path": "./tips/LoaderClock/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Clock Loader</title>\n</head>\n<body>\n  <div class=\"loader\"></div>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: 'Montserrat', sans-serif;\n  font-weight: 500;\n  margin-left: 16%;\n  margin-top: 5%;\n  letter-spacing: 1px;\n}\n\n\n.loader {\n  width: 70px; height: 70px;\n  border: 5px dotted blueviolet;\n  border-radius: 50%;\n  position: relative;\n}\n.loader:after {\n  content: \"\";\n  width: 3px; height: 30px;\n  background: darkblue;\n  display: block;\n  position: absolute;\n  left: 35px; bottom: 35px;\n  transform-origin: 0 100%;\n  animation: 2s clock infinite;\n}\n@keyframes clock {\n  to { transform: rotate(360deg); }\n}\n"
+  },
+  {
+    "id": "MarkerLista",
+    "name": "arker ista",
+    "category": "UI Components & Misc",
+    "path": "./tips/MarkerLista/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Marker li ol</title>\n</head>\n<body>\n  <ul>\n    <li>First item</li>\n    <li>Second item</li>\n    <li>Third item</li>\n    <li>Fourth item</li>\n  </ul>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 22px;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n    sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\n\nli {\n  list-style: disc;\n}\nli::marker {\n  content: \"Paso \" counter(list-item)\": \";\n  color: blueviolet;\n}\nli::marker {\n  /* content: \"🤪\"; */\n}"
+  },
+  {
+    "id": "MirrorImage",
+    "name": "irror mage",
+    "category": "Images & Media",
+    "path": "./tips/MirrorImage/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Image Mirror</title>\n</head>\n<body>\n  <img src=\"./example.png\" alt=\"rick\">\n  <img src=\"./example.png\" alt=\"rick\">\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 30px;\n    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n    font-weight: 600;\n    margin-left: 12%;\n    margin-top: 3%;\n}\n\n\nimg:last-of-type {\n  /* -webkit-box-reflect: right; */\n  /* transform: scaleX(-1); */\n  transform: rotateY(180deg);\n}"
+  },
+  {
+    "id": "Modal",
+    "name": "odal",
+    "category": "UI Components & Misc",
+    "path": "./tips/Modal/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Modal only with CSS</title>\n</head>\n\n<body>\n  <a href=\"#modal\">Open Modal</a>\n  <div id=\"modal\" class=\"new-modal\">\n    <div>\n      <h2>Modal Title</h2>\n      <p>Modal without javascript only with CSS.</p>\n      <a href=\"#close\">Close</a>\n    </div>\n  </div>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 16px;\n  font-family: Arial, Helvetica, sans-serif;\n  /* font-weight: 600; */\n  margin-left: 26%;\n  margin-top: 5%;\n}\n\n.new-modal {\n  background: #00000088;\n  position: fixed;\n  inset: 0;\n  display: none;\n}\n.new-modal:target {\n  display: block;\n}\n.new-modal div {\n  background: #fff;\n  width: 300px;\n  margin: 20px auto;\n  padding: 10px;\n  border-radius: 5px;\n}"
+  },
+  {
+    "id": "ModernToggleSwitch",
+    "name": "odern oggle witch",
+    "category": "Forms & Inputs",
+    "path": "./tips/ModernToggleSwitch/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Modern CSS Toggle Switch</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"toggle-card\">\n    <div class=\"toggle-row\">\n      <span>Dark Mode Mode</span>\n      <label class=\"switch\">\n        <input type=\"checkbox\" checked>\n        <span class=\"slider\"></span>\n      </label>\n    </div>\n    <div class=\"toggle-row\">\n      <span>Auto-Save Code</span>\n      <label class=\"switch\">\n        <input type=\"checkbox\">\n        <span class=\"slider\"></span>\n      </label>\n    </div>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n}\n\n.toggle-card {\n  background: #151f34;\n  border: 1px solid rgba(255, 255, 255, 0.08);\n  border-radius: 16px;\n  padding: 24px;\n  width: 100%;\n  max-width: 320px;\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n}\n\n.toggle-row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  font-size: 0.95rem;\n  font-weight: 600;\n}\n\n/* 🌟 Pure CSS iOS-style Switch */\n.switch {\n  position: relative;\n  display: inline-block;\n  width: 50px;\n  height: 28px;\n}\n\n.switch input {\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n\n.slider {\n  position: absolute;\n  cursor: pointer;\n  inset: 0;\n  background-color: #334155;\n  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  border-radius: 9999px;\n}\n\n.slider::before {\n  position: absolute;\n  content: \"\";\n  height: 22px;\n  width: 22px;\n  left: 3px;\n  bottom: 3px;\n  background-color: white;\n  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  border-radius: 50%;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);\n}\n\ninput:checked + .slider {\n  background-color: #10b981;\n}\n\ninput:focus-visible + .slider {\n  outline: 2px solid #38bdf8;\n  outline-offset: 2px;\n}\n\ninput:checked + .slider::before {\n  transform: translateX(22px);\n}\n\n"
+  },
+  {
+    "id": "NeonEffect",
+    "name": "eon ffect",
+    "category": "Typography & Text",
+    "path": "./tips/NeonEffect/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  \n    <title>Neon Effect</title>\n</head>\n<body>\n    <div class=\"neon\"></div>\n</body>\n\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 10%;\n    margin-top: 6%;\n    background-color: #000;\n}\n\n.neon {\n  width: 350px;\n  height: 15px;\n  background-color: #fff;\n  border-radius: 10px;\n  box-shadow: 0 0 5px cyan,\n              0 0 25px cyan,\n              0 0 50px cyan,\n              0 0 100px cyan;\n}"
+  },
+  {
+    "id": "OpacityBox",
+    "name": "pacity ox",
+    "category": "UI Components & Misc",
+    "path": "./tips/OpacityBox/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 01</title>\n</head>\n<body>\n<section>\n    <div class=\"card\"></div>\n    <div class=\"card\"></div>\n    <div class=\"card\"></div>\n    <div class=\"card\"></div>\n</section>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: Arial, Helvetica, sans-serif;\n    font-weight: 600;\n    margin-left: 13%;\n    margin-top: 5%;\n}\n\nsection {\n  display: flex;\n  gap: 5px;\n}\n.card {\n  width: 90px; height: 90px;\n  background-color: aquamarine;\n  border-radius: 5px;\n  transition: 0.3s;\n}\nsection:hover > :not(:hover) {\n  opacity: 0.4;\n}"
+  },
+  {
+    "id": "OpacityImage",
+    "name": "pacity mage",
+    "category": "Images & Media",
+    "path": "./tips/OpacityImage/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Opacity Image</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <div>\n        <h4>Title Card</h4>\n        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam in modi quibusdam.</p>\n    </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 17px;\n    font-family: 'Courier New', Courier, monospace;\n    margin-left: 6%;\n    margin-top: 4%;\n}\ndiv {\n    width: 250px;\n    height: 200px;\n    position: relative;\n    padding: 10px;\n}\ndiv::after {\n    content: \"\";\n    background-image: url(./images/dunas.jpg);\n    background-size: cover;\n    position: absolute;\n    inset: 0;\n    opacity: 0.5;\n    z-index: -1;\n}\n"
+  },
+  {
+    "id": "OrderFlex",
+    "name": "rder lex",
+    "category": "Layout & Flexbox",
+    "path": "./tips/OrderFlex/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Flex Order</title>\n</head>\n<body>\n  <div class=\"flex-container\">\n    <div class=\"item c-1\">1</div>\n    <div class=\"item c-2\">2</div>\n    <div class=\"item c-3\">3</div>\n  </div>\n</body>  <!-- FlexBox Order -->\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 14%;\n    margin-top: 6%;\n}\n.flex-container {\n    display: flex;\n}\n.item {\n    width: 70px; height: 70px;\n    background-color: gold;\n    border: 1px solid gray;\n}\n.c-1 { order: 6; }\n.c-2 { order: 4; }\n.c-3 { order: 9; }"
+  },
+  {
+    "id": "Paralax",
+    "name": "aralax",
+    "category": "UI Components & Misc",
+    "path": "./tips/Paralax/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Paralax</title>\n</head>\n<body>\n  <section>\n    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis numquam nisi corporis tenetur consequuntur voluptatibus? Neque quaerat omnis est! Voluptas quae eligendi iure, aliquid consequuntur amet corrupti odit perferendis explicabo.</p>\n    <div class=\"image\"></div>\n    <p>numquam nisi corporis tenetur consequuntur voluptatibus? Neque quaerat omnis est! Voluptas quae eligendi iure, aliquid consequuntur amet corrupti odit perferendis explicabo.</p>\n  </section>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 13%;\n    margin-top: 3%;\n}\nsection {\n    border: 1px solid gray;\n    width: 400px; height: 300px;\n    overflow: auto;\n}\n.image {\n    height: 150px;\n    background-image: url(./sabana.jpg);\n    background-attachment: fixed;\n    background-size: contain;\n    background-position: center ;\n}"
+  },
+  {
+    "id": "ParrafoVertical",
+    "name": "arrafo ertical",
+    "category": "UI Components & Misc",
+    "path": "./tips/ParrafoVertical/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Vertical Word</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <!-- <h2>Vertical Word.</h2> -->\n    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, asperiores. Optio nulla perferendis officiis quo deserunt eum sint saepe praesentium quis aliquam dignissimos, quas aperiam vero eius dolorem corporis asperiores?</p>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    margin-left: 4%;\n}\n\np {\n    writing-mode: vertical-lr;\n}\n"
+  },
+  {
+    "id": "ProfileRotate",
+    "name": "rofile otate",
+    "category": "UI Components & Misc",
+    "path": "./tips/ProfileRotate/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Profile Image Hover</title>\n</head>\n<body>\n\n  <figure>\n    <img src=\"./profile.jpg\" alt=\"profile\">\n  </figure>\n\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\nfigure {\n  width: 150px; height: 150px;\n  border: 7px solid gray;\n  border-radius: 20px;\n  overflow: hidden;\n  transition: 0.5s;\n  transform-origin: 0 100%;\n  transform: scale(0.70)rotateZ(-10deg);\n}\nfigure:hover { transform: scale(0.70)rotateZ(0deg); }\nfigure:hover img { transform: rotateZ(0deg); }\nimg {\n  width: 100%; height: 100%;\n  object-fit: cover;\n  transition: 0.5s;\n  transform: scale(1.2)rotateZ(10deg);\n}"
+  },
+  {
+    "id": "ResposiveColumns",
+    "name": "esposive olumns",
+    "category": "Layout & Flexbox",
+    "path": "./tips/ResposiveColumns/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Hover 01</title>\n</head>\n<body>\n  <div>\n    <h2>The Title</h2>\n    <p>\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo esse temporibus accusantium iure sint. Dignissimos illum quaerat eveniet placeat, eum error blanditiis quos est hic tenetur quia aliquam corporis maxime?\n    </p>\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight:500;\n  margin-left: 300px;\n  margin-right: 10%;\n  margin-top: 5%;\n}\n\ndiv {\n  border: 1px solid black;\n  padding: 10px;\n  border-radius: 8px;\n  columns: 200px 2;\n}\nh2 {\n  column-span: all;\n  margin: 0;\n}"
+  },
+  {
+    "id": "ScrollBar",
+    "name": "croll ar",
+    "category": "Animations & Loaders",
+    "path": "./tips/ScrollBar/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Custon ScrollBar</title>\n</head>\n<body>\n    <div>\n        Lorem ipsum dolor sit amet, consectetur \n        adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n        adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n        adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n    </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 8%;\n    margin-right: 18%;\n    margin-top: 5%;\n}\n\ndiv {\n  width: 400px; height: 200px;\n  overflow: auto;\n}\n::-webkit-scrollbar {\n    width: 15px;\n}\n::-webkit-scrollbar-track {\n    background: gold;\n}\n::-webkit-scrollbar-thumb {\n    background: blueviolet;\n    border-radius: 15px;\n}"
+  },
+  {
+    "id": "ScrollDiv",
+    "name": "croll iv",
+    "category": "Animations & Loaders",
+    "path": "./tips/ScrollDiv/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>overflow scroll</title>\n</head>\n<body>\n  <div>\n    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto \n    de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y estándar de las industrias desde el año.\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 18px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 8%;\n    margin-top: 3%;\n}\ndiv {\n  width: 300px;\n  height: 180px;\n  border: 1px solid gray;\n  overflow: auto;\n}"
+  },
+  {
+    "id": "ScrollDrivenAnimation",
+    "name": "croll riven nimation",
+    "category": "Animations & Loaders",
+    "path": "./tips/ScrollDrivenAnimation/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Pure CSS Scroll-Driven Animation</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"progress-bar\"></div>\n\n  <div class=\"content-scroll\">\n    <h2>Scroll Down to See Pure CSS Animation</h2>\n    <div class=\"card reveal-card\">🚀 Card 1: Scroll-driven progress bar at top</div>\n    <div class=\"card reveal-card\">⚡ Card 2: animation-timeline: scroll()</div>\n    <div class=\"card reveal-card\">🎨 Card 3: No JavaScript required!</div>\n    <div class=\"card reveal-card\">💎 Card 4: Modern CSS Specification</div>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 250vh;\n  padding: 40px 20px;\n}\n\n/* 🌟 Top Scroll Progress Indicator using animation-timeline */\n.progress-bar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 6px;\n  background: linear-gradient(90deg, #38bdf8, #10b981, #f59e0b, #ec4899);\n  transform-origin: left center;\n  scale: 0 1;\n  animation: growProgress linear;\n  animation-timeline: scroll();\n  z-index: 999;\n}\n\n@keyframes growProgress {\n  to { scale: 1 1; }\n}\n\n.content-scroll {\n  max-width: 500px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  gap: 80px;\n}\n\nh2 {\n  text-align: center;\n  font-size: 1.3rem;\n  color: #38bdf8;\n  margin-top: 30px;\n}\n\n.card {\n  background: #151f34;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 16px;\n  padding: 30px;\n  font-size: 1.05rem;\n  font-weight: 700;\n  text-align: center;\n  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);\n}\n\n/* Scroll reveal using view() */\n.reveal-card {\n  animation: revealCard linear both;\n  animation-timeline: view();\n  animation-range: entry 15% cover 40%;\n}\n\n@keyframes revealCard {\n  from {\n    opacity: 0;\n    transform: translateY(60px) scale(0.9);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0) scale(1);\n  }\n}\n\n"
+  },
+  {
+    "id": "ScrollProgressBar",
+    "name": "croll rogress ar",
+    "category": "Animations & Loaders",
+    "path": "./tips/ScrollProgressBar/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Scroll Progress Bar</title>\n</head>\n\n<body>\n  <div id=\"bar\"></div>\n\n  <script>\n    // Simular contenido en la pagina\n    document.body.appendChild(document.createTextNode(\n      \"Lorem Ipsum Lorem Ipsum \".repeat(1000)));\n\n    // Código necesario para la funcionalidad\n    let bar = document.querySelector('#bar');\n    window.addEventListener('scroll', () => {\n      let max = document.body.scrollHeight - innerHeight;\n      bar.style.width = (pageYOffset / max) * 100 + '%';\n    })\n  </script>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  margin-top: 6%;\n}\n#bar {\n  width: 0;\n  border-bottom: 10px solid blueviolet;\n  position: fixed;\n  top: 0;\n  left: 0;\n}"
+  },
+  {
+    "id": "SearchInput",
+    "name": "earch nput",
+    "category": "Forms & Inputs",
+    "path": "./tips/SearchInput/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Search Input</title>\n</head>\n<body>\n  <div class=\"search\">\n      <img src=\"./lenss.png\" alt=\"icon\">\n      <input type=\"search\" placeholder=\"search\">\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 25px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\n\n\n.search {\n  background-color: tomato;\n  width: fit-content;\n  padding: 4px;\n  display: flex;\n  border-radius: 25px;\n}\nimg {\n  width: 20px;\n  background-color: gold;\n  padding: 10px;\n  border-radius: 50%;\n}\n.search:hover input {\n  width: 140px;\n  padding: 0 10px 0 10px;\n}\ninput {\n  transition: 0.4s;\n  width: 0;\n  background-color: transparent;\n  border: 0;\n  outline: none;\n  font-size: 20px;\n  padding: 0;\n}\n"
+  },
+  {
+    "id": "SeleccionTexto",
+    "name": "eleccion exto",
+    "category": "Typography & Text",
+    "path": "./tips/SeleccionTexto/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Seleccionar Texto</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit.\n        Pariatur, doloribus incidunt. Modi asperiores corrupti \n        accusantium beatae corporis iure rem, animi ea velit?\n    </p>\n   \n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    width: 40%;\n    margin-left: 4%;\n}\n\np::selection {\n    color: blueviolet;\n    background-color: aquamarine;\n}\n\n\n"
+  },
+  {
+    "id": "SeparadorLista",
+    "name": "eparador ista",
+    "category": "UI Components & Misc",
+    "path": "./tips/SeparadorLista/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>:not(:last-child)</title>\n</head>\n<body>\n    <ul>\n        <li>ListOne</li>\n        <li>ListTwo</li>\n        <li>ListThree</li>\n    </ul>\n</body>\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n}\nul {\n    display: flex;\n}\nul > li {\n    list-style: none;\n}\nul > li:not(:last-child)::after{\n    content: \"-\";\n}\n\n"
+  },
+  {
+    "id": "Shorthands",
+    "name": "horthands",
+    "category": "UI Components & Misc",
+    "path": "./tips/Shorthands/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Shorthands</title>\n</head>\n<body>\n \n<div class=\"Shorthands\">\n  Shorthands\n</div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: Arial, Helvetica, sans-serif;\n    font-weight: 600;\n    margin-left: 16%;\n    margin-top: 5%;\n}\n\n.Shorthands {\n  /* top|right|bottom|left */\n  margin: 10px 5px 15px 0px;\n\n  /* top.left|top.right|bottom.right|bottom.left */\n  border-radius: 2px 15px 50px 25px;\n  /* top.left|top.right-bottom.left|bottom.right */\n  border-radius: 2px 15px 50px;\n  /* top.left-bottom.right|bottom.left-top.right */\n  border-radius: 2px 50px;\n\n  /* width|style|color */\n  border: 1px solid gray;\n\n  /* color|image|repeat|position */\n  background: aqua url(\"bg.jpg\") no-repeat 50% 50%;\n\n  /* type|position|image */\n  list-style: square inside url(\"icon.png\");\n\n  /* style|weight|size|line-height|family */\n  font: normal bold 16px/20px Arial;\n\n  /* property|duration|timing-function */\n  transition: color 2s ease-in;\n\n  /* name|duration|timing-function|delay|iteration-count */\n  animation: move-letter 2s ease 1s infinite;\n\n  /* flex-direction|flex-wrap */\n  flex-flow: column wrap;\n\n  /* align-items|justify-items */\n  place-items: center start;\n}"
+  },
+  {
+    "id": "ShowPassword",
+    "name": "how assword",
+    "category": "Forms & Inputs",
+    "path": "./tips/ShowPassword/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Show Password</title>\n</head>\n\n<body>\n  <label>\n    Password:\n    <input type=\"password\" id=\"field\">\n  </label>\n  <br>\n  <label>\n    Show Password:\n    <input type=\"checkbox\" onclick=\"showPwd()\">\n  </label>\n\n  <script>\n    const showPwd = () => {\n      let input = document.querySelector(\"#field\")\n      if (input.type === \"password\") {\n        input.type = \"text\"\n      } else {\n        input.type = \"password\"\n      }\n    }\n  </script>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 16px;\n    font-family: Arial, Helvetica, sans-serif;\n    font-weight: 400;\n    margin-left: 16%;\n    margin-top: 5%;\n}\n"
+  },
+  {
+    "id": "ShowPasswordEye",
+    "name": "how assword ye",
+    "category": "Forms & Inputs",
+    "path": "./tips/ShowPasswordEye/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Show Password Eye</title>\n</head>\n\n<body>\n  <div class=\"input-row\">\n    <input type=\"password\" id=\"field\">\n    <p class=\"eye\"><img src=\"eyeclose.svg\"></p>\n  </div>\n\n  <script>\n    const eye = document.querySelector('.eye')\n    eye.addEventListener('click',()=>{\n      showPwd()\n    })\n\n    const icon = document.querySelector('.eye img')\n\n    const showPwd = () => {\n      let input = document.querySelector(\"#field\")\n      if (input.type === \"password\") {\n        input.type = \"text\"\n        icon.setAttribute('src', 'eyeopen.svg')\n      } else {\n        input.type = \"password\"\n        icon.setAttribute('src', 'eyeclose.svg')\n      }\n    }\n  </script>\n</body>\n\n</html>",
+    "css": "body {\n  font-size: 16px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 400;\n  margin-left: 8%;\n  margin-top: 2%;\n}\n\n.input-row {\n  display: flex;\n  border: 1px solid black;\n  width: fit-content;\n  padding: 1px 5px;\n  border-radius: 10px;\n}\n.input-row p {\n  margin: 0;\n  cursor: pointer;\n}\n.input-row input {\n  border: 0;\n  outline: none;\n}\n.input-row img {\n  width: 25px;\n}"
+  },
+  {
+    "id": "SliceEffect",
+    "name": "lice ffect",
+    "category": "UI Components & Misc",
+    "path": "./tips/SliceEffect/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Slice Effect</title>\n</head>\n<body>\n  <div class=\"box\">\n    Description\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 14px;\n    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;\n    font-weight: 400;\n    margin-left: 23%;\n    margin-top: 3%;\n}\n\n.box {\n  width: 150px; height: 150px;\n  background-color: aquamarine;\n  display: grid;\n  place-content: center;\n  position: relative;\n}\n.box:before {\n  content: \"\";\n  position: absolute;\n  inset: 0;\n  background: url(./user.jpg);\n  background-size: cover;\n  transition: 0.5s;\n}\n.box:hover:before {\n  transform: translateX(150px);\n}"
+  },
+  {
+    "id": "Spiner01",
+    "name": "piner01",
+    "category": "Animations & Loaders",
+    "path": "./tips/Spiner01/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Spiner</title>\n</head>\n<body>\n  <div class=\"spinner\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 18%;\n    margin-top: 3%;\n}\n\n.spinner {\n  width: 80px; height: 80px;\n  border: 10px solid blueviolet;\n  border-top: 10px solid plum;\n  border-radius: 50%;\n  animation: 1s linear infinite spiner;\n}\n@keyframes spiner {\n    0% {\n        transform: rotate(0deg);\n    }\n    100% {\n        transform: rotate(360deg);\n    }\n}"
+  },
+  {
+    "id": "StartingStyleTransitions",
+    "name": "tarting tyle ransitions",
+    "category": "Modern CSS Specs",
+    "path": "./tips/StartingStyleTransitions/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS @starting-style Entry Transition</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"demo-box\">\n    <button class=\"trigger-btn\" onclick=\"togglePopover()\">Toggle Toast with @starting-style</button>\n    <div class=\"toast\" id=\"myToast\">\n      🎉 Modern CSS @starting-style allows smooth entrance animations from display:none!\n    </div>\n  </div>\n\n  <script>\n    function togglePopover() {\n      const toast = document.getElementById('myToast');\n      toast.classList.toggle('open');\n    }\n  </script>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n}\n\n.demo-box {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 20px;\n}\n\n.trigger-btn {\n  background: linear-gradient(135deg, #a855f7, #6366f1);\n  color: #fff;\n  border: none;\n  padding: 12px 24px;\n  border-radius: 9999px;\n  font-weight: 800;\n  cursor: pointer;\n  box-shadow: 0 4px 18px rgba(168, 85, 247, 0.4);\n  transition: transform 0.2s ease;\n}\n\n.trigger-btn:hover {\n  transform: translateY(-2px);\n}\n\n/* 🌟 @starting-style with transition-behavior: allow-discrete */\n.toast {\n  display: none;\n  opacity: 0;\n  transform: scale(0.8) translateY(20px);\n  background: #1e293b;\n  border: 1px solid #a855f7;\n  padding: 16px 20px;\n  border-radius: 12px;\n  max-width: 320px;\n  font-size: 0.9rem;\n  color: #e2e8f0;\n  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);\n\n  transition: opacity 0.35s ease, transform 0.35s ease, display 0.35s allow-discrete;\n}\n\n.toast.open {\n  display: block;\n  opacity: 1;\n  transform: scale(1) translateY(0);\n\n  @starting-style {\n    opacity: 0;\n    transform: scale(0.8) translateY(20px);\n  }\n}\n\n"
+  },
+  {
+    "id": "SubgridLayout",
+    "name": "ubgrid ayout",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/SubgridLayout/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Grid Subgrid Alignment</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"parent-grid\">\n    <div class=\"card subgrid-card\">\n      <h3>Title 1 (Short)</h3>\n      <p>A quick summary sentence that takes little space.</p>\n      <button>Action</button>\n    </div>\n\n    <div class=\"card subgrid-card\">\n      <h3>Title 2 (Much Longer Multiline Heading to Demonstrate Subgrid Alignment)</h3>\n      <p>This paragraph contains multiple sentences with detailed explanation. Notice how all buttons align on the same line!</p>\n      <button>Action</button>\n    </div>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n}\n\n/* Parent defines columns and rows */\n.parent-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 20px;\n  width: 100%;\n  max-width: 600px;\n}\n\n/* 🌟 Subgrid allows card children (h3, p, button) to share the parent's row tracks! */\n.subgrid-card {\n  grid-row: span 3;\n  display: grid;\n  grid-template-rows: subgrid;\n  background: #151f34;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 14px;\n  padding: 20px;\n  gap: 12px;\n}\n\nh3 {\n  font-size: 1.1rem;\n  color: #38bdf8;\n}\n\np {\n  font-size: 0.88rem;\n  color: #94a3b8;\n  line-height: 1.5;\n}\n\nbutton {\n  background: #0284c7;\n  color: #fff;\n  border: none;\n  padding: 10px 16px;\n  border-radius: 8px;\n  font-weight: 700;\n  cursor: pointer;\n  align-self: end;\n}\n\n"
+  },
+  {
+    "id": "SupSub",
+    "name": "up ub",
+    "category": "UI Components & Misc",
+    "path": "./tips/SupSub/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Tags \n    subíndice & superíndice\n  </title>\n</head>\n<body>\n  <h2>CO<sub>2</sub></h2>\n  <h2>E = mc<sup>2</sup></h2>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 800;\n    margin-left: 14%;\n    margin-top: 4%;\n}\n\nsub {\n  color: cyan;\n}\nsup { \n  color: red;\n  font-size: 18px;\n}"
+  },
+  {
+    "id": "Text Decoration",
+    "name": "ext  ecoration",
+    "category": "Typography & Text",
+    "path": "./tips/Text Decoration/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Text Decoration</title>\n</head>\n<body>\n    <p>\n        Lorem ipsum dolor, modi consequatur voluptates possimus.\n        <a href=\"#\">consectetur adipisicing</a>\n        aperiam atque beatae odit, cupiditate voluptatibus rem \n        <a href=\"#\">aperiam atque beatae odit, cupiditate voluptatibus rem </a>\n    </p>\n   \n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 6%;\n    margin-right: 16%\n}\n\na {\n    text-decoration-color: aqua;\n    text-decoration-thickness: 4px;\n    text-decoration-style: solid;\n}\na:hover {\n    text-decoration-style: dotted;\n    text-decoration-color: orange;\n}"
+  },
+  {
+    "id": "TextArea",
+    "name": "ext rea",
+    "category": "Typography & Text",
+    "path": "./tips/TextArea/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Area</title>\n</head>\n<body>\n  <textarea cols=\"30\" rows=\"10\"></textarea>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 38%;\n    margin-top: 4%;\n}\n\ntextarea {\n    border: 2px solid #000;\n    resize: both;\n    resize: horizontal;\n    resize: vertical;\n    resize: none;\n}"
+  },
+  {
+    "id": "TextGradient",
+    "name": "ext radient",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/TextGradient/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Gradient</title>\n</head>\n<body>\n  <h2>Gradient Text</h2>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 35px;\n    /* font-family: 'Courier New', Courier, monospace; */\n    font-weight: 600;\n    margin-left: 12%;\n    margin-right: 30%;\n    margin-top: 6%;\n}\n\nh2 {\n  width: fit-content;\n  background: \n    linear-gradient(\n      to left,blueviolet,cyan\n    );\n  -webkit-background-clip: text;\n  -moz-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}"
+  },
+  {
+    "id": "TextGradientShimmer",
+    "name": "ext radient himmer",
+    "category": "Backgrounds & Gradients",
+    "path": "./tips/TextGradientShimmer/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>CSS Text Gradient Shimmer</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n  <div class=\"shimmer-box\">\n    <h1 class=\"shimmer-text\">Next-Gen CSS Engineering</h1>\n    <p>Pure CSS animated linear-gradient background clipped to text with continuous smooth flow.</p>\n  </div>\n</body>\n</html>\n",
+    "css": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  font-family: system-ui, -apple-system, sans-serif;\n  background: #090d16;\n  color: #f8fafc;\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 20px;\n}\n\n.shimmer-box {\n  text-align: center;\n  max-width: 480px;\n}\n\n/* 🌟 Animated Text Gradient with background-clip: text */\n.shimmer-text {\n  font-size: 2.2rem;\n  font-weight: 900;\n  background: linear-gradient(\n    90deg,\n    #38bdf8 0%,\n    #a855f7 25%,\n    #ec4899 50%,\n    #f59e0b 75%,\n    #38bdf8 100%\n  );\n  background-size: 200% auto;\n  -webkit-background-clip: text;\n  background-clip: text;\n  color: transparent;\n  animation: shine 4s linear infinite;\n  letter-spacing: -0.02em;\n  line-height: 1.2;\n  margin-bottom: 12px;\n}\n\n@keyframes shine {\n  to {\n    background-position: 200% center;\n  }\n}\n\np {\n  color: #94a3b8;\n  font-size: 0.95rem;\n  line-height: 1.6;\n}\n\n"
+  },
+  {
+    "id": "TextHover",
+    "name": "ext over",
+    "category": "Typography & Text",
+    "path": "./tips/TextHover/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Hover</title>\n</head>\n<body>\n  <p>Hover</p>\n</body>\n\n</html>",
+    "css": "body {\n  background-color: #000;\n  font-family: sans-serif;\n  margin-top: 0px;\n  margin-left: 70px;\n}\n\np {\n  -webkit-text-stroke: 4px #fff;\n  font-size: 130px;\n  margin: 0;\n  font-weight: 800;\n  color: transparent;\n  transition: 0.5s;\n  text-shadow: 5px 5px 0px #07bccc,\n    10px 10px 0px #e601c0,\n    15px 15px 0px #e9019a,\n    20px 20px 0px #f40468;\n}\n\np:hover {\n  text-shadow: none;\n}"
+  },
+  {
+    "id": "TextImage",
+    "name": "ext mage",
+    "category": "Images & Media",
+    "path": "./tips/TextImage/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Texto Image</title>\n</head>\n<body>\n  <p>Simply dummy text of the printing and \n    <img src=\"./images/dunas.jpg\" alt=\"dunas\">\n    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.text ever since the 1500s, when an unknown It has survived not only five centuries, but also the leap into electronic\n  </p>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 18px;\n  font-family: 'Courier New', Courier, monospace;\n  font-weight: 600;\n  margin-top: 6%;\n  margin-left: 4%;\n}\n\nimg {\n  float: right;\n  margin-left: 15px;\n}\np {\n  text-align: justify;\n}\n\n\n"
+  },
+  {
+    "id": "TextStroke",
+    "name": "ext troke",
+    "category": "Typography & Text",
+    "path": "./tips/TextStroke/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Text Stroke</title>\n</head>\n<body>\n  <h1>TITLE</h1>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 35px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n  background-color: #000000;\n}\n\nh1 {\n  text-shadow: 4px 4px cyan;\n\n  -webkit-text-stroke-color: #fff;\n  -webkit-text-stroke-width: 1px;\n\n  color: transparent;\n}"
+  },
+  {
+    "id": "TextStyle",
+    "name": "ext tyle",
+    "category": "Typography & Text",
+    "path": "./tips/TextStyle/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Font Style</title>\n</head>\n<body>\n    <p>This is a example paragraph</p>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 9%;\n    margin-top: 6%;\n}\n\np {\n    font-style: normal;\n    font-style: italic;\n    font-style: oblique;\n}"
+  },
+  {
+    "id": "TextTransform",
+    "name": "ext ransform",
+    "category": "Forms & Inputs",
+    "path": "./tips/TextTransform/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Text Transform</title>\n</head>\n<body>\n    <h2>Texto De ejemplo</h2>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 5%;\n}\n\nh2 {\n    text-transform: uppercase;\n    text-transform: lowercase;\n    text-transform: capitalize;\n}\n\n"
+  },
+  {
+    "id": "Toggle",
+    "name": "oggle",
+    "category": "UI Components & Misc",
+    "path": "./tips/Toggle/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Toggle</title>\n  <script src=\"./custom.js\" defer></script>\n</head>\n<body>\n  <div class=\"toggle-box \">\n    <div class=\"circle\"></div>\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 34%;\n    margin-top: 8%;\n}\n.toggle-box {\n  width: 70px; height: 40px;\n  background-color: blueviolet;\n  border-radius: 25px;\n  display: flex;\n  align-items: center;\n  padding: 0 2px;\n  cursor: pointer;\n}\n.circle {\n  background-color: #fff;\n  width: 35px; height: 35px;\n  border-radius: 50%;\n}\n.toggle-box.dark {\n  justify-content: right;\n}"
+  },
+  {
+    "id": "TooltipCSS",
+    "name": "ooltip",
+    "category": "UI Components & Misc",
+    "path": "./tips/TooltipCSS/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n\t<title>ToolTip</title>\n\t<link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n\t<p>Lorem \n\t\t<span tooltip=\"Tooltip Content\">ipsum</span> \n\t\tdolor sit, eius dolorem corporis asperiores?\n\t</p>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    margin-left: 4%;\n    font-weight: 600;\n    margin-top: 8%;\n}\n\nspan {\n    border-bottom: solid 2px #000;\n    position: relative;\n}\nspan::after {\n    content: attr(tooltip);\n    position: absolute;\n    font-size: 15px;\n    top: -35px;\n    left: 0;\n    background-color: aquamarine;\n    border-radius: 5px;\n    display: none;\n}\np span:hover::after {\n    display: block;\n}\n\n\n\n"
+  },
+  {
+    "id": "Translate",
+    "name": "ranslate",
+    "category": "UI Components & Misc",
+    "path": "./tips/Translate/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Hover Translate</title>\n</head>\n<body>\n  <div class=\"box\">\n    <div class=\"child\">this is a title</div>\n  </div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 8%;\n    margin-top: 3%;\n}\n\n.box {\n    height: 150px; width: 200px;\n    border: 2px solid gray;\n    position: relative;\n    overflow: hidden;\n}\n.box:hover .child {\n    transform: translateX(-200px);\n}\n.child {\n    width: 200px; height: 50px;\n    background-color: aquamarine;\n    position: absolute;\n    right: -200px;\n    transition: 1s;\n}\n"
+  },
+  {
+    "id": "TreeSVG",
+    "name": "ree",
+    "category": "UI Components & Misc",
+    "path": "./tips/TreeSVG/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Christmas Tree SVG</title>\n</head>\n\n<body>\n  <svg width=\"200\" height=\"300\"\n    viewBox=\"-50 -50 200 300\">\n    <rect x=\"40\" y=\"95\"\n      width=\"20\" height=\"30\"\n      fill=\"Brown\" />\n\n    <polygon \n      points=\"50,20 100,100 0,100\"\n      fill=\"DarkGreen\"/>\n      \n    <polygon \n      points=\"50,0 90,60 10,60\"\n      fill=\"Green\"/>\n    \n  </svg>\n</body>\n</html>",
+    "css": "body {\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n}"
+  },
+  {
+    "id": "Triangle",
+    "name": "riangle",
+    "category": "UI Components & Misc",
+    "path": "./tips/Triangle/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Triangle</title>\n</head>\n<body>\n  <div class=\"triangle\"></div>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 29%;\n    margin-top: 9%;\n}\n\n.triangle {\n  width: 0px;\n  height: 0px;\n  /* background-color: aqua; */\n  border-left: 50px solid transparent;\n  border-right: 50px solid transparent;\n  border-bottom: 100px solid blueviolet;\n}"
+  },
+  {
+    "id": "TruncateText",
+    "name": "runcate ext",
+    "category": "Typography & Text",
+    "path": "./tips/TruncateText/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Truncar texto</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <p>\n        Lorem ipsum dolor sit amet consectetur adipisicing elit.\n        Pariatur, doloribus incidunt. Modi asperiores corrupti \n        accusantium beatae corporis iure rem, animi ea velit?\n    </p>\n   \n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 4%;\n}\n\np {\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    width: 200px; \n}\n\n\n"
+  },
+  {
+    "id": "TypingEffect",
+    "name": "yping ffect",
+    "category": "Animations & Loaders",
+    "path": "./tips/TypingEffect/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Typing Effect</title>\n</head>\n<body>\n  <h1>TYPING</h1>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 25px;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\nh1 {\n  width: 1ch;\n  overflow: hidden;\n  font-family: 'Courier New';\n  animation: 4s typing steps(7) \n    infinite alternate;\n}\n@keyframes typing {\n  from { width: 0ch; }\n  to { width: 7ch; }\n}"
+  },
+  {
+    "id": "Unset",
+    "name": "nset",
+    "category": "UI Components & Misc",
+    "path": "./tips/Unset/index.html",
+    "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>All Unset</title>\n</head>\n<body>\n    <a href=\"#\">Example</a>\n</body>\n</html>",
+    "css": "body{\n    font-size: 25px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n}\na {\n    text-decoration: none;\n    color: #000;\n    background-color: cyan;\n    padding: 6px 23px;\n    border-radius: 9px;\n\n    /* all: unset; */\n}"
+  },
+  {
+    "id": "UpperCaseFirstLetter",
+    "name": "pper ase irst etter",
+    "category": "Typography & Text",
+    "path": "./tips/UpperCaseFirstLetter/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Letra Capital</title>\n</head>\n<body>\n  <p>Lorem ipsum dolor sit amet, consectetur \n    adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. \n  </p>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 20px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 10%;\n    margin-top: 3%;\n    margin-right: 44%;\n}\n\np::first-letter {\n  font-size: 80px;\n  float: left;\n  line-height: 60px;\n  margin-right: 16px;\n}"
+  },
+  {
+    "id": "VinietasTriangulares",
+    "name": "inietas riangulares",
+    "category": "UI Components & Misc",
+    "path": "./tips/VinietasTriangulares/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <title>ViñetasTriangulares</title>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n</head>\n<body>\n    <ul>\n        <li>Título uno</li>\n        <li>Título dos</li>\n        <li>Título tres</li>\n        <li>Título cuatro</li>\n    </ul>\n   \n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n}\nul {\n    list-style: none;\n}\nul li::before {\n    content: \"\";\n    border-color: transparent #000;\n    border-style: solid;\n    border-width: 7px 0 7px 10px;\n    display: block;\n    width: 0;\n    position: relative;\n    left: -20px;\n    top: 18px;\n}\n\n\n"
+  },
+  {
+    "id": "WaveText",
+    "name": "ave ext",
+    "category": "Animations & Loaders",
+    "path": "./tips/WaveText/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <title>Wave Text</title>\n</head>\n<body>\n  <span style=\"--n:1\">B</span>\n  <span style=\"--n:2\">L</span>\n  <span style=\"--n:3\">A</span>\n  <span style=\"--n:4\">C</span>\n  <span style=\"--n:5\">K</span>\n</body>\n\n</html>",
+    "css": "body{\n  font-size: 20px;\n  font-family: Arial, Helvetica, sans-serif;\n  font-weight: 600;\n  margin-left: 16%;\n  margin-top: 5%;\n}\n\nspan {\n  animation: 1.5s waves infinite;\n  display: inline-block;\n  animation-delay: calc(0.1s * var(--n));\n  font-size: 40px;\n  font-weight: 800;\n}\n@keyframes waves {\n  0%,40%,100% {\n    transform: translateY(0px);\n  }\n  20% {\n    transform: translateY(-30px);\n  }\n}"
+  },
+  {
+    "id": "WordBreak",
+    "name": "ord reak",
+    "category": "Typography & Text",
+    "path": "./tips/WordBreak/index.html",
+    "html": "<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n    <title>Word Break</title>\n</head>\n<body>\n    <h1>WORDBREAK</h1>\n</body>\n\n</html>",
+    "css": "body{\n    font-size: 22px;\n    font-family: 'Courier New', Courier, monospace;\n    font-weight: 600;\n    margin-left: 9%;\n    margin-top: 3%;\n}\n\nh1 {\n    word-break: break-all;\n    width: 40px;\n    line-height: 35px;\n}"
+  }
+]

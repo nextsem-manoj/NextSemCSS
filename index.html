@@ -504,7 +504,7 @@
 
     <div class="projects-grid">
       <!-- Project 1 -->
-      <a href="/projects/01-modern-layouts-bento-studio/index.html" class="project-card">
+      <a href="./projects/01-modern-layouts-bento-studio/index.html" class="project-card">
         <div class="project-header">
           <div class="project-icon">📐</div>
           <div class="project-title">Modern Layouts &amp; Bento Grid</div>
@@ -514,7 +514,7 @@
       </a>
 
       <!-- Project 2 -->
-      <a href="/projects/02-creative-ui-components-kit/index.html" class="project-card">
+      <a href="./projects/02-creative-ui-components-kit/index.html" class="project-card">
         <div class="project-header">
           <div class="project-icon">🎨</div>
           <div class="project-title">Creative UI Components Kit</div>
@@ -524,7 +524,7 @@
       </a>
 
       <!-- Project 3 -->
-      <a href="/projects/03-animations-loaders-studio/index.html" class="project-card">
+      <a href="./projects/03-animations-loaders-studio/index.html" class="project-card">
         <div class="project-header">
           <div class="project-icon">⚡</div>
           <div class="project-title">Animations &amp; Loaders Lab</div>
@@ -534,7 +534,7 @@
       </a>
 
       <!-- Project 4 -->
-      <a href="/projects/04-modern-selectors-lab/index.html" class="project-card">
+      <a href="./projects/04-modern-selectors-lab/index.html" class="project-card">
         <div class="project-header">
           <div class="project-icon">🔬</div>
           <div class="project-title">Modern Selectors &amp; Features</div>
@@ -616,7 +616,13 @@
       }
 
       try {
-        const res = await fetch('/api/tips');
+        let res;
+        try {
+          res = await fetch('./tips.json');
+          if (!res.ok) throw new Error('tips.json not found');
+        } catch (_) {
+          res = await fetch('/api/tips');
+        }
         allTips = await res.json();
         filteredTips = [...allTips];
 

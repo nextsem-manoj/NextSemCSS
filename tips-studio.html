@@ -449,7 +449,13 @@
 
     async function init() {
       try {
-        const res = await fetch('/api/tips');
+        let res;
+        try {
+          res = await fetch('./tips.json');
+          if (!res.ok) throw new Error('tips.json not found');
+        } catch (_) {
+          res = await fetch('/api/tips');
+        }
         allTips = await res.json();
         filteredTips = [...allTips];
 
